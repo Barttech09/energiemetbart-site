@@ -1,0 +1,393 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+<meta charset="UTF-8">
+<title>5 vragen voor u overstapt: Energie met Bart</title>
+<style>
+  @page { size: A4; margin: 0; }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    color: #22303f;
+    font-size: 12.5px;
+    line-height: 1.55;
+  }
+  :root {
+    --navy: #10233a;
+    --navy-light: #1c3b5c;
+    --amber: #a04f28;
+    --amber-light: #b45f31;
+    --bg: #f7f5f1;
+    --muted: #5b6b7a;
+    --border: #e4ded3;
+  }
+
+  /* COVER PAGE */
+  .cover {
+    width: 210mm;
+    height: 297mm;
+    background: linear-gradient(160deg, var(--navy) 0%, var(--navy-light) 60%, var(--navy) 100%);
+    position: relative;
+    color: white;
+    padding: 26mm 22mm;
+    display: flex;
+    flex-direction: column;
+    page-break-after: always;
+    overflow: hidden;
+  }
+  .cover .dots {
+    position: absolute; inset: 0;
+    background-image: radial-gradient(circle, var(--amber) 1.6px, transparent 1.6px);
+    background-size: 30px 30px; opacity: 0.14;
+  }
+  .cover-logo { font-size: 20px; font-weight: 800; position: relative; }
+  .cover-logo span { color: var(--amber-light); }
+  .cover-eyebrow {
+    position: relative;
+    margin-top: 60px;
+    display: inline-flex; width: fit-content;
+    background: rgba(217,138,95,0.16);
+    color: var(--amber-light);
+    font-weight: 700; font-size: 12px;
+    padding: 7px 16px; border-radius: 999px;
+    letter-spacing: 0.02em;
+  }
+  .cover h1 {
+    position: relative;
+    font-size: 40px;
+    line-height: 1.18;
+    margin-top: 22px;
+    max-width: 430px;
+    letter-spacing: -0.01em;
+  }
+  .cover h1 em { font-style: normal; color: var(--amber-light); }
+  .cover .sub {
+    position: relative;
+    margin-top: 22px;
+    font-size: 14.5px;
+    color: rgba(255,255,255,0.78);
+    max-width: 380px;
+    line-height: 1.65;
+  }
+  .cover .spacer { flex: 1; }
+  .cover-footer {
+    position: relative;
+    display: flex; align-items: center; gap: 18px;
+    border-top: 1px solid rgba(255,255,255,0.18);
+    padding-top: 22px;
+  }
+  .cover-avatar {
+    width: 54px; height: 54px; border-radius: 50%;
+    background: rgba(255,255,255,0.07);
+    border: 2px solid var(--amber-light);
+    display: flex; align-items: center; justify-content: center;
+    font-size: 24px; font-weight: 800; color: var(--amber-light);
+    flex-shrink: 0;
+  }
+  .cover-footer .name { font-weight: 800; font-size: 15px; }
+  .cover-footer .role { font-size: 12.5px; color: rgba(255,255,255,0.65); margin-top: 2px; }
+
+  /* CONTENT PAGES */
+  .page {
+    width: 210mm;
+    min-height: 297mm;
+    padding: 20mm 22mm 24mm;
+    position: relative;
+    page-break-after: always;
+  }
+  .page:last-child { page-break-after: avoid; }
+
+  .page-header {
+    display: flex; align-items: center; justify-content: space-between;
+    padding-bottom: 10px;
+    border-bottom: 2px solid var(--border);
+    margin-bottom: 20px;
+  }
+  .page-header .logo { font-weight: 800; font-size: 13px; color: var(--navy); }
+  .page-header .logo span { color: var(--amber); }
+  .page-header .tag { font-size: 10.5px; color: var(--muted); }
+
+  .intro {
+    font-size: 13.5px;
+    color: var(--text);
+    margin-bottom: 22px;
+    max-width: 640px;
+  }
+  .intro strong { color: var(--navy); }
+
+  .question {
+    display: flex;
+    gap: 16px;
+    padding: 18px 0;
+    border-bottom: 1px solid var(--border);
+  }
+  .question:first-of-type { padding-top: 4px; }
+  .qnum {
+    flex-shrink: 0;
+    width: 34px; height: 34px; border-radius: 50%;
+    background: rgba(177,89,47,0.12);
+    color: var(--amber);
+    display: flex; align-items: center; justify-content: center;
+    font-weight: 800; font-size: 15px;
+  }
+  .qbody h2 {
+    font-size: 15.5px;
+    color: var(--navy);
+    margin-bottom: 6px;
+    letter-spacing: -0.005em;
+  }
+  .qbody p { color: var(--text); font-size: 12.3px; }
+  .qbody .why {
+    margin-top: 8px;
+    background: var(--bg);
+    border-left: 3px solid var(--amber);
+    padding: 10px 14px;
+    border-radius: 0 8px 8px 0;
+    font-size: 11.8px;
+    color: var(--muted);
+  }
+  .qbody .why strong { color: var(--navy); }
+
+  .closing {
+    margin-top: 26px;
+    background: linear-gradient(155deg, var(--navy), var(--navy-light));
+    color: white;
+    border-radius: 14px;
+    padding: 26px 28px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+  }
+  .closing h3 { font-size: 16px; margin-bottom: 6px; }
+  .closing p { font-size: 12px; color: rgba(255,255,255,0.75); max-width: 340px; }
+  .closing .contact {
+    text-align: right;
+    font-size: 12px;
+    flex-shrink: 0;
+  }
+  .closing .contact .name { font-weight: 800; font-size: 14px; color: var(--amber-light); }
+  .closing .contact div { margin-top: 3px; color: rgba(255,255,255,0.85); }
+
+  .page-footer {
+    position: absolute;
+    bottom: 12mm; left: 22mm; right: 22mm;
+    display: flex; justify-content: space-between;
+    font-size: 9.5px; color: var(--muted);
+    border-top: 1px solid var(--border);
+    padding-top: 8px;
+  }
+
+  .checklist-box {
+    margin-top: 22px;
+    border: 1.5px dashed var(--border);
+    border-radius: 12px;
+    padding: 18px 22px;
+  }
+  .checklist-box h3 { font-size: 13.5px; color: var(--navy); margin-bottom: 10px; }
+  .checklist-item {
+    display: flex; align-items: center; gap: 10px;
+    font-size: 11.8px; color: var(--text);
+    padding: 6px 0;
+  }
+  .checklist-item .box {
+    width: 15px; height: 15px; border-radius: 4px;
+    border: 1.6px solid var(--amber);
+    flex-shrink: 0;
+  }
+</style>
+<style>
+.whatsapp-float {
+  position: fixed;
+  bottom: 24px;
+  right: 24px;
+  width: 60px;
+  height: 60px;
+  background: #25D366;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 16px rgba(0,0,0,0.28);
+  z-index: 999;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+.whatsapp-float:hover {
+  transform: scale(1.08);
+  box-shadow: 0 6px 20px rgba(0,0,0,0.32);
+}
+.whatsapp-float svg {
+  width: 30px;
+  height: 30px;
+  fill: #fff;
+}
+@media (max-width: 600px) {
+  .whatsapp-float {
+    width: 52px;
+    height: 52px;
+    bottom: 16px;
+    right: 16px;
+  }
+  .whatsapp-float svg {
+    width: 26px;
+    height: 26px;
+  }
+}
+</style>
+</head>
+<body>
+
+  <!-- COVER -->
+  <div class="cover">
+    <div class="dots"></div>
+    <div class="cover-logo">Energie met <span>Bart</span></div>
+    <div class="spacer" style="flex: 0.15;"></div>
+    <div class="cover-eyebrow">● Gratis gids voor ondernemers</div>
+    <h1>5 vragen die u zich moet stellen <em>voordat u overstapt</em> van energieleverancier</h1>
+    <p class="sub">
+      Een overstap kan u geld besparen, maar niet altijd, en niet voor iedereen.
+      Deze gids helpt u de juiste vragen te stellen, zodat u een weloverwogen keuze maakt.
+      Geen verkooppraatje, gewoon een eerlijk overzicht.
+    </p>
+    <div class="spacer"></div>
+    <div class="cover-footer">
+      <div class="cover-avatar">B</div>
+      <div>
+        <div class="name">Bart</div>
+        <div class="role">Persoonlijk energieadviseur voor ondernemers &middot; 10 jaar ervaring</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- CONTENT PAGE 1 -->
+  <div class="page">
+    <div class="page-header">
+      <div class="logo">Energie met <span>Bart</span></div>
+      <div class="tag">Gratis gids · 2026</div>
+    </div>
+
+    <p class="intro">
+      Elk jaar stappen duizenden ondernemers over van energieleverancier, soms terecht, soms niet.
+      <strong>Voordat u een handtekening zet, is het slim om uzelf deze vijf vragen te stellen.</strong>
+      Hieronder leest u waarom elke vraag ertoe doet en wat u concreet kunt controleren.
+    </p>
+
+    <div class="question">
+      <div class="qnum">1</div>
+      <div class="qbody">
+        <h2>Wanneer loopt mijn huidige contract precies af, en wat is de opzegtermijn?</h2>
+        <p>
+          Veel bedrijven stappen over op een moment dat helemaal niet nodig of voordelig is, simpelweg
+          omdat ze de einddatum en opzegtermijn van hun huidige contract niet scherp hebben. Een
+          verkeerd getimede overstap kan onnodige kosten of een dubbele contractperiode opleveren.
+        </p>
+        <div class="why"><strong>Check dit:</strong> zoek de einddatum en opzegtermijn op in uw huidige
+          contract, of vraag dit na bij uw leverancier. Zonder deze informatie kunt u geen goede
+          vergelijking maken.</div>
+      </div>
+    </div>
+
+    <div class="question">
+      <div class="qnum">2</div>
+      <div class="qbody">
+        <h2>Vergelijk ik op basis van mijn werkelijke verbruik, of op een gemiddelde?</h2>
+        <p>
+          Vergelijkingssites en offertes werken vaak met landelijke gemiddeldes. Uw bedrijf verbruikt
+          waarschijnlijk anders, door bedrijfstijden, seizoensinvloeden of specifieke apparatuur.
+          Een tarief dat op papier goedkoop lijkt, kan in de praktijk duurder uitpakken.
+        </p>
+        <div class="why"><strong>Check dit:</strong> vraag een berekening op basis van uw eigen
+          jaarverbruik (elektriciteit én gas), niet op basis van een gemiddeld profiel.</div>
+      </div>
+    </div>
+
+    <div class="question">
+      <div class="qnum">3</div>
+      <div class="qbody">
+        <h2>Wat gebeurt er met de vaste leveringskosten, netbeheerkosten en energiebelasting?</h2>
+        <p>
+          De prijs per kWh of m³ is maar een deel van het verhaal. Vaste leveringskosten, kosten voor
+          uw netbeheerder en energiebelasting maken vaak een groot deel van de rekening uit, en die
+          verschillen niet of nauwelijks tussen leveranciers. Let dus op waar de vergelijking écht op
+          gebaseerd is.
+        </p>
+        <div class="why"><strong>Check dit:</strong> vraag een volledige kostenopbouw op, niet alleen
+          het kale leveringstarief, zodat u vergelijkt wat er werkelijk toe doet.</div>
+      </div>
+    </div>
+
+    <div class="page-footer">
+      <div>Energie met Bart: persoonlijk energieadvies voor ondernemers</div>
+      <div>Pagina 1 van 2</div>
+    </div>
+  </div>
+
+  <!-- CONTENT PAGE 2 -->
+  <div class="page">
+    <div class="page-header">
+      <div class="logo">Energie met <span>Bart</span></div>
+      <div class="tag">Gratis gids · 2026</div>
+    </div>
+
+    <div class="question" style="padding-top: 4px;">
+      <div class="qnum">4</div>
+      <div class="qbody">
+        <h2>Past een vast of een dynamisch contract bij mijn situatie?</h2>
+        <p>
+          Een vast contract geeft zekerheid over uw kosten. Een dynamisch contract volgt de actuele
+          marktprijs en kan voordeliger zijn, vooral als u zonnepanelen heeft of uw verbruik kunt
+          verschuiven naar goedkopere momenten. Er is geen universeel beste antwoord; het hangt af
+          van uw risicobereidheid en bedrijfsvoering.
+        </p>
+        <div class="why"><strong>Check dit:</strong> bepaal eerst of u actief kunt (of wilt) meebewegen
+          met de energiemarkt. Zo niet, dan is een vast contract vaak rustiger.</div>
+      </div>
+    </div>
+
+    <div class="question">
+      <div class="qnum">5</div>
+      <div class="qbody">
+        <h2>Is overstappen eigenlijk wel de beste stap, of is niets doen nu verstandiger?</h2>
+        <p>
+          Dit is de vraag die de meeste vergelijkers u niet stellen. Soms is uw huidige contract nog
+          steeds scherp, loopt de markt op dit moment ongunstig, of is het slimmer om eerst te kijken
+          naar besparen of verduurzamen voordat u overstapt. Een eerlijk advies begint met de vraag of
+          overstappen überhaupt nodig is.
+        </p>
+        <div class="why"><strong>Check dit:</strong> vraag een persoonlijke check van
+          uw situatie, niet alleen een prijsvergelijking, maar een advies op maat.</div>
+      </div>
+    </div>
+
+    <div class="checklist-box">
+      <h3>Snel overzicht om paraat te houden</h3>
+      <div class="checklist-item"><div class="box"></div> Einddatum en opzegtermijn huidig contract</div>
+      <div class="checklist-item"><div class="box"></div> Jaarverbruik elektriciteit en gas (indicatie is prima)</div>
+      <div class="checklist-item"><div class="box"></div> Volledige kostenopbouw, niet alleen het leveringstarief</div>
+      <div class="checklist-item"><div class="box"></div> Vast of dynamisch: past bij mijn situatie</div>
+      <div class="checklist-item"><div class="box"></div> Een persoonlijke check voordat ik beslis</div>
+    </div>
+
+    <div class="closing">
+      <div>
+        <h3>Twijfelt u nog, of wilt u dit voor uw situatie laten uitzoeken?</h3>
+        <p>Ik denk graag persoonlijk met u mee, telefonisch, zonder verkooppraatje. Ik reageer op werkdagen binnen &eacute;&eacute;n werkdag.</p>
+      </div>
+      <div class="contact">
+        <div class="name">Bart</div>
+        <div>06 15 72 11 73</div>
+        <div>info@energiemetbart.nl</div>
+      </div>
+    </div>
+
+    <div class="page-footer">
+      <div>Energie met Bart: persoonlijk energieadvies voor ondernemers</div>
+      <div>Pagina 2 van 2</div>
+    </div>
+  </div>
+
+<a href="https://wa.me/31615721173?text=Hallo%20Bart%2C%20ik%20heb%20een%20vraag%20over%20energieadvies." class="whatsapp-float" target="_blank" rel="noopener" aria-label="Stuur een WhatsApp-bericht naar Bart">
+<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12.001 2C6.478 2 2 6.477 2 12c0 1.955.56 3.779 1.528 5.32L2 22l4.828-1.492A9.94 9.94 0 0 0 12.001 22C17.523 22 22 17.523 22 12S17.523 2 12.001 2zm0 18.2a8.16 8.16 0 0 1-4.409-1.288l-.316-.19-3.116.963.99-3.037-.206-.313A8.15 8.15 0 0 1 3.8 12c0-4.522 3.679-8.2 8.201-8.2 4.521 0 8.199 3.678 8.199 8.2 0 4.522-3.678 8.2-8.199 8.2z"/></svg>
+</a>
+</body>
+</html>

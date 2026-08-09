@@ -1,0 +1,567 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Werkwijze | Energie met Bart</title>
+<meta name="description" content="Vijf stappen, geen verrassingen: hoe Bart u persoonlijk begeleidt van kennismaking tot een eerlijk energieadvies en, indien gewenst, een soepele overstap.">
+<link rel="canonical" href="https://energiemetbart.nl/werkwijze">
+<link rel="icon" type="image/png" sizes="32x32" href="images/favicon-32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="images/favicon-16.png">
+<link rel="apple-touch-icon" href="images/apple-touch-icon.png">
+<link rel="icon" href="images/favicon.ico">
+<meta property="og:type" content="website">
+<meta property="og:locale" content="nl_NL">
+<meta property="og:title" content="Werkwijze | Energie met Bart">
+<meta property="og:description" content="Vijf stappen, geen verrassingen: hoe Bart u persoonlijk begeleidt naar een eerlijk energieadvies.">
+<meta property="og:image" content="https://energiemetbart.nl/images/og-image.png">
+<meta property="og:url" content="https://energiemetbart.nl/werkwijze">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Werkwijze | Energie met Bart">
+<meta name="twitter:description" content="Vijf stappen, geen verrassingen: hoe Bart u persoonlijk begeleidt naar een eerlijk energieadvies.">
+<meta name="twitter:image" content="https://energiemetbart.nl/images/og-image.png">
+<style>
+  :root {
+    --navy: #10233a;
+    --navy-light: #1c3b5c;
+    --amber: #a04f28;
+    --amber-light: #b45f31;
+    --bg: #f7f5f1;
+    --white: #ffffff;
+    --text: #22303f;
+    --muted: #5b6b7a;
+    --border: #e4ded3;
+    --radius: 14px;
+  }
+
+  * { box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  body {
+    margin: 0;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    color: var(--text);
+    background: var(--bg);
+    line-height: 1.6;
+  }
+  a { text-decoration: none; color: inherit; }
+  img { max-width: 100%; display: block; }
+  .wrap {
+    max-width: 1120px;
+    margin: 0 auto;
+    padding: 0 24px;
+  }
+
+  /* Header */
+  header {
+    position: sticky;
+    top: 0;
+    z-index: 50;
+    background: rgba(247,245,241,0.92);
+    backdrop-filter: blur(6px);
+    border-bottom: 1px solid var(--border);
+  }
+  .topbar {
+    background: var(--navy);
+    color: rgba(255,255,255,0.85);
+    font-size: 0.82rem;
+  }
+  .topbar .wrap {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 8px 24px;
+    flex-wrap: wrap;
+    gap: 6px;
+  }
+  .topbar a { color: var(--white); font-weight: 700; }
+  .topbar .topbar-links { display: flex; gap: 20px; flex-wrap: wrap; }
+  .nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 16px 0;
+    position: relative;
+  }
+  .logo {
+    font-weight: 800;
+    font-size: 1.1rem;
+    letter-spacing: -0.02em;
+    color: var(--navy);
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    white-space: nowrap;
+    flex-shrink: 0;
+  }
+  .logo span {
+    color: var(--amber);
+  }
+  nav ul {
+    list-style: none;
+    display: flex;
+    gap: 16px;
+    margin: 0;
+    padding: 0;
+    flex-wrap: nowrap;
+  }
+  nav ul a {
+    font-size: 0.82rem;
+    font-weight: 600;
+    color: var(--navy-light);
+    transition: color .15s;
+    white-space: nowrap;
+  }
+  nav ul a:hover { color: var(--amber); }
+  .nav-cta {
+    background: var(--navy);
+    color: var(--white) !important;
+    padding: 10px 20px;
+    border-radius: 999px;
+    font-weight: 700;
+    font-size: 0.9rem;
+    white-space: nowrap;
+  }
+  .nav-cta:hover { background: var(--navy-light); }
+  .burger {
+    display: none;
+    flex-direction: column;
+    justify-content: center;
+    gap: 5px;
+    width: 40px;
+    height: 40px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 0;
+    flex-shrink: 0;
+  }
+  .burger span {
+    display: block;
+    width: 22px;
+    height: 2px;
+    background: var(--navy);
+    border-radius: 2px;
+    transition: transform .2s ease, opacity .2s ease;
+  }
+  .nav-open .burger span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+  .nav-open .burger span:nth-child(2) { opacity: 0; }
+  .nav-open .burger span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+  .mobile-cta { display: none; }
+
+  /* Sections */
+  section { padding: 88px 0; }
+  .section-head {
+    max-width: 640px;
+    margin: 0 0 48px;
+  }
+  .section-head .eyebrow { margin-bottom: 14px; }
+  .eyebrow {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: rgba(177,89,47,0.12);
+    color: #8c4a22;
+    font-weight: 700;
+    font-size: 0.82rem;
+    padding: 6px 14px;
+    border-radius: 999px;
+    margin-bottom: 20px;
+  }
+  h2 {
+    font-size: 2rem;
+    letter-spacing: -0.02em;
+    color: var(--navy);
+    margin: 0 0 14px;
+  }
+  h1.page-title {
+    font-size: 2.2rem;
+    letter-spacing: -0.02em;
+    color: var(--navy);
+    margin: 0 0 14px;
+  }
+  .section-head p { color: var(--muted); font-size: 1.05rem; margin: 0; }
+
+  .btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 14px 26px;
+    border-radius: 999px;
+    font-weight: 700;
+    font-size: 0.98rem;
+    border: 2px solid transparent;
+  }
+  .btn-primary { background: var(--amber); color: var(--white); }
+  .btn-primary:hover { background: var(--amber-light); }
+  .btn-secondary { border-color: var(--navy); color: var(--navy); }
+  .btn-secondary:hover { background: var(--navy); color: var(--white); }
+
+  /* Process */
+  .steps {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(190px, 1fr));
+    gap: 20px;
+    counter-reset: step;
+  }
+  .step {
+    position: relative;
+    padding: 28px 22px 22px;
+    background: var(--white);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+  }
+  .step .step-num {
+    position: absolute;
+    top: -16px;
+    left: 22px;
+    width: 34px;
+    height: 34px;
+    border-radius: 50%;
+    background: var(--navy);
+    color: var(--white);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 800;
+    font-size: 0.95rem;
+  }
+  .step h3 { font-size: 1rem; color: var(--navy); margin: 10px 0 8px; }
+  .step p { color: var(--muted); margin: 0; font-size: 0.92rem; }
+
+  /* CTA banner (herbruikt sustain-stijl) */
+  .sustain {
+    background: var(--navy);
+    color: var(--white);
+    border-radius: 20px;
+    padding: 46px;
+    display: grid;
+    grid-template-columns: 1.3fr 0.7fr;
+    gap: 30px;
+    align-items: center;
+  }
+  .sustain h2 { color: var(--white); }
+  .sustain p { color: rgba(255,255,255,0.78); }
+  .sustain .btn-primary { background: var(--amber); }
+
+  /* Footer */
+  footer {
+    background: var(--navy);
+    color: rgba(255,255,255,0.6);
+    padding: 32px 0;
+    font-size: 0.85rem;
+  }
+  .footer-grid {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 12px;
+  }
+  .footer-grid strong { color: var(--white); }
+
+  @media (max-width: 900px) {
+    .sustain { grid-template-columns: 1fr; }
+    .steps { grid-template-columns: 1fr 1fr; }
+    .burger { display: flex; }
+    .nav > .nav-cta { display: none; }
+    nav ul {
+      display: none;
+      position: absolute;
+      top: 100%;
+      left: 0;
+      right: 0;
+      background: var(--white);
+      flex-direction: column;
+      gap: 0;
+      padding: 4px 24px 16px;
+      border-bottom: 1px solid var(--border);
+      box-shadow: 0 16px 30px -18px rgba(16,35,58,0.25);
+      z-index: 60;
+    }
+    .nav-open nav ul { display: flex; }
+    nav ul li { border-bottom: 1px solid var(--border); }
+    nav ul li:last-child { border-bottom: none; }
+    nav ul a { display: block; padding: 14px 0; font-size: 1rem; }
+    .mobile-cta { display: block; padding: 16px 0 6px; }
+    .mobile-cta a {
+      display: block;
+      background: var(--navy);
+      color: var(--white);
+      text-align: center;
+      padding: 13px;
+      border-radius: 999px;
+      font-weight: 700;
+      font-size: 0.95rem;
+    }
+  }
+  @media (max-width: 560px) {
+    .steps { grid-template-columns: 1fr; }
+    .sustain { padding: 30px 22px; }
+    section { padding: 60px 0; }
+  }
+  .scroll-progress { position: fixed; top: 0; left: 0; height: 3px; background: linear-gradient(90deg, var(--amber), var(--amber-light)); width: 0%; z-index: 999; transition: width 0.1s linear; }
+  .page-hero-band { background: linear-gradient(160deg, var(--navy), var(--navy-light)); color: #fff; padding: 60px 0 50px; }
+  .page-hero-band .eyebrow { background: none; padding: 0; color: var(--amber-light); }
+  .page-hero-band h1 { color: #fff; margin: 0 0 14px; }
+  .page-hero-band p { color: rgba(255,255,255,0.78); max-width: 640px; margin: 0; }
+
+  .skip-link { position: absolute; left: -9999px; top: 0; background: #fff; color: var(--navy); padding: 10px 16px; border-radius: 8px; z-index: 9999; font-weight: 700; font-size: 0.9rem; }
+  .skip-link:focus { left: 12px; top: 12px; }
+  :focus-visible { outline: 3px solid var(--amber); outline-offset: 2px; border-radius: 4px; }
+</style>
+
+</head>
+<body>
+<a class="skip-link" href="#main-content">Direct naar inhoud</a>
+<div class="scroll-progress" id="scrollProgress"></div>
+
+<header id="siteHeader">
+  <div class="topbar">
+    <div class="wrap">
+      <span>Persoonlijk advies, snel contact</span>
+      <div class="topbar-links">
+        <a href="tel:+31615721173"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="vertical-align:-2px; margin-right:2px;"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg> 06 15 72 11 73</a>
+        <a href="mailto:info@energiemetbart.nl"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="vertical-align:-2px; margin-right:2px;"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-10 6L2 7"/></svg> info@energiemetbart.nl</a>
+      </div>
+    </div>
+  </div>
+  <div class="wrap nav">
+    <a href="index.html" class="logo">Energie met <span>Bart</span></a>
+    <nav>
+      <ul>
+        <li><a href="index.html#waarom">Waarom</a></li>
+        <li><a href="diensten.html">Diensten</a></li>
+        <li><a href="markt.html">Marktinzicht</a></li>
+        <li><a href="nieuws.html">Nieuws</a></li>
+        <li><a href="werkwijze.html">Werkwijze</a></li>
+        <li><a href="mijn-verhaal.html">Mijn verhaal</a></li>
+        <li class="mobile-cta"><a href="index.html#contact">Terugbelverzoek</a></li>
+      </ul>
+    </nav>
+    <a href="index.html#contact" class="nav-cta">Terugbelverzoek</a>
+    <button class="burger" id="burgerBtn" aria-label="Menu" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</header>
+
+<section class="page-hero-band" id="main-content">
+  <div class="wrap">
+    <span class="eyebrow">Werkwijze</span>
+    <h1>Vijf stappen, geen verrassingen</h1>
+    <p>Eerst bespreken we samen uw wensen en de huidige situatie op de energiemarkt. Daarna ga ik persoonlijk op zoek naar de beste deal voor u, zonder verkoopscript en zonder dat u zelf leveranciers hoeft te vergelijken.</p>
+  </div>
+</section>
+
+<section style="padding-bottom:0;">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="eyebrow">Voor wie is dit</span>
+      <h2>Vooral geschikt als u geen tijd of zin heeft om het zelf uit te zoeken</h2>
+      <p>
+        Veel ondernemers weten dat hun energiecontract waarschijnlijk niet meer het scherpste is,
+        maar komen er simpelweg niet aan toe om dat uit te zoeken tussen alle andere zaken door.
+        Dat is precies waar ik het werk uit handen neem: u hoeft zelf geen vergelijkingssites door
+        te spitten of leveranciers te bellen. Ik doe het uitzoekwerk, u beslist.
+      </p>
+    </div>
+  </div>
+</section>
+
+<section id="werkwijze">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="eyebrow">Hoe het traject verloopt</span>
+      <h2>Vijf stappen, elk zonder verplichting</h2>
+      <p>
+        Ondernemers die ik spreek willen vooral duidelijkheid: wat gaat er gebeuren, hoeveel tijd
+        kost het mij, en waar zeg ik precies ja tegen? Daarom werk ik met een vast traject van vijf
+        stappen. U kunt op elk moment stoppen zonder kosten of gedoe, tot en met het moment dat u
+        daadwerkelijk voor een nieuw contract tekent. Hieronder ziet u precies wat elke stap
+        inhoudt.
+      </p>
+    </div>
+    <div class="steps">
+      <div class="step">
+        <div class="step-num">1</div>
+        <h3>Kennismaking</h3>
+        <p>Een kort, vrijblijvend gesprek, het liefst telefonisch. U vertelt over uw situatie: hoeveel u verbruikt, wat uw huidige contract u kost en waar u tegenaan loopt. Er zit op dit moment nog geen enkele verplichting aan vast &mdash; ik wil eerst begrijpen wat u nodig heeft, voordat ik iets voorstel.</p>
+      </div>
+      <div class="step">
+        <div class="step-num">2</div>
+        <h3>Analyse</h3>
+        <p>Ik bekijk uw huidige contract en verbruik en vertaal dat naar concrete opties. Daarbij kijk ik ook naar de opbouw van uw energieprijs: wat vast staat (netbeheer, belastingen) en wat u wel kunt beïnvloeden. Dat duurt meestal een paar dagen, en ook hier zit u nog nergens aan vast.</p>
+      </div>
+      <div class="step">
+        <div class="step-num">3</div>
+        <h3>Eerlijk advies</h3>
+        <p>U krijgt een helder advies, met de cijfers erbij zodat u het zelf kunt controleren. Soms is dat overstappen, soms is dat: laat het zoals het is, want uw huidige contract is al scherp geprijsd. Die tweede uitkomst komt vaker voor dan u misschien verwacht, en kost u niets.</p>
+      </div>
+      <div class="step">
+        <div class="step-num">4</div>
+        <h3>Uitvoering</h3>
+        <p>Kiest u voor een nieuw contract? Dan regel ik de uitvoering en verwerking voor u, inclusief het contact met de nieuwe en oude leverancier, zodat u daar zelf geen omkijken naar heeft. U ontvangt van mij een overzicht van wat er gebeurt en wanneer.</p>
+      </div>
+      <div class="step">
+        <div class="step-num">5</div>
+        <h3>Nazorg</h3>
+        <p>Ook na het afsluiten van uw contract kunt u altijd bij mij terecht. Als u dat wilt, blijf ik de markt voor u volgen en neem ik contact met u op zodra er iets beters ontstaat &mdash; dat spreken we dan samen af, u bepaalt zelf of en hoe ik u benader.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="wat-kost-het">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="eyebrow">Tijdsinvestering en kosten</span>
+      <h2>Wat vraagt dit traject van u?</h2>
+    </div>
+    <div style="max-width:760px; color:var(--text); font-size:1.02rem; line-height:1.75;">
+      <p>
+        Reken op een kennismakingsgesprek van vijftien tot dertig minuten, en daarna weinig meer
+        dan het doorlezen van mijn advies. De analyse en het uitzoekwerk doe ik. Bij een overstap
+        vraag ik u om enkele gegevens te bevestigen; de rest van de administratieve afhandeling
+        neem ik voor mijn rekening.
+      </p>
+      <p>
+        Financieel kost het traject u niets: geen intakekosten, geen adviesfee, geen verborgen
+        opslag op uw energietarief.
+      </p>
+    </div>
+  </div>
+</section>
+
+<section style="padding-top:0;">
+  <div class="wrap">
+    <div class="sustain">
+      <div>
+        <h2>Klaar voor de eerste stap?</h2>
+        <p>Plan een vrijblijvend kennismakingsgesprek, telefonisch of op locatie in de regio Amsterdam. Ik reageer op werkdagen binnen &eacute;&eacute;n werkdag, en u zit na dat gesprek nog steeds nergens aan vast.</p>
+      </div>
+      <div>
+        <a href="index.html#contact" class="btn btn-primary">Terugbelverzoek</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap" style="display:flex; justify-content:space-between; flex-wrap:wrap; gap:24px; padding-bottom:24px; border-bottom:1px solid rgba(255,255,255,0.12); margin-bottom:20px;">
+    <div class="topbar-links" style="display:flex; gap:16px; flex-wrap:wrap;">
+      <a href="diensten.html" style="color:rgba(255,255,255,0.7); font-weight:500;">Diensten</a>
+      <a href="markt.html" style="color:rgba(255,255,255,0.7); font-weight:500;">Marktinzicht</a>
+      <a href="werkwijze.html" style="color:rgba(255,255,255,0.7); font-weight:500;">Werkwijze</a>
+      <a href="nieuws.html" style="color:rgba(255,255,255,0.7); font-weight:500;">Nieuws</a>
+      <a href="mijn-verhaal.html" style="color:rgba(255,255,255,0.7); font-weight:500;">Mijn verhaal</a>
+    </div>
+  </div>
+  <div class="wrap footer-grid">
+    <div><strong>Energie met Bart</strong>: eerlijk energieadvies voor ondernemers</div>
+    <div class="topbar-links" style="display:flex; gap:16px; flex-wrap:wrap;">
+      <a href="privacyverklaring.html" style="color:rgba(255,255,255,0.7); font-weight:500;">Privacyverklaring</a>
+      <a href="algemene-voorwaarden.html" style="color:rgba(255,255,255,0.7); font-weight:500;">Algemene voorwaarden</a>
+    </div>
+    <div>&copy; <span id="year"></span> Energie met Bart</div>
+  </div>
+  <div class="footer-legal" style="margin-top:20px; padding-top:18px; border-top:1px solid rgba(255,255,255,0.12); font-size:0.76rem; line-height:1.7; color:rgba(255,255,255,0.5);">
+    <strong style="color:rgba(255,255,255,0.75);">Energie met Bart</strong> &mdash; eenmanszaak<br>
+    Amsterdam<br>
+    KvK 69874581 &middot; btw NL002381531B93<br>
+    <a href="tel:+31615721173" style="color:rgba(255,255,255,0.5);">06 15 72 11 73</a> &middot;
+    <a href="mailto:info@energiemetbart.nl" style="color:rgba(255,255,255,0.5);">info@energiemetbart.nl</a>
+  </div>
+</footer>
+
+<script>
+  document.getElementById('year').textContent = new Date().getFullYear();
+
+  var progress = document.getElementById('scrollProgress');
+  if (progress) {
+    window.addEventListener('scroll', function () {
+      var h = document.documentElement;
+      var scrolled = (h.scrollTop) / (h.scrollHeight - h.clientHeight) * 100;
+      progress.style.width = scrolled + '%';
+    });
+  }
+
+  // Mobiel menu: hamburger-knop toont/verbergt de navigatie.
+  var burgerBtn = document.getElementById('burgerBtn');
+  var siteHeader = document.getElementById('siteHeader');
+  if (burgerBtn && siteHeader) {
+    burgerBtn.addEventListener('click', function () {
+      var isOpen = siteHeader.classList.toggle('nav-open');
+      burgerBtn.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+    });
+    siteHeader.querySelectorAll('nav ul a').forEach(function (link) {
+      link.addEventListener('click', function () {
+        siteHeader.classList.remove('nav-open');
+        burgerBtn.setAttribute('aria-expanded', 'false');
+      });
+    });
+  }
+</script>
+
+<a href="https://wa.me/31615721173?text=Hallo%20Bart%2C%20ik%20heb%20een%20vraag%20over%20energieadvies." class="whatsapp-float" target="_blank" rel="noopener" aria-label="Stuur een WhatsApp-bericht naar Bart">
+<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12.001 2C6.478 2 2 6.477 2 12c0 1.955.56 3.779 1.528 5.32L2 22l4.828-1.492A9.94 9.94 0 0 0 12.001 22C17.523 22 22 17.523 22 12S17.523 2 12.001 2zm0 18.2a8.16 8.16 0 0 1-4.409-1.288l-.316-.19-3.116.963.99-3.037-.206-.313A8.15 8.15 0 0 1 3.8 12c0-4.522 3.679-8.2 8.201-8.2 4.521 0 8.199 3.678 8.199 8.2 0 4.522-3.678 8.2-8.199 8.2z"/></svg>
+</a>
+
+<div id="cookieBanner" class="cookie-banner" role="dialog" aria-label="Cookiemelding" style="display:none;">
+  <div class="cookie-banner-inner">
+    <p>Deze website gebruikt uitsluitend functionele en noodzakelijke cookies/scripts: Google reCAPTCHA
+      om het contactformulier tegen spam te beschermen. Er worden geen tracking- of advertentiecookies
+      geplaatst. Meer weten? Lees de <a href="privacyverklaring.html">privacyverklaring</a>.</p>
+    <button type="button" id="cookieBannerAccept" class="cookie-banner-btn">Akkoord</button>
+  </div>
+</div>
+<style>
+  .cookie-banner { position: fixed; left: 0; right: 0; bottom: 0; z-index: 9998; background: var(--navy); color: rgba(255,255,255,0.88); padding: 16px 20px; box-shadow: 0 -8px 30px -12px rgba(16,35,58,0.4); }
+  .cookie-banner-inner { max-width: 980px; margin: 0 auto; display: flex; align-items: center; gap: 20px; flex-wrap: wrap; }
+  .cookie-banner-inner p { margin: 0; font-size: 0.85rem; line-height: 1.6; flex: 1 1 480px; }
+  .cookie-banner-inner a { color: #fff; text-decoration: underline; }
+  .cookie-banner-btn { background: var(--amber); color: #fff; border: none; padding: 10px 22px; border-radius: 999px; font-weight: 700; font-size: 0.88rem; cursor: pointer; flex-shrink: 0; }
+
+  .whatsapp-float { position: fixed; bottom: 24px; right: 24px; width: 60px; height: 60px; background: #25D366; border-radius: 50%; display: flex; align-items: center; justify-content: center; box-shadow: 0 4px 16px rgba(0,0,0,0.28); z-index: 999; transition: transform 0.2s ease, box-shadow 0.2s ease; }
+  .whatsapp-float:hover { transform: scale(1.08); box-shadow: 0 6px 20px rgba(0,0,0,0.32); }
+  .whatsapp-float svg { width: 30px; height: 30px; fill: #fff; }
+  @media (max-width: 600px) {
+    .whatsapp-float { width: 52px; height: 52px; bottom: 16px; right: 16px; }
+    .whatsapp-float svg { width: 26px; height: 26px; }
+  }
+</style>
+<script>
+(function () {
+  try {
+    var KEY = 'emb_cookie_consent';
+    var banner = document.getElementById('cookieBanner');
+    var btn = document.getElementById('cookieBannerAccept');
+    var wa = document.querySelector('.whatsapp-float');
+
+    function positionWa() {
+      if (wa && banner && banner.style.display !== 'none') {
+        wa.style.bottom = (banner.offsetHeight + 16) + 'px';
+      } else if (wa) {
+        wa.style.bottom = '';
+      }
+    }
+
+    if (!localStorage.getItem(KEY)) {
+      if (banner) banner.style.display = 'block';
+      document.body.classList.add('cookie-banner-visible');
+      positionWa();
+      window.addEventListener('resize', positionWa);
+    }
+
+    if (btn) {
+      btn.addEventListener('click', function () {
+        localStorage.setItem(KEY, '1');
+        if (banner) banner.style.display = 'none';
+        document.body.classList.remove('cookie-banner-visible');
+        if (wa) wa.style.bottom = '';
+      });
+    }
+  } catch (e) {}
+})();
+</script>
+</body>
+</html>

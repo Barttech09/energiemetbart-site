@@ -1,0 +1,9 @@
+User-agent: *
+Allow: /
+Disallow: /lp-quote
+Disallow: /lp-rustig
+Disallow: /lp-ervaring
+Disallow: /aanvraag
+Disallow: /bedankt
+
+Sitemap: https://energiemetbart.nl/sitemap.xml
