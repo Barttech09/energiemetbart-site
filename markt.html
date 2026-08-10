@@ -359,10 +359,13 @@
 
 <div id="cookieBanner" class="cookie-banner" role="dialog" aria-label="Cookiemelding" style="display:none;">
   <div class="cookie-banner-inner">
-    <p>Deze website gebruikt uitsluitend functionele en noodzakelijke cookies/scripts: Google reCAPTCHA
-      om het contactformulier tegen spam te beschermen. Er worden geen tracking- of advertentiecookies
-      geplaatst. Meer weten? Lees de <a href="privacyverklaring.html">privacyverklaring</a>.</p>
-    <button type="button" id="cookieBannerAccept" class="cookie-banner-btn">Akkoord</button>
+    <p>Deze website gebruikt functionele cookies (Google reCAPTCHA, tegen spam) en, alleen met uw
+      toestemming, Google Analytics-cookies om bezoekersstatistieken te meten. Zonder toestemming worden er
+      geen analytische of trackingcookies geplaatst. Meer weten? Lees de <a href="privacyverklaring.html">privacyverklaring</a>.</p>
+    <div class="cookie-banner-actions">
+      <button type="button" id="cookieBannerReject" class="cookie-banner-btn cookie-banner-btn-ghost">Alleen noodzakelijk</button>
+      <button type="button" id="cookieBannerAccept" class="cookie-banner-btn">Alles accepteren</button>
+    </div>
   </div>
 </div>
 <style>
@@ -371,20 +374,66 @@
   .cookie-banner-inner p { margin: 0; font-size: 0.85rem; line-height: 1.6; flex: 1 1 480px; }
   .cookie-banner-inner a { color: #fff; text-decoration: underline; }
   .cookie-banner-btn { background: var(--amber); color: #fff; border: none; padding: 10px 22px; border-radius: 999px; font-weight: 700; font-size: 0.88rem; cursor: pointer; flex-shrink: 0; }
+  .cookie-banner-actions { display: flex; gap: 10px; flex-shrink: 0; flex-wrap: wrap; }
+  .cookie-banner-btn-ghost { background: transparent; color: #fff; border: 1px solid rgba(255,255,255,0.45); }
 </style>
 <script>
 (function () {
   try {
     var KEY = 'emb_cookie_consent';
-    if (!localStorage.getItem(KEY)) {
-      var b = document.getElementById('cookieBanner');
-      if (b) b.style.display = 'block';
+    var MEAS_ID = 'G-3KRHEMLLQ5';
+    var banner = document.getElementById('cookieBanner');
+    var acceptBtn = document.getElementById('cookieBannerAccept');
+    var rejectBtn = document.getElementById('cookieBannerReject');
+    var wa = document.querySelector('.whatsapp-float');
+
+    function positionWa() {
+      if (wa && banner && banner.style.display !== 'none') {
+        wa.style.bottom = (banner.offsetHeight + 16) + 'px';
+      } else if (wa) {
+        wa.style.bottom = '';
+      }
     }
-    var btn = document.getElementById('cookieBannerAccept');
-    if (btn) {
-      btn.addEventListener('click', function () {
-        localStorage.setItem(KEY, '1');
-        document.getElementById('cookieBanner').style.display = 'none';
+
+    function loadAnalytics() {
+      if (window.__gaLoaded) return;
+      window.__gaLoaded = true;
+      var s = document.createElement('script');
+      s.async = true;
+      s.src = 'https://www.googletagmanager.com/gtag/js?id=' + MEAS_ID;
+      document.head.appendChild(s);
+      window.dataLayer = window.dataLayer || [];
+      window.gtag = function () { dataLayer.push(arguments); };
+      gtag('js', new Date());
+      gtag('config', MEAS_ID, { anonymize_ip: true });
+    }
+    window.embLoadAnalytics = loadAnalytics;
+
+    var consent = localStorage.getItem(KEY);
+    if (consent === 'granted') {
+      loadAnalytics();
+    } else if (!consent) {
+      if (banner) banner.style.display = 'block';
+      document.body.classList.add('cookie-banner-visible');
+      positionWa();
+      window.addEventListener('resize', positionWa);
+    }
+
+    if (acceptBtn) {
+      acceptBtn.addEventListener('click', function () {
+        localStorage.setItem(KEY, 'granted');
+        loadAnalytics();
+        if (banner) banner.style.display = 'none';
+        document.body.classList.remove('cookie-banner-visible');
+        if (wa) wa.style.bottom = '';
+      });
+    }
+    if (rejectBtn) {
+      rejectBtn.addEventListener('click', function () {
+        localStorage.setItem(KEY, 'denied');
+        if (banner) banner.style.display = 'none';
+        document.body.classList.remove('cookie-banner-visible');
+        if (wa) wa.style.bottom = '';
       });
     }
   } catch (e) {}
