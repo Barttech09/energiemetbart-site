@@ -3,22 +3,22 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Diensten &amp; tariefopbouw | Energie met Bart</title>
-<meta name="description" content="Energie-inkoopadvies, bemiddeling, contractbegeleiding en verduurzamingsadvies voor ondernemers. Ontdek hoe uw energietarief is opgebouwd en wat Bart voor u kan doen.">
-<link rel="canonical" href="https://energiemetbart.nl/diensten">
+<title>Energieadvies voor horeca | Energie met Bart</title>
+<meta name="description" content="Energieadvies voor horecaondernemers: persoonlijk, eerlijk en zonder gedoe. Hoog en piekgevoelig verbruik door koeling en keuken vraagt om maatwerk.">
+<link rel="canonical" href="https://energiemetbart.nl/horeca">
 <link rel="icon" type="image/png" sizes="32x32" href="images/favicon-32.png">
 <link rel="icon" type="image/png" sizes="16x16" href="images/favicon-16.png">
 <link rel="apple-touch-icon" href="images/apple-touch-icon.png">
 <link rel="icon" href="images/favicon.ico">
 <meta property="og:type" content="website">
 <meta property="og:locale" content="nl_NL">
-<meta property="og:title" content="Diensten &amp; tariefopbouw | Energie met Bart">
-<meta property="og:description" content="Energie-inkoopadvies, bemiddeling, contractbegeleiding en verduurzamingsadvies voor ondernemers.">
+<meta property="og:title" content="Energieadvies voor horeca | Energie met Bart">
+<meta property="og:description" content="Persoonlijk energieadvies voor horecaondernemers, afgestemd op hoog en piekgevoelig verbruik.">
 <meta property="og:image" content="https://energiemetbart.nl/images/og-image.png">
-<meta property="og:url" content="https://energiemetbart.nl/diensten">
+<meta property="og:url" content="https://energiemetbart.nl/horeca">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="Diensten &amp; tariefopbouw | Energie met Bart">
-<meta name="twitter:description" content="Energie-inkoopadvies, bemiddeling, contractbegeleiding en verduurzamingsadvies voor ondernemers.">
+<meta name="twitter:title" content="Energieadvies voor horeca | Energie met Bart">
+<meta name="twitter:description" content="Persoonlijk energieadvies voor horecaondernemers, afgestemd op hoog en piekgevoelig verbruik.">
 <meta name="twitter:image" content="https://energiemetbart.nl/images/og-image.png">
 <style>
   :root {
@@ -193,106 +193,42 @@
   }
   .btn-primary { background: var(--amber); color: var(--white); }
   .btn-primary:hover { background: var(--amber-light); }
-  .btn-tertiary { color: var(--amber); font-weight: 700; text-decoration: none; }
-  .btn-tertiary:hover { text-decoration: underline; }
   .btn-secondary { border-color: var(--navy); color: var(--navy); }
   .btn-secondary:hover { background: var(--navy); color: var(--white); }
 
-  /* Why-style cards (reused for tariefopbouw) */
-  .cards {
+  /* Process */
+  .steps {
     display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 24px;
+    grid-template-columns: repeat(auto-fit, minmax(190px, 1fr));
+    gap: 20px;
+    counter-reset: step;
   }
-  .card {
+  .step {
+    position: relative;
+    padding: 28px 22px 22px;
     background: var(--white);
     border: 1px solid var(--border);
     border-radius: var(--radius);
-    padding: 30px 26px;
   }
-  .card .icon {
-    width: 46px;
-    height: 46px;
-    border-radius: 12px;
-    background: rgba(177,89,47,0.14);
-    color: var(--amber);
+  .step .step-num {
+    position: absolute;
+    top: -16px;
+    left: 22px;
+    width: 34px;
+    height: 34px;
+    border-radius: 50%;
+    background: var(--navy);
+    color: var(--white);
     display: flex;
     align-items: center;
     justify-content: center;
-    font-size: 1.3rem;
-    margin-bottom: 18px;
     font-weight: 800;
+    font-size: 0.95rem;
   }
-  .card h3 {
-    font-size: 1.12rem;
-    color: var(--navy);
-    margin: 0 0 10px;
-  }
-  .card p { color: var(--muted); margin: 0; font-size: 0.96rem; }
+  .step h3 { font-size: 1rem; color: var(--navy); margin: 10px 0 8px; }
+  .step p { color: var(--muted); margin: 0; font-size: 0.92rem; }
 
-  /* Services */
-  .services {
-    background: var(--white);
-    border-top: 1px solid var(--border);
-    border-bottom: 1px solid var(--border);
-  }
-  .service-list {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 20px;
-  }
-  .service {
-    display: flex;
-    gap: 18px;
-    padding: 24px;
-    border-radius: var(--radius);
-    background: var(--bg);
-    border: 1px solid var(--border);
-  }
-  .service .num {
-    font-weight: 800;
-    font-size: 1.4rem;
-    color: var(--amber);
-    flex-shrink: 0;
-  }
-  .service h3 { margin: 0 0 6px; color: var(--navy); font-size: 1.05rem; }
-  .service p { margin: 0; color: var(--muted); font-size: 0.95rem; }
-
-  /* Changing market */
-  .market {
-    background: var(--white);
-    border-top: 1px solid var(--border);
-    border-bottom: 1px solid var(--border);
-  }
-  .market-grid {
-    display: grid;
-    grid-template-columns: 1.2fr 0.8fr;
-    gap: 48px;
-    align-items: start;
-  }
-  .market-grid p { color: var(--text); margin: 0 0 16px; }
-  .market-grid p:last-child { margin-bottom: 0; }
-  .market-highlight {
-    background: var(--bg);
-    border: 1px solid var(--border);
-    border-radius: var(--radius);
-    padding: 26px 28px;
-    display: flex;
-    flex-direction: column;
-  }
-  .market-highlight h3 { font-size: 1.02rem; color: var(--navy); margin: 0 0 18px; }
-  .market-point {
-    display: flex;
-    flex-direction: column;
-    gap: 2px;
-    padding: 12px 0;
-    border-top: 1px solid var(--border);
-  }
-  .market-point:first-of-type { border-top: none; padding-top: 0; }
-  .market-point strong { color: var(--navy); font-size: 0.95rem; }
-  .market-point span { color: var(--muted); font-size: 0.88rem; }
-
-  /* Sustainability banner */
+  /* CTA banner (herbruikt sustain-stijl) */
   .sustain {
     background: var(--navy);
     color: var(--white);
@@ -324,9 +260,8 @@
   .footer-grid strong { color: var(--white); }
 
   @media (max-width: 900px) {
-    .contact-grid, .sustain, .market-grid { grid-template-columns: 1fr; }
-    .cards { grid-template-columns: 1fr 1fr; }
-    .service-list { grid-template-columns: 1fr; }
+    .sustain { grid-template-columns: 1fr; }
+    .steps { grid-template-columns: 1fr 1fr; }
     .burger { display: flex; }
     .nav > .nav-cta { display: none; }
     nav ul {
@@ -360,7 +295,7 @@
     }
   }
   @media (max-width: 560px) {
-    .cards { grid-template-columns: 1fr; }
+    .steps { grid-template-columns: 1fr; }
     .sustain { padding: 30px 22px; }
     section { padding: 60px 0; }
   }
@@ -370,14 +305,14 @@
   .page-hero-band h1 { color: #fff; margin: 0 0 14px; }
   .page-hero-band p { color: rgba(255,255,255,0.78); max-width: 640px; margin: 0; }
 
-  .skip-link { position: absolute; left: -9999px; top: 0; background: #fff; color: var(--navy); padding: 10px 16px; border-radius: 8px; z-index: 9999; font-weight: 700; font-size: 0.9rem; }
-  .skip-link:focus { left: 12px; top: 12px; }
-  :focus-visible { outline: 3px solid var(--amber); outline-offset: 2px; border-radius: 4px; }
-
   .faq-list { max-width: 780px; display: flex; flex-direction: column; gap: 4px; }
   .faq-item { padding: 22px 0; border-bottom: 1px solid var(--border); }
   .faq-item h3 { font-size: 1.02rem; color: var(--navy); margin: 0 0 8px; }
   .faq-item p { color: var(--muted); margin: 0; font-size: 0.95rem; }
+
+  .skip-link { position: absolute; left: -9999px; top: 0; background: #fff; color: var(--navy); padding: 10px 16px; border-radius: 8px; z-index: 9999; font-weight: 700; font-size: 0.9rem; }
+  .skip-link:focus { left: 12px; top: 12px; }
+  :focus-visible { outline: 3px solid var(--amber); outline-offset: 2px; border-radius: 4px; }
 
 .mobile-call-bar { display: none; }
 @media (max-width: 900px) {
@@ -392,19 +327,21 @@
   body { padding-bottom: 54px; }
 }
 </style>
+
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
   "@type": "ProfessionalService",
   "name": "Energie met Bart",
-  "url": "https://energiemetbart.nl/diensten",
+  "url": "https://energiemetbart.nl/horeca",
   "image": "https://energiemetbart.nl/images/og-image.png",
   "areaServed": "NL",
   "address": { "@type": "PostalAddress", "addressLocality": "Amsterdam", "addressCountry": "NL" },
   "telephone": "+31615721173",
   "email": "info@energiemetbart.nl",
   "priceRange": "Gratis advies",
-  "founder": { "@type": "Person", "name": "Bart" }
+  "founder": { "@type": "Person", "name": "Bart" },
+  "description": "Persoonlijk energieadvies voor horecaondernemers, afgestemd op hoog en piekgevoelig energieverbruik."
 }
 </script>
 <script type="application/ld+json">
@@ -412,16 +349,12 @@
   "@context": "https://schema.org",
   "@type": "FAQPage",
   "mainEntity": [
-    { "@type": "Question", "name": "Kost het mij iets om advies te vragen?", "acceptedAnswer": { "@type": "Answer", "text": "Nee. Een adviesgesprek en analyse zijn altijd gratis en vrijblijvend, ook als u uiteindelijk niet overstapt." } },
-    { "@type": "Question", "name": "Ben ik verplicht om over te stappen als ik advies vraag?", "acceptedAnswer": { "@type": "Answer", "text": "Nee, u zit nergens aan vast. Na het gesprek en de analyse beslist u zelf, zonder druk." } },
-    { "@type": "Question", "name": "Werkt u met alle energieleveranciers?", "acceptedAnswer": { "@type": "Answer", "text": "Ik werk met meerdere leveranciers via mijn eigen netwerk, maar niet met alle partijen op de markt." } },
-    { "@type": "Question", "name": "Hoe lang duurt een overstap?", "acceptedAnswer": { "@type": "Answer", "text": "Dat verschilt per leverancier en per situatie, meestal enkele weken." } },
-    { "@type": "Question", "name": "Kunt u ook helpen als ik nog vastzit aan een lopend contract?", "acceptedAnswer": { "@type": "Answer", "text": "Zeker. Ik bekijk wanneer uw contract afloopt en wat een opzegtermijn of -vergoeding betekent." } },
-    { "@type": "Question", "name": "Ik heb zonnepanelen of overweeg ze. Verandert dat iets?", "acceptedAnswer": { "@type": "Answer", "text": "Ja, zeker met de aankomende afbouw van de salderingsregeling. Ik neem dat mee in mijn advies." } }
+    { "@type": "Question", "name": "Mijn energieverbruik wisselt sterk per seizoen, is dat een probleem?", "acceptedAnswer": { "@type": "Answer", "text": "Nee. Ik kijk naar uw verbruik over een heel jaar, inclusief piekmomenten door terrassen, feestdagen of vakantiedrukte, zodat het advies bij uw werkelijke situatie past." } },
+    { "@type": "Question", "name": "Ik heb meerdere vestigingen, kan dat ook?", "acceptedAnswer": { "@type": "Answer", "text": "Ja. Ik bekijk elke vestiging apart, want aansluitwaarde en verbruik verschillen vaak per locatie." } },
+    { "@type": "Question", "name": "Kost het mij tijd die ik niet heb?", "acceptedAnswer": { "@type": "Answer", "text": "Reken op een kort gesprek, telefonisch of tussen de bediening door. De rest van het uitzoekwerk doe ik." } }
   ]
 }
 </script>
-
 </head>
 <body>
 <a class="skip-link" href="#main-content">Direct naar inhoud</a>
@@ -459,153 +392,59 @@
 
 <section class="page-hero-band" id="main-content">
   <div class="wrap">
-    <span class="eyebrow">Diensten</span>
-    <h1>Waar ik ondernemers mee help</h1>
-    <p>Energiekosten raken elk onderdeel van uw bedrijfsvoering. Ik help u grip te krijgen, helder en zonder verrassingen.</p>
+    <span class="eyebrow">Voor horeca</span>
+    <h1>Energieadvies voor horecaondernemers</h1>
+    <p>Koeling, keukenapparatuur en airconditioning maken uw energieverbruik hoog en onvoorspelbaar. Ik help u begrijpen waar u aan vastzit, en of er ruimte is voor verbetering &mdash; zonder dat het u tijd kost die u niet heeft.</p>
   </div>
 </section>
 
-<section class="services" id="diensten">
-  <div class="wrap">
-    <div class="service-list">
-      <div class="service">
-        <div class="num">01</div>
-        <div><h3>Energie-inkoopadvies</h3><p>Analyse van uw huidig contract en verbruik, met een eerlijk oordeel of overstappen zinvol is.</p></div>
-      </div>
-      <div class="service">
-        <div class="num">02</div>
-        <div><h3>Bemiddeling via mijn netwerk</h3><p>Toegang tot meerdere energieleveranciers via directe contacten, zodat u niet zelf hoeft te vergelijken.</p></div>
-      </div>
-      <div class="service">
-        <div class="num">03</div>
-        <div><h3>Contractbegeleiding</h3><p>Duidelijke uitleg van voorwaarden, looptijden en kosten, geen kleine lettertjes achteraf.</p></div>
-      </div>
-      <div class="service">
-        <div class="num">04</div>
-        <div><h3>Verduurzamingsadvies</h3><p>Interesse in zonnepanelen, een thuisbatterij of andere vormen van verduurzaming? Ik denk mee en ondersteun bij de vervolgstappen.</p></div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<section id="tariefopbouw">
+<section style="padding-bottom:0;">
   <div class="wrap">
     <div class="section-head">
-      <span class="eyebrow">Tariefopbouw</span>
-      <h2>Wat bepaalt uw energieprijs eigenlijk?</h2>
-      <p>Veel vergelijkers laten alleen een eindbedrag zien. Ik leg liever uit waar dat bedrag uit is opgebouwd, zodat u zelf ook begrijpt waar u voor betaalt.</p>
-    </div>
-    <div class="cards">
-      <div class="card">
-        <div class="icon">1</div>
-        <h3>Uw verbruiksprofiel</h3>
-        <p>Hoeveel en wanneer u energie gebruikt bepaalt mede de prijs die leveranciers kunnen bieden. Een piek overdag vraagt om iets anders dan een constant verbruik.</p>
-      </div>
-      <div class="card">
-        <div class="icon">2</div>
-        <h3>Markt- en risico-opslag</h3>
-        <p>Leveranciers rekenen een opslag voor het risico dat zij lopen op de inkoopmarkt. Deze opslag verschilt per leverancier en per contractvorm.</p>
-      </div>
-      <div class="card">
-        <div class="icon">3</div>
-        <h3>Vast of variabel contract</h3>
-        <p>Een vaste prijs geeft zekerheid, een variabel contract kan voordeliger zijn maar brengt meer schommeling met zich mee. Wat past, hangt af van uw situatie.</p>
-      </div>
-      <div class="card">
-        <div class="icon">4</div>
-        <h3>Netbeheer en belastingen</h3>
-        <p>Een deel van de rekening staat vast, ongeacht welke leverancier u kiest. Ik laat zien welk deel u wél kunt beïnvloeden, en welk deel niet.</p>
-      </div>
+      <span class="eyebrow">Herkenbaar?</span>
+      <h2>Horeca heeft andere energie-uitdagingen dan een gemiddeld kantoor</h2>
+      <p>
+        Koeling die dag en nacht doorloopt, keukenapparatuur die piekbelasting veroorzaakt,
+        terrasverwarming in de zomer en airco's die 's zomers overuren draaien: uw energieverbruik
+        is hoger en onvoorspelbaarder dan bij de meeste bedrijven. Tegelijk heeft u simpelweg geen
+        tijd om tussen de bediening door leveranciers te vergelijken.
+      </p>
     </div>
   </div>
 </section>
 
-<section id="energiemarkt" class="market">
-  <div class="wrap market-grid">
-    <div>
-      <span class="eyebrow">De energiemarkt verandert</span>
-      <h2>Wat er verandert, en wat dat voor u betekent</h2>
-      <p>
-        De salderingsregeling voor zonnepanelen wordt de komende jaren afgebouwd. Heeft u
-        zonnepanelen, of overweegt u die, dan wordt teruglevering straks anders afgerekend dan
-        u gewend bent, en dat raakt wat een investering u werkelijk oplevert.
-      </p>
-      <p>
-        Tegelijkertijd kiezen steeds meer ondernemers voor een dynamisch energiecontract, omdat
-        dat op papier voordeliger oogt. Dat kan een goede keuze zijn, zeker als u uw verbruik
-        kunt afstemmen op de markt. Maar het vraagt ook meer opvolging en brengt meer risico met
-        zich mee dan een vast contract. Ik maak eerst een analyse van uw situatie, zodat u een
-        weloverwogen keuze maakt in plaats van een gok.
-      </p>
-    </div>
-    <div class="market-highlight">
-      <h3>Twee ontwikkelingen om in de gaten te houden</h3>
-      <div class="market-point">
-        <strong>Salderingsregeling</strong>
-        <span>wordt afgebouwd voor wie zonnepanelen heeft of overweegt</span>
-      </div>
-      <div class="market-point">
-        <strong>Dynamische contracten</strong>
-        <span>winnen terrein, maar vragen om een grondige analyse vooraf</span>
-      </div>
-      <a href="nieuws.html" class="btn btn-secondary" style="margin-top: 18px; width: fit-content;">Lees de achtergrond</a>
-    </div>
-  </div>
-</section>
-
-<section id="sectoren" style="background:var(--white); border-top:1px solid var(--border); border-bottom:1px solid var(--border);">
+<section id="waarvoor">
   <div class="wrap">
     <div class="section-head">
-      <span class="eyebrow">Voor uw sector</span>
-      <h2>Elke sector heeft andere energie-uitdagingen</h2>
-    </div>
-    <div class="cards">
-      <div class="card">
-        <h3>Horeca</h3>
-        <p>Hoog en piekgevoelig verbruik door koeling, keuken en airco &mdash; en weinig tijd om het zelf uit te zoeken.</p>
-        <a href="horeca.html" class="btn-tertiary" style="display:inline-block; margin-top:10px;">Lees meer &rarr;</a>
-      </div>
-      <div class="card">
-        <h3>Kantoren &amp; dienstverleners</h3>
-        <p>Energie is geen kernactiviteit, maar het contract verdient wel af en toe een blik.</p>
-        <a href="kantoren.html" class="btn-tertiary" style="display:inline-block; margin-top:10px;">Lees meer &rarr;</a>
-      </div>
-    </div>
-  </div>
-</section>
-
-<section id="verduurzaming">
-  <div class="wrap">
-    <div class="sustain">
-      <div>
-        <span class="eyebrow" style="background:rgba(255,255,255,0.12); color:#f2c98a;">Verduurzaming</span>
-        <h2>Ook toe aan verduurzaming? Ik denk met u mee.</h2>
-        <p>
-          Heeft u interesse in zonnepanelen, een thuisbatterij of andere manieren om energie te
-          besparen? Naast eerlijk inkoopadvies help ik u ook op weg met verduurzaming, praktisch
-          en zonder onnodige verkooppraatjes.
-        </p>
-      </div>
-      <div>
-        <a href="index.html#contact" class="btn btn-primary">Bespreek de mogelijkheden</a>
-      </div>
-    </div>
-  </div>
-</section>
-
-<section id="kosten">
-  <div class="wrap">
-    <div class="section-head">
-      <span class="eyebrow">Wat kost dit u?</span>
-      <h2>Mijn advies is gratis.</h2>
-      <p>Een adviesgesprek, een analyse van uw huidige contract of begeleiding bij een overstap kost u niets.</p>
-    </div>
-    <div style="max-width:760px; color:var(--text); font-size:1.02rem; line-height:1.75;">
+      <span class="eyebrow">Wat ik voor u doe</span>
+      <h2>Advies dat rekening houdt met uw manier van werken</h2>
       <p>
-        Kiest u ervoor om niet over te stappen, dan kost mijn advies u dus helemaal niets. Kiest u
-        wel voor een overstap, dan regel ik de uitvoering voor u zonder dat u daar zelf achteraan
-        hoeft te bellen.
+        Ik ken de energiemarkt, niet uw keuken &mdash; maar ik weet wel dat uw verbruik anders in
+        elkaar zit dan bij een kantoor, en dat u geen tijd te verliezen heeft. Daarom werk ik met
+        korte, praktische stappen.
       </p>
+    </div>
+    <div class="steps">
+      <div class="step">
+        <div class="step-num">1</div>
+        <h3>Kort gesprek, uw tempo</h3>
+        <p>Telefonisch, tussen de bediening door of op een rustig moment. U vertelt over uw situatie: verbruik, huidig contract, aantal vestigingen. Geen verplichting.</p>
+      </div>
+      <div class="step">
+        <div class="step-num">2</div>
+        <h3>Analyse per vestiging</h3>
+        <p>Heeft u meerdere locaties? Dan bekijk ik elke vestiging apart, want aansluitwaarde en verbruik verschillen vaak per pand.</p>
+      </div>
+      <div class="step">
+        <div class="step-num">3</div>
+        <h3>Eerlijk advies</h3>
+        <p>Soms is overstappen de moeite waard, soms is uw huidige contract al scherp geprijsd. Beide uitkomsten kosten u niets.</p>
+      </div>
+      <div class="step">
+        <div class="step-num">4</div>
+        <h3>Uitvoering en nazorg</h3>
+        <p>Bij een overstap regel ik het contact met de leveranciers. Daarna blijf ik, als u dat wilt, de markt voor u volgen.</p>
+      </div>
     </div>
   </div>
 </section>
@@ -614,33 +453,34 @@
   <div class="wrap">
     <div class="section-head">
       <span class="eyebrow">Veelgestelde vragen</span>
-      <h2>Wat ondernemers mij het vaakst vragen</h2>
+      <h2>Wat horecaondernemers mij vaak vragen</h2>
     </div>
     <div class="faq-list">
       <div class="faq-item">
-        <h3>Kost het mij iets om advies te vragen?</h3>
-        <p>Nee. Een adviesgesprek en analyse zijn altijd gratis en vrijblijvend, ook als u uiteindelijk niet overstapt.</p>
+        <h3>Mijn energieverbruik wisselt sterk per seizoen, is dat een probleem?</h3>
+        <p>Nee. Ik kijk naar uw verbruik over een heel jaar, inclusief piekmomenten door terrassen, feestdagen of vakantiedrukte, zodat het advies bij uw werkelijke situatie past.</p>
       </div>
       <div class="faq-item">
-        <div class="faq-item">
-        <h3>Ben ik verplicht om over te stappen als ik advies vraag?</h3>
-        <p>Nee, u zit nergens aan vast. Na het gesprek en de analyse beslist u zelf, zonder druk.</p>
+        <h3>Ik heb meerdere vestigingen, kan dat ook?</h3>
+        <p>Ja. Ik bekijk elke vestiging apart, want aansluitwaarde en verbruik verschillen vaak per locatie.</p>
       </div>
       <div class="faq-item">
-        <h3>Werkt u met alle energieleveranciers?</h3>
-        <p>Ik werk met meerdere leveranciers via mijn eigen netwerk, maar niet met alle partijen op de markt. Ik ben hier open over: waar relevant benoem ik dat expliciet in mijn advies.</p>
+        <h3>Kost het mij tijd die ik niet heb?</h3>
+        <p>Reken op een kort gesprek, telefonisch of tussen de bediening door. De rest van het uitzoekwerk doe ik.</p>
       </div>
-      <div class="faq-item">
-        <h3>Hoe lang duurt een overstap?</h3>
-        <p>Dat verschilt per leverancier en per situatie, meestal enkele weken. Ik houd u tussentijds op de hoogte en regel de administratieve afhandeling.</p>
+    </div>
+  </div>
+</section>
+
+<section style="padding-top:0;">
+  <div class="wrap">
+    <div class="sustain">
+      <div>
+        <h2>Klaar voor de eerste stap?</h2>
+        <p>Plan een vrijblijvend kennismakingsgesprek, op een moment dat u uitkomt. Ik reageer op werkdagen binnen &eacute;&eacute;n werkdag, en u zit na dat gesprek nog steeds nergens aan vast.</p>
       </div>
-      <div class="faq-item">
-        <h3>Kunt u ook helpen als ik nog vastzit aan een lopend contract?</h3>
-        <p>Zeker. Ik bekijk wanneer uw contract afloopt en wat een eventuele opzegtermijn of -vergoeding betekent, zodat u tijdig en goed geïnformeerd een vervolgstap kunt zetten.</p>
-      </div>
-      <div class="faq-item">
-        <h3>Ik heb zonnepanelen of overweeg ze. Verandert dat iets?</h3>
-        <p>Ja, zeker met de aankomende afbouw van de salderingsregeling. Ik neem dat mee in mijn advies zodat u weet wat teruglevering u nu, en over een paar jaar, oplevert.</p>
+      <div>
+        <a href="index.html#contact" class="btn btn-primary">Terugbelverzoek</a>
       </div>
     </div>
   </div>
