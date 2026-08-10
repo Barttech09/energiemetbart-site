@@ -743,6 +743,23 @@
     }
     window.embLoadAnalytics = loadAnalytics;
 
+    document.addEventListener('click', function (ev) {
+      if (!window.gtag) return;
+      var telLink = ev.target.closest('a[href^="tel:"]');
+      if (telLink) {
+        if (telLink.classList.contains('mobile-call-bar')) {
+          gtag('event', 'belknop_mobiel_klik');
+        } else {
+          gtag('event', 'telefoonklik');
+        }
+        return;
+      }
+      var waLink = ev.target.closest('a[href*="wa.me"]');
+      if (waLink) {
+        gtag('event', 'whatsapp_klik');
+      }
+    }, true);
+
     var consent = localStorage.getItem(KEY);
     if (consent === 'granted') {
       loadAnalytics();

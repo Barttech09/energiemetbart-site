@@ -216,6 +216,23 @@
     }
     window.embLoadAnalytics = loadAnalytics;
 
+    document.addEventListener('click', function (ev) {
+      if (!window.gtag) return;
+      var telLink = ev.target.closest('a[href^="tel:"]');
+      if (telLink) {
+        if (telLink.classList.contains('mobile-call-bar')) {
+          gtag('event', 'belknop_mobiel_klik');
+        } else {
+          gtag('event', 'telefoonklik');
+        }
+        return;
+      }
+      var waLink = ev.target.closest('a[href*="wa.me"]');
+      if (waLink) {
+        gtag('event', 'whatsapp_klik');
+      }
+    }, true);
+
     var consent = localStorage.getItem(KEY);
     if (consent === 'granted') {
       loadAnalytics();
@@ -243,6 +260,23 @@
         if (wa) wa.style.bottom = '';
       });
     }
+  } catch (e) {}
+})();
+</script>
+<script>
+(function () {
+  try {
+    if (localStorage.getItem('emb_cookie_consent') !== 'granted') return;
+    var tries = 0;
+    var iv = setInterval(function () {
+      tries++;
+      if (window.gtag) {
+        gtag('event', 'formulier_verzonden');
+        clearInterval(iv);
+      } else if (tries > 20) {
+        clearInterval(iv);
+      }
+    }, 100);
   } catch (e) {}
 })();
 </script>
