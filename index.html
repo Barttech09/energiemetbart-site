@@ -291,6 +291,22 @@
   body { padding-bottom: 54px; }
 }
 </style>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "ProfessionalService",
+  "name": "Energie met Bart",
+  "url": "https://energiemetbart.nl/",
+  "image": "https://energiemetbart.nl/images/og-image.png",
+  "areaServed": "NL",
+  "address": { "@type": "PostalAddress", "addressLocality": "Amsterdam", "addressCountry": "NL" },
+  "telephone": "+31615721173",
+  "email": "info@energiemetbart.nl",
+  "priceRange": "Gratis advies",
+  "founder": { "@type": "Person", "name": "Bart" },
+  "description": "Persoonlijk en onafhankelijk energieadvies voor ondernemers: duidelijkheid over energiekosten zonder verkooppraatje."
+}
+</script>
 </head>
 <body>
 <a class="skip-link" href="#main-content">Direct naar inhoud</a>
@@ -333,7 +349,7 @@
   <div class="wrap hero-grid">
     <div class="hero-copy">
     <span class="eyebrow">Persoonlijk advies, zakelijke energiemarkt</span>
-    <h1 class="hero-title" id="heroTitle"></h1>
+    <h1 class="hero-title" id="heroTitle">Duidelijkheid over uw energiekosten. <em>Zonder ruis.</em></h1>
     <p class="lead">
       Op zoek naar een partij waarbij u altijd weet met wie u spreekt? Bij Energie met Bart
       spreekt u persoonlijk met mij: tien jaar ervaring in de energiemarkt, een eigen netwerk
@@ -636,6 +652,7 @@
 
   var titleWords = ["Duidelijkheid", "over", "uw", "energiekosten.", "|EM|Zonder", "ruis."];
   var heroTitle = document.getElementById('heroTitle');
+  heroTitle.textContent = '';
   var delay = 0;
   titleWords.forEach(function (w) {
     var isEm = w.indexOf("|EM|") === 0;
