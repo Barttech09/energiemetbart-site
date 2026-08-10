@@ -757,13 +757,18 @@
       var waLink = ev.target.closest('a[href*="wa.me"]');
       if (waLink) {
         gtag('event', 'whatsapp_klik');
+        return;
+      }
+      var pdfLink = ev.target.closest('a[href$=".pdf"], button[formaction$=".pdf"]');
+      if (pdfLink) {
+        gtag('event', 'gratis_gids_gedownload');
       }
     }, true);
 
     var consent = localStorage.getItem(KEY);
     if (consent === 'granted') {
       loadAnalytics();
-    } else if (!consent) {
+    } else if (consent !== 'denied') {
       if (banner) banner.style.display = 'block';
       document.body.classList.add('cookie-banner-visible');
       positionWa();
