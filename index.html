@@ -250,6 +250,21 @@
   .submit-btn { width: 100%; background: var(--amber); color: #fff; border: none; padding: 15px; border-radius: 999px; font-weight: 700; font-size: 0.98rem; cursor: pointer; transition: transform .2s, box-shadow .2s; box-shadow: 0 8px 22px rgba(177,89,47,0.35); }
   .submit-btn:hover { transform: translateY(-2px); }
   .form-note { text-align: center; font-size: 0.8rem; color: var(--muted); margin-top: 12px; }
+  .form-progress { display: flex; align-items: center; gap: 10px; margin-bottom: 6px; }
+  .form-progress .step-dot { width: 8px; height: 8px; border-radius: 50%; background: var(--border); flex-shrink: 0; }
+  .form-progress .step-dot.active { background: var(--amber); }
+  .form-progress span { font-size: 0.78rem; color: var(--muted); font-weight: 700; letter-spacing: 0.02em; }
+  .form-step.hidden { display: none; }
+  .btn-next {
+    width: 100%; background: var(--navy); color: #fff; border: none; padding: 15px;
+    border-radius: 999px; font-weight: 700; font-size: 0.98rem; cursor: pointer;
+  }
+  .btn-next:hover { background: var(--navy-light); }
+  .btn-back {
+    background: none; border: none; color: var(--muted); font-weight: 600;
+    font-size: 0.85rem; cursor: pointer; padding: 6px 0; text-align: left; text-decoration: underline; display: block; margin-top: 4px;
+  }
+  .btn-back:hover { color: var(--navy); }
 
   footer { background: var(--navy); color: rgba(255,255,255,0.7); padding: 52px 0 28px; margin-top: 20px; }
   footer .wrap { display: flex; justify-content: space-between; flex-wrap: wrap; gap: 20px; font-size: 0.86rem; padding-bottom: 24px; border-bottom: 1px solid rgba(255,255,255,0.12); margin-bottom: 20px; }
@@ -552,46 +567,109 @@
         </div>
       </div>
     </div>
-    <form name="contact" method="POST" data-netlify="true" data-netlify-recaptcha="true" netlify-honeypot="bot-field" action="/bedankt">
+    <form name="contact" method="POST" data-netlify="true" data-netlify-recaptcha="true" netlify-honeypot="bot-field" action="/bedankt" id="contactForm">
       <input type="hidden" name="form-name" value="contact">
       <input type="hidden" name="bron_pagina" value="index">
       <p style="display:none;"><label>Niet invullen: <input name="bot-field"></label></p>
-      <div class="field">
-        <label for="naam">Naam</label>
-        <input type="text" id="naam" name="naam" placeholder="Uw naam" required>
+
+      <div class="form-progress">
+        <span class="step-dot active" id="contactDot1"></span>
+        <span class="step-dot" id="contactDot2"></span>
+        <span id="contactProgressText">Stap 1 van 2 &mdash; uw contactgegevens</span>
       </div>
-      <div class="field">
-        <label for="bedrijf">Bedrijfsnaam</label>
-        <input type="text" id="bedrijf" name="bedrijf" placeholder="Uw bedrijf">
+
+      <div class="form-step" id="contactStep1">
+        <div class="field">
+          <label for="naam">Naam</label>
+          <input type="text" id="naam" name="naam" placeholder="Uw naam" required>
+        </div>
+        <div class="field">
+          <label for="telefoon">Telefoonnummer <span class="optional">(zodat ik u kan terugbellen)</span></label>
+          <input type="tel" id="telefoon" name="telefoon" placeholder="06 - ..." required>
+        </div>
+        <div class="field">
+          <label for="email">E-mailadres <span class="optional">(optioneel)</span></label>
+          <input type="email" id="email" name="email" placeholder="uw@email.nl">
+        </div>
+        <button type="button" class="btn-next" id="contactNextBtn">Volgende stap &rarr;</button>
+        <p class="form-note">Nog een paar korte vragen over uw situatie.</p>
       </div>
-      <div class="field">
-        <label for="telefoon">Telefoonnummer</label>
-        <input type="tel" id="telefoon" name="telefoon" placeholder="06 - ..." required>
+
+      <div class="form-step hidden" id="contactStep2">
+        <div class="field">
+          <label for="bedrijf">Bedrijfsnaam <span class="optional">(optioneel)</span></label>
+          <input type="text" id="bedrijf" name="bedrijf" placeholder="Uw bedrijf">
+        </div>
+        <div class="field">
+          <label for="einddatum">Einddatum huidig contract <span class="optional">(optioneel)</span></label>
+          <input type="text" id="einddatum" name="einddatum" placeholder="Bijv. januari 2027, of onbekend">
+        </div>
+        <div class="field">
+          <label for="verbruik">Indicatie jaarverbruik <span class="optional">(optioneel)</span></label>
+          <input type="text" id="verbruik" name="verbruik" placeholder="Bijv. 40.000 kWh / 8.000 m³, of onbekend">
+        </div>
+        <div class="field">
+          <label for="voorkeursmoment">Wanneer kan ik u het beste bereiken? <span class="optional">(indicatie, geen garantie)</span></label>
+          <select id="voorkeursmoment" name="voorkeursmoment">
+            <option value="">Geen voorkeur</option>
+            <option value="ochtend (9-12u)">Ochtend (9 - 12 uur)</option>
+            <option value="middag (12-17u)">Middag (12 - 17 uur)</option>
+            <option value="avond (17-19u)">Avond (17 - 19 uur)</option>
+          </select>
+        </div>
+        <div class="field">
+          <label for="bericht">Waar kan ik u mee helpen? <span class="optional">(optioneel)</span></label>
+          <textarea id="bericht" name="bericht" placeholder="Bijv. huidig energiecontract, verduurzaming, of gewoon een vraag..."></textarea>
+        </div>
+        <div class="field" style="flex-direction:row; align-items:flex-start; gap:10px;">
+          <input type="checkbox" id="toestemming" name="toestemming" required style="margin-top:3px; width:auto;">
+          <label for="toestemming" style="font-weight:500; font-size:0.85rem;">Ik geef toestemming dat Bart mij naar aanleiding van deze aanvraag persoonlijk benadert per telefoon of e-mail. Zie de <a href="privacyverklaring.html" style="color:var(--amber);">privacyverklaring</a>.</label>
+        </div>
+        <div data-netlify-recaptcha="true"></div>
+        <button type="submit" class="submit-btn">Verstuur aanvraag</button>
+        <button type="button" class="btn-back" id="contactBackBtn">&larr; Vorige stap</button>
+        <p class="form-note">Ik reageer op werkdagen binnen &eacute;&eacute;n werkdag.</p>
       </div>
-      <div class="field">
-        <label for="email">E-mailadres <span class="optional">(optioneel)</span></label>
-        <input type="email" id="email" name="email" placeholder="uw@email.nl">
-      </div>
-      <div class="field">
-        <label for="einddatum">Einddatum huidig contract <span class="optional">(optioneel)</span></label>
-        <input type="text" id="einddatum" name="einddatum" placeholder="Bijv. januari 2027, of onbekend">
-      </div>
-      <div class="field">
-        <label for="verbruik">Indicatie jaarverbruik <span class="optional">(optioneel)</span></label>
-        <input type="text" id="verbruik" name="verbruik" placeholder="Bijv. 40.000 kWh / 8.000 m³, of onbekend">
-      </div>
-      <div class="field">
-        <label for="bericht">Waar kan ik u mee helpen?</label>
-        <textarea id="bericht" name="bericht" placeholder="Bijv. huidig energiecontract, verduurzaming, of gewoon een vraag..."></textarea>
-      </div>
-      <div class="field" style="flex-direction:row; align-items:flex-start; gap:10px;">
-        <input type="checkbox" id="toestemming" name="toestemming" required style="margin-top:3px; width:auto;">
-        <label for="toestemming" style="font-weight:500; font-size:0.85rem;">Ik geef toestemming dat Bart mij naar aanleiding van deze aanvraag persoonlijk benadert per telefoon of e-mail. Zie de <a href="privacyverklaring.html" style="color:var(--amber);">privacyverklaring</a>.</label>
-      </div>
-      <div data-netlify-recaptcha="true"></div>
-      <button type="submit" class="submit-btn">Verstuur aanvraag</button>
-      <p class="form-note">Ik reageer op werkdagen binnen &eacute;&eacute;n werkdag.</p>
     </form>
+
+    <script>
+    (function () {
+      var step1 = document.getElementById('contactStep1');
+      var step2 = document.getElementById('contactStep2');
+      var nextBtn = document.getElementById('contactNextBtn');
+      var backBtn = document.getElementById('contactBackBtn');
+      var progressText = document.getElementById('contactProgressText');
+      var dot1 = document.getElementById('contactDot1');
+      var dot2 = document.getElementById('contactDot2');
+      if (!step1 || !step2) return;
+
+      function goToStep2() {
+        var required = step1.querySelectorAll('input[required], select[required]');
+        for (var i = 0; i < required.length; i++) {
+          if (!required[i].checkValidity()) {
+            required[i].reportValidity();
+            return;
+          }
+        }
+        step1.classList.add('hidden');
+        step2.classList.remove('hidden');
+        progressText.textContent = 'Stap 2 van 2 — uw situatie';
+        dot1.classList.remove('active');
+        dot2.classList.add('active');
+        var firstField = step2.querySelector('input, select, textarea');
+        if (firstField) firstField.focus();
+      }
+      function goToStep1() {
+        step2.classList.add('hidden');
+        step1.classList.remove('hidden');
+        progressText.textContent = 'Stap 1 van 2 — uw contactgegevens';
+        dot2.classList.remove('active');
+        dot1.classList.add('active');
+      }
+      nextBtn.addEventListener('click', goToStep2);
+      backBtn.addEventListener('click', goToStep1);
+    })();
+    </script>
   </div>
 </section>
 

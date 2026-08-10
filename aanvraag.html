@@ -149,6 +149,22 @@
   .submit-btn:hover { background: var(--navy-light); }
   .form-note { font-size: 0.78rem; color: var(--muted); text-align: center; margin: 4px 0 0; }
 
+  .form-progress { display: flex; align-items: center; gap: 10px; margin-bottom: 18px; }
+  .form-progress .step-dot { width: 8px; height: 8px; border-radius: 50%; background: var(--border); flex-shrink: 0; }
+  .form-progress .step-dot.active { background: var(--amber); }
+  .form-progress span { font-size: 0.78rem; color: var(--muted); font-weight: 700; letter-spacing: 0.02em; }
+  .form-step.hidden { display: none; }
+  .btn-next {
+    background: var(--amber); color: #fff; border: none; padding: 15px;
+    border-radius: 999px; font-weight: 700; font-size: 1rem; cursor: pointer; margin-top: 6px;
+  }
+  .btn-next:hover { background: var(--amber-light); }
+  .btn-back {
+    background: none; border: none; color: var(--muted); font-weight: 600;
+    font-size: 0.85rem; cursor: pointer; padding: 6px 0; text-align: left; text-decoration: underline;
+  }
+  .btn-back:hover { color: var(--navy); }
+
   footer {
     background: var(--navy);
     color: rgba(255,255,255,0.6);
@@ -240,72 +256,135 @@
           <label>Niet invullen: <input name="bot-field"></label>
         </p>
 
-        <div class="field">
-          <label for="bedrijfsnaam">Bedrijfsnaam</label>
-          <input type="text" id="bedrijfsnaam" name="bedrijfsnaam" placeholder="Uw bedrijf" required>
+        <div class="form-progress">
+          <span class="step-dot active" id="formDot1"></span>
+          <span class="step-dot" id="formDot2"></span>
+          <span id="formProgressText">Stap 1 van 2 &mdash; uw contactgegevens</span>
         </div>
 
-        <div class="field">
-          <label for="naam">Naam</label>
-          <input type="text" id="naam" name="naam" placeholder="Uw naam" required>
+        <div class="form-step" id="formStep1">
+          <div class="field">
+            <label for="naam">Naam</label>
+            <input type="text" id="naam" name="naam" placeholder="Uw naam" required>
+          </div>
+
+          <div class="field">
+            <label for="telefoon">Telefoonnummer <span class="optional">(zodat ik u kan terugbellen)</span></label>
+            <input type="tel" id="telefoon" name="telefoon" placeholder="06 - ..." required>
+          </div>
+
+          <div class="field">
+            <label for="email">E-mailadres <span class="optional">(optioneel)</span></label>
+            <input type="email" id="email" name="email" placeholder="uw@email.nl">
+          </div>
+
+          <button type="button" class="btn-next" id="formNextBtn">Volgende stap &rarr;</button>
+          <p class="form-note">Nog 2 korte vragen over uw bedrijf en situatie.</p>
         </div>
 
-        <div class="field">
-          <label for="telefoon">Telefoonnummer</label>
-          <input type="tel" id="telefoon" name="telefoon" placeholder="06 - ..." required>
-        </div>
+        <div class="form-step hidden" id="formStep2">
+          <div class="field">
+            <label for="bedrijfsnaam">Bedrijfsnaam</label>
+            <input type="text" id="bedrijfsnaam" name="bedrijfsnaam" placeholder="Uw bedrijf" required>
+          </div>
 
-        <div class="field">
-          <label for="verbruik_stroom">Jaarverbruik stroom <span class="optional">(indicatie is prima)</span></label>
-          <select id="verbruik_stroom" name="verbruik_stroom">
-            <option value="">Kies een indicatie...</option>
-            <option value="minder dan 20.000 kWh">Minder dan 20.000 kWh</option>
-            <option value="20.000 - 70.000 kWh">20.000 – 70.000 kWh</option>
-            <option value="70.000 - 150.000 kWh">70.000 – 150.000 kWh</option>
-            <option value="meer dan 150.000 kWh">Meer dan 150.000 kWh</option>
-            <option value="weet ik niet">Weet ik niet</option>
-          </select>
-        </div>
+          <div class="field">
+            <label for="verbruik_stroom">Jaarverbruik stroom <span class="optional">(indicatie is prima)</span></label>
+            <select id="verbruik_stroom" name="verbruik_stroom">
+              <option value="">Kies een indicatie...</option>
+              <option value="minder dan 20.000 kWh">Minder dan 20.000 kWh</option>
+              <option value="20.000 - 70.000 kWh">20.000 – 70.000 kWh</option>
+              <option value="70.000 - 150.000 kWh">70.000 – 150.000 kWh</option>
+              <option value="meer dan 150.000 kWh">Meer dan 150.000 kWh</option>
+              <option value="weet ik niet">Weet ik niet</option>
+            </select>
+          </div>
 
-        <div class="field">
-          <label for="verbruik_gas">Jaarverbruik gas <span class="optional">(indicatie is prima)</span></label>
-          <select id="verbruik_gas" name="verbruik_gas">
-            <option value="">Kies een indicatie...</option>
-            <option value="minder dan 5.000 m3">Minder dan 5.000 m³</option>
-            <option value="5.000 - 15.000 m3">5.000 – 15.000 m³</option>
-            <option value="15.000 - 50.000 m3">15.000 – 50.000 m³</option>
-            <option value="meer dan 50.000 m3">Meer dan 50.000 m³</option>
-            <option value="geen gas">Geen gasaansluiting</option>
-            <option value="weet ik niet">Weet ik niet</option>
-          </select>
-        </div>
+          <div class="field">
+            <label for="verbruik_gas">Jaarverbruik gas <span class="optional">(indicatie is prima)</span></label>
+            <select id="verbruik_gas" name="verbruik_gas">
+              <option value="">Kies een indicatie...</option>
+              <option value="minder dan 5.000 m3">Minder dan 5.000 m³</option>
+              <option value="5.000 - 15.000 m3">5.000 – 15.000 m³</option>
+              <option value="15.000 - 50.000 m3">15.000 – 50.000 m³</option>
+              <option value="meer dan 50.000 m3">Meer dan 50.000 m³</option>
+              <option value="geen gas">Geen gasaansluiting</option>
+              <option value="weet ik niet">Weet ik niet</option>
+            </select>
+          </div>
 
-        <div class="field">
-          <label for="einddatum">Einde huidig contract <span class="optional">(indicatie is prima)</span></label>
-          <select id="einddatum" name="einddatum">
-            <option value="">Kies een indicatie...</option>
-            <option value="binnen 3 maanden">Binnen 3 maanden</option>
-            <option value="3 - 6 maanden">3 – 6 maanden</option>
-            <option value="6 - 12 maanden">6 – 12 maanden</option>
-            <option value="meer dan 12 maanden">Meer dan 12 maanden</option>
-            <option value="weet ik niet">Weet ik niet</option>
-          </select>
-        </div>
+          <div class="field">
+            <label for="einddatum">Einde huidig contract <span class="optional">(indicatie is prima)</span></label>
+            <select id="einddatum" name="einddatum">
+              <option value="">Kies een indicatie...</option>
+              <option value="binnen 3 maanden">Binnen 3 maanden</option>
+              <option value="3 - 6 maanden">3 – 6 maanden</option>
+              <option value="6 - 12 maanden">6 – 12 maanden</option>
+              <option value="meer dan 12 maanden">Meer dan 12 maanden</option>
+              <option value="weet ik niet">Weet ik niet</option>
+            </select>
+          </div>
 
-        <div class="field">
-          <label for="email">E-mailadres <span class="optional">(optioneel)</span></label>
-          <input type="email" id="email" name="email" placeholder="uw@email.nl">
-        </div>
+          <div class="field">
+            <label for="voorkeursmoment">Wanneer kan ik u het beste bereiken? <span class="optional">(indicatie, geen garantie)</span></label>
+            <select id="voorkeursmoment" name="voorkeursmoment">
+              <option value="">Geen voorkeur</option>
+              <option value="ochtend (9-12u)">Ochtend (9 - 12 uur)</option>
+              <option value="middag (12-17u)">Middag (12 - 17 uur)</option>
+              <option value="avond (17-19u)">Avond (17 - 19 uur)</option>
+            </select>
+          </div>
 
-        <div class="field" style="flex-direction:row; align-items:flex-start; gap:10px;">
-          <input type="checkbox" id="toestemming" name="toestemming" required style="margin-top:3px; width:auto;">
-          <label for="toestemming" style="font-weight:500; font-size:0.85rem;">Ik geef toestemming dat Bart mij naar aanleiding van deze aanvraag persoonlijk benadert per telefoon of e-mail. Zie de <a href="privacyverklaring.html" style="color:var(--amber);">privacyverklaring</a>.</label>
-        </div>
+          <div class="field" style="flex-direction:row; align-items:flex-start; gap:10px;">
+            <input type="checkbox" id="toestemming" name="toestemming" required style="margin-top:3px; width:auto;">
+            <label for="toestemming" style="font-weight:500; font-size:0.85rem;">Ik geef toestemming dat Bart mij naar aanleiding van deze aanvraag persoonlijk benadert per telefoon of e-mail. Zie de <a href="privacyverklaring.html" style="color:var(--amber);">privacyverklaring</a>.</label>
+          </div>
 
-        <div data-netlify-recaptcha="true"></div>
-        <button type="submit" class="submit-btn">Ontvang gratis advies</button>
-        <p class="form-note">Uw gegevens worden alleen gebruikt om contact met u op te nemen.</p>
+          <div data-netlify-recaptcha="true"></div>
+          <button type="submit" class="submit-btn">Ontvang gratis advies</button>
+          <button type="button" class="btn-back" id="formBackBtn">&larr; Vorige stap</button>
+          <p class="form-note">Uw gegevens worden alleen gebruikt om contact met u op te nemen.</p>
+        </div>
       </form>
+
+      <script>
+      (function () {
+        var step1 = document.getElementById('formStep1');
+        var step2 = document.getElementById('formStep2');
+        var nextBtn = document.getElementById('formNextBtn');
+        var backBtn = document.getElementById('formBackBtn');
+        var progressText = document.getElementById('formProgressText');
+        var dot1 = document.getElementById('formDot1');
+        var dot2 = document.getElementById('formDot2');
+        if (!step1 || !step2) return;
+
+        function goToStep2() {
+          var required = step1.querySelectorAll('input[required], select[required]');
+          for (var i = 0; i < required.length; i++) {
+            if (!required[i].checkValidity()) {
+              required[i].reportValidity();
+              return;
+            }
+          }
+          step1.classList.add('hidden');
+          step2.classList.remove('hidden');
+          progressText.textContent = 'Stap 2 van 2 — uw situatie';
+          dot1.classList.remove('active');
+          dot2.classList.add('active');
+          var firstField = step2.querySelector('input, select');
+          if (firstField) firstField.focus();
+        }
+        function goToStep1() {
+          step2.classList.add('hidden');
+          step1.classList.remove('hidden');
+          progressText.textContent = 'Stap 1 van 2 — uw contactgegevens';
+          dot2.classList.remove('active');
+          dot1.classList.add('active');
+        }
+        nextBtn.addEventListener('click', goToStep2);
+        backBtn.addEventListener('click', goToStep1);
+      })();
+      </script>
     </div>
   </div>
 </main>
