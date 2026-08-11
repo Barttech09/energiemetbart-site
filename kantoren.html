@@ -318,7 +318,7 @@
 @media (max-width: 900px) {
   .mobile-call-bar {
     display: flex; position: fixed; left: 0; right: 0; bottom: 0; z-index: 1000;
-    background: var(--amber, #d98c1f); color: #16233a; text-decoration: none;
+    background: var(--amber, #d98c1f); color: #ffffff; text-decoration: none;
     align-items: center; justify-content: center; gap: 8px;
     padding: 13px 16px calc(13px + env(safe-area-inset-bottom));
     font-weight: 700; font-size: 0.95rem;
@@ -343,6 +343,13 @@
   .callback-form .submit-btn:hover { opacity: 0.92; }
   .callback-form .form-note { font-size: 0.78rem; color: var(--muted); margin: 10px 0 0; }
   @media (max-width: 640px) { .callback-form { padding: 28px 22px; } .callback-form .cb-grid { grid-template-columns: 1fr; } }
+
+  .related-links { display: flex; gap: 14px; flex-wrap: wrap; margin: 24px 0 0; }
+  .related-links a {
+    background: var(--white); border: 1px solid var(--border); border-radius: 999px;
+    padding: 10px 18px; font-size: 0.85rem; font-weight: 600; color: var(--navy-light);
+  }
+  .related-links a:hover { color: var(--amber); border-color: var(--amber); }
 </style>
 
 <script type="application/ld+json">
@@ -367,7 +374,7 @@
   "@type": "FAQPage",
   "mainEntity": [
     { "@type": "Question", "name": "Ik heb geen idee wat een goed energiecontract is, is dat erg?", "acceptedAnswer": { "@type": "Answer", "text": "Nee, dat hoeft u ook niet te weten. Ik leg uit waar u op moet letten en doe de vergelijking voor u." } },
-    { "@type": "Question", "name": "Hoeveel tijd kost dit mij?", "acceptedAnswer": { "@type": "Answer", "text": "Een kort kennismakingsgesprek, en daarna vooral het doorlezen van mijn advies. De rest doe ik." } },
+    { "@type": "Question", "name": "Hoeveel tijd kost dit mij?", "acceptedAnswer": { "@type": "Answer", "text": "Een kort kennismakingsgesprek en daarna vooral het doorlezen van mijn advies. De rest doe ik." } },
     { "@type": "Question", "name": "Is dit ook interessant als ons verbruik laag is?", "acceptedAnswer": { "@type": "Answer", "text": "Zeker. Ook bij een kantoor met beperkt verbruik loont het om te weten of uw contract nog marktconform is." } }
   ]
 }
@@ -411,7 +418,7 @@
   <div class="wrap">
     <span class="eyebrow">Voor kantoren &amp; dienstverleners</span>
     <h1>Energieadvies voor kantoren en zakelijke dienstverleners</h1>
-    <p>Energie is geen kernactiviteit van uw bedrijf, en dat mag ook zo blijven. Ik zoek uit of uw huidige contract nog marktconform is, zodat u er zelf geen tijd aan kwijt bent.</p>
+    <p>Energie is geen kernactiviteit van uw bedrijf en dat mag ook zo blijven. Ik zoek uit of uw huidige contract nog marktconform is, zodat u er zelf geen tijd aan kwijt bent.</p>
   </div>
 </section>
 
@@ -478,12 +485,22 @@
       </div>
       <div class="faq-item">
         <h3>Hoeveel tijd kost dit mij?</h3>
-        <p>Een kort kennismakingsgesprek, en daarna vooral het doorlezen van mijn advies. De rest doe ik.</p>
+        <p>Een kort kennismakingsgesprek en daarna vooral het doorlezen van mijn advies. De rest doe ik.</p>
       </div>
       <div class="faq-item">
         <h3>Is dit ook interessant als ons verbruik laag is?</h3>
         <p>Zeker. Ook bij een kantoor met beperkt verbruik loont het om te weten of uw contract nog marktconform is.</p>
       </div>
+    </div>
+  </div>
+</section>
+
+<section style="padding-top:0;">
+  <div class="wrap">
+    <div class="related-links">
+      <a href="nieuws-artikel-geopolitieke-situatie-2026">Lees ook: Waarom de energiemarkt kwetsbaar blijft voor het Midden-Oosten &rarr;</a>
+      <a href="markt.html">Bekijk de marktontwikkeling &rarr;</a>
+      <a href="werkwijze.html">Zo werk ik &rarr;</a>
     </div>
   </div>
 </section>
