@@ -95,6 +95,20 @@
     .header-row { flex-wrap: wrap; gap: 10px; }
   }
 
+.verbruik-card .field { margin-bottom: 14px; }
+.verbruik-card label { display: block; font-weight: 700; font-size: 0.88rem; color: var(--navy); margin-bottom: 6px; }
+.verbruik-card input, .verbruik-card select {
+  width: 100%; padding: 11px 13px; border-radius: 8px; border: 1px solid var(--border);
+  font-size: 0.95rem; font-family: inherit; color: var(--text); background: var(--white);
+}
+.verbruik-card .submit-btn {
+  background: var(--navy); color: var(--white); border: none; padding: 12px 24px;
+  border-radius: 999px; font-weight: 700; font-size: 0.92rem; cursor: pointer;
+}
+.verbruik-card .submit-btn:hover { background: var(--navy-light); }
+.verbruik-card .form-note { font-size: 0.8rem; color: var(--muted); margin: 10px 0 0; }
+.verbruik-card .skip-link-inline { display: inline-block; margin-top: 10px; font-size: 0.82rem; color: var(--muted); text-decoration: underline; }
+
 .mobile-call-bar { display: none; }
 @media (max-width: 900px) {
   .mobile-call-bar {
@@ -132,10 +146,30 @@
     <div class="next-card">
       <h2>Zo gaat het verder</h2>
       <ol>
-        <li>Ik bekijk uw aanvraag en (indien ingevuld) uw verbruiksindicatie.</li>
+        <li>Ik bekijk uw aanvraag.</li>
         <li>Ik bel of app u om uw situatie kort door te nemen, geen verkoopscript.</li>
         <li>U krijgt eerlijk advies: soms overstappen, soms niets doen.</li>
       </ol>
+    </div>
+
+    <div class="next-card verbruik-card">
+      <h2>Alvast uw jaarverbruik doorgeven?</h2>
+      <p style="margin:0 0 16px; color:var(--muted); font-size:0.92rem;">Helemaal optioneel, maar met een indicatie van uw jaarverbruik kan ik uw situatie alvast voorbereiden voor het gesprek.</p>
+      <form name="verbruik-followup" method="POST" data-netlify="true" netlify-honeypot="bot-field" action="/bedankt" id="verbruikForm" data-recaptcha-action="verbruik_followup">
+        <input type="hidden" name="form-name" value="verbruik-followup">
+        <input type="hidden" name="bron_pagina" value="bedankt">
+        <p style="display:none;"><label>Niet invullen: <input name="bot-field"></label></p>
+        <div class="field">
+          <label for="fu_email">Uw e-mailadres (zodat ik het kan koppelen aan uw aanvraag)</label>
+          <input type="email" id="fu_email" name="email" placeholder="uw@email.nl" required>
+        </div>
+        <div class="field">
+          <label for="fu_verbruik">Indicatie jaarverbruik</label>
+          <input type="text" id="fu_verbruik" name="verbruik" placeholder="Bijv. 40.000 kWh / 8.000 m³, of onbekend">
+        </div>
+        <button type="submit" class="submit-btn">Versturen</button>
+        <p class="form-note">Lees hoe ik met uw gegevens omga in de <a href="privacyverklaring.html">privacyverklaring</a>.</p>
+      </form>
     </div>
 
     <a href="https://wa.me/31615721173?text=Hallo%20Bart%2C%20ik%20heb%20zojuist%20een%20aanvraag%20verstuurd." class="btn">Liever nu al appen? Stuur een bericht</a>
@@ -286,5 +320,6 @@
 })();
 </script>
 <a href="tel:+31615721173" class="mobile-call-bar"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg> Bel direct: 06 15 72 11 73</a>
+<script src="recaptcha-gate.js" defer></script>
 </body>
 </html>

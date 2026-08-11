@@ -294,7 +294,16 @@
           <label for="art_email" style="font-size:0.82rem; font-weight:700; color:var(--navy);">E-mailadres</label>
           <input type="email" id="art_email" name="email" placeholder="uw@email.nl" required style="width:100%; padding:10px 12px; border-radius:8px; border:1px solid var(--border);">
         </div>
+        <div style="flex:1 1 100%; display:flex; gap:8px; align-items:flex-start;">
+          <input type="checkbox" id="art_consent_gids" name="toestemming_gids" required style="margin-top:3px; width:auto;">
+          <label for="art_consent_gids" style="font-weight:500; font-size:0.82rem; color:var(--muted);">Ik ontvang de gids per e-mail. Mijn gegevens worden alleen daarvoor gebruikt.</label>
+        </div>
+        <div style="flex:1 1 100%; display:flex; gap:8px; align-items:flex-start;">
+          <input type="checkbox" id="art_consent_bellen" name="toestemming_bellen" style="margin-top:3px; width:auto;">
+          <label for="art_consent_bellen" style="font-weight:500; font-size:0.82rem; color:var(--muted);">Bart mag mij ook eenmalig bellen of mailen om te vragen of ik nog vragen heb over mijn energiecontract.</label>
+        </div>
         <button type="submit" formaction="5-vragen-voor-u-overstapt.pdf" style="background:var(--amber); color:#fff; border:none; padding:11px 22px; border-radius:999px; font-weight:700; cursor:pointer;">Download</button>
+        <p style="flex:1 1 100%; margin:0; font-size:0.78rem; color:var(--muted);">Lees hoe ik met uw gegevens omga in de <a href="privacyverklaring.html">privacyverklaring</a>.</p>
       </form>
     </div>
 

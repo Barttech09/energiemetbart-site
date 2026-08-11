@@ -319,7 +319,7 @@
   "email": "info@energiemetbart.nl",
   "priceRange": "Gratis advies",
   "founder": { "@type": "Person", "name": "Bart" },
-  "description": "Persoonlijk en onafhankelijk energieadvies voor ondernemers: duidelijkheid over energiekosten zonder verkooppraatje."
+  "description": "Persoonlijk energieadvies voor ondernemers: duidelijkheid over energiekosten zonder verkooppraatje."
 }
 </script>
 </head>
@@ -366,9 +366,9 @@
     <span class="eyebrow">Persoonlijk advies, zakelijke energiemarkt</span>
     <h1 class="hero-title" id="heroTitle">Duidelijkheid over uw energiekosten. <em>Zonder ruis.</em></h1>
     <p class="lead">
-      Op zoek naar een partij waarbij u altijd weet met wie u spreekt? Bij Energie met Bart
-      spreekt u persoonlijk met mij: tien jaar ervaring in de energiemarkt, een eigen netwerk
-      met leveranciers, en gewoon duidelijke uitleg over uw situatie.
+      Ik ben Bart. Tien jaar ervaring in de energiemarkt, een eigen netwerk met leveranciers,
+      en gewoon duidelijke uitleg over uw situatie. Soms betekent dat overstappen, soms
+      betekent dat gewoon blijven zitten.
     </p>
     <div class="btn-row">
       <a href="#contact" class="btn btn-primary">Vraag een adviesgesprek aan</a>
@@ -385,7 +385,7 @@
 <div class="wrap">
   <div class="stats reveal-stagger">
     <div class="stat"><strong data-count="10">10</strong><span>jaar ervaring in de energiemarkt</span></div>
-    <div class="stat"><strong data-count="100" data-suffix="%">100%</strong><span>persoonlijk advies op maat</span></div>
+    <div class="stat"><strong data-count="0" data-prefix="&euro;">&euro;0</strong><span>wat mijn advies u kost, ook als u niet overstapt</span></div>
     <div class="stat"><strong data-count="1" data-suffix=" dag">1 dag</strong><span>uiterlijk binnen 1 werkdag reactie</span></div>
     <div class="stat"><strong data-count="1">1</strong><span>vast aanspreekpunt, geen callcenter</span></div>
   </div>
@@ -407,7 +407,7 @@
       <div class="card">
         <div class="icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="5" r="2.5"/><circle cx="5" cy="19" r="2.5"/><circle cx="19" cy="19" r="2.5"/><path d="M12 7.5v6M12 13.5 6.8 17M12 13.5l5.2 3.5"/></svg></div>
         <h3>Tien jaar ervaring, een groot netwerk</h3>
-        <p>Door mijn jarenlange ervaring in de energiebranche is mijn netwerk groot, en daar profiteert u direct van.</p>
+        <p>Door mijn jarenlange ervaring in de energiebranche is mijn netwerk groot, en dat gebruik ik om voor u tarieven op te vragen bij meerdere leveranciers.</p>
       </div>
       <div class="card">
         <div class="icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="M12 16v-5"/><path d="M12 8h.01"/></svg></div>
@@ -420,6 +420,9 @@
         <p>Soms is het slimmer om nog even niets te doen en de markt af te wachten. Ook dat is een eerlijk advies.</p>
       </div>
     </div>
+    <p style="max-width:640px; margin:28px auto 0; text-align:center; font-size:0.92rem; color:var(--muted);">
+      Mijn advies kost u niets. Ik ontvang een vergoeding van de energieleverancier zodra u via mij een contract afsluit, u betaalt daardoor niet meer dan wanneer u dat zelf zou regelen. <a href="diensten.html#kosten">Lees hoe dat precies werkt</a>.
+    </p>
   </div>
 </section>
 
@@ -428,7 +431,7 @@
     <div class="section-head reveal">
       <span class="eyebrow">Werkwijze</span>
       <h2>Vijf stappen, geen verrassingen</h2>
-      <p>Eerst bespreken we samen uw wensen en de huidige situatie op de energiemarkt. Daarna ga ik persoonlijk op zoek naar de beste deal voor u.</p>
+      <p>Eerst bespreken we samen uw wensen en de huidige situatie op de energiemarkt. Daarna ga ik voor u op zoek naar het contract dat het beste bij uw situatie past, of het advies om nog even niets te doen.</p>
     </div>
     <div class="timeline reveal-stagger">
       <div class="tl-step"><div class="tl-num">1</div><strong>Kennismaking</strong></div>
@@ -518,8 +521,16 @@
           <label for="gids_email">E-mailadres</label>
           <input type="email" id="gids_email" name="email" placeholder="uw@email.nl" required>
         </div>
+        <div style="display:flex; gap:8px; align-items:flex-start;">
+          <input type="checkbox" id="gids_consent_gids" name="toestemming_gids" required style="margin-top:3px; width:auto;">
+          <label for="gids_consent_gids" style="font-weight:500; font-size:0.85rem;">Ik ontvang de gids per e-mail. Mijn gegevens worden alleen daarvoor gebruikt.</label>
+        </div>
+        <div style="display:flex; gap:8px; align-items:flex-start;">
+          <input type="checkbox" id="gids_consent_bellen" name="toestemming_bellen" style="margin-top:3px; width:auto;">
+          <label for="gids_consent_bellen" style="font-weight:500; font-size:0.85rem;">Bart mag mij ook eenmalig bellen of mailen om te vragen of ik nog vragen heb over mijn energiecontract.</label>
+        </div>
         <button type="submit" class="submit-btn" formaction="5-vragen-voor-u-overstapt.pdf">Download de gratis gids</button>
-        <p class="form-note" style="margin:2px 0 0;">Uw gegevens gebruik ik alleen om, indien gewenst, contact met u op te nemen.</p>
+        <p class="form-note" style="margin:2px 0 0;">Lees hoe ik met uw gegevens omga in de <a href="privacyverklaring.html">privacyverklaring</a>.</p>
       </form>
     </div>
   </div>
@@ -630,8 +641,15 @@
           <input type="text" id="einddatum" name="einddatum" placeholder="Bijv. januari 2027, of onbekend">
         </div>
         <div class="field">
-          <label for="verbruik">Indicatie jaarverbruik <span class="optional">(optioneel)</span></label>
-          <input type="text" id="verbruik" name="verbruik" placeholder="Bijv. 40.000 kWh / 8.000 m³, of onbekend">
+          <label for="onderwerp">Waarover gaat uw vraag?</label>
+          <select id="onderwerp" name="onderwerp" required>
+            <option value="">Kies een onderwerp</option>
+            <option value="Mijn contract loopt binnenkort af">Mijn contract loopt binnenkort af</option>
+            <option value="Ik wil weten of ik te veel betaal">Ik wil weten of ik te veel betaal</option>
+            <option value="Ik denk na over zonnepanelen of een batterij">Ik denk na over zonnepanelen of een batterij</option>
+            <option value="Ik heb een vraag over dynamische contracten">Ik heb een vraag over dynamische contracten</option>
+            <option value="Iets anders / weet ik nog niet">Iets anders / weet ik nog niet</option>
+          </select>
         </div>
         <div class="field">
           <label for="voorkeursmoment">Wanneer kan ik u het beste bereiken? <span class="optional">(indicatie, geen garantie)</span></label>

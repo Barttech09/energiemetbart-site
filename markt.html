@@ -129,6 +129,23 @@
   }
   body { padding-bottom: 54px; }
 }
+
+  /* Kort terugbelverzoek */
+  .callback-form { background: var(--white); border: 1px solid var(--border); border-radius: 20px; padding: 40px 46px; margin-top: 24px; }
+  .callback-form h2 { font-size: 1.3rem; color: var(--navy); margin: 0 0 8px; }
+  .callback-form > p.cb-intro { color: var(--muted); margin: 0 0 22px; font-size: 0.95rem; }
+  .callback-form .cb-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px 20px; }
+  .callback-form .field { margin-bottom: 0; }
+  .callback-form .field.full { grid-column: 1 / -1; }
+  .callback-form label { display: block; font-weight: 700; font-size: 0.86rem; color: var(--navy); margin-bottom: 6px; }
+  .callback-form input, .callback-form select { width: 100%; padding: 11px 13px; border-radius: 8px; border: 1px solid var(--border); font-size: 0.95rem; font-family: inherit; color: var(--text); background: var(--bg); }
+  .callback-form .consent-row { display: flex; gap: 8px; align-items: flex-start; }
+  .callback-form .consent-row input { width: auto; margin-top: 3px; }
+  .callback-form .consent-row label { font-weight: 500; font-size: 0.83rem; color: var(--muted); }
+  .callback-form .submit-btn { background: var(--amber); color: #fff; border: none; padding: 13px 28px; border-radius: 999px; font-weight: 700; font-size: 0.95rem; cursor: pointer; margin-top: 6px; }
+  .callback-form .submit-btn:hover { opacity: 0.92; }
+  .callback-form .form-note { font-size: 0.78rem; color: var(--muted); margin: 10px 0 0; }
+  @media (max-width: 640px) { .callback-form { padding: 28px 22px; } .callback-form .cb-grid { grid-template-columns: 1fr; } }
 </style>
 <script type="application/ld+json">
 {
@@ -325,6 +342,49 @@
         <a href="index.html#contact" class="btn">Plan een vrijblijvend kennismakingsgesprek</a>
       </div>
 
+<div class="wrap">
+  <div class="callback-form">
+    <h2>Liever direct een terugbelverzoek?</h2>
+    <p class="cb-intro">Vul onderstaand formulier in en ik neem op werkdagen binnen &eacute;&eacute;n werkdag persoonlijk contact met u op.</p>
+    <form name="terugbelverzoek" method="POST" data-netlify="true" netlify-honeypot="bot-field" action="/bedankt" data-recaptcha-action="terugbelverzoek">
+      <input type="hidden" name="form-name" value="terugbelverzoek">
+      <input type="hidden" name="bron_pagina" value="markt">
+      <p style="display:none;"><label>Niet invullen: <input name="bot-field"></label></p>
+      <div class="cb-grid">
+        <div class="field">
+          <label for="cb_naam_markt">Naam</label>
+          <input type="text" id="cb_naam_markt" name="naam" placeholder="Uw naam" required>
+        </div>
+        <div class="field">
+          <label for="cb_telefoon_markt">Telefoonnummer</label>
+          <input type="tel" id="cb_telefoon_markt" name="telefoon" placeholder="06 - ..." required>
+        </div>
+        <div class="field">
+          <label for="cb_bedrijf_markt">Bedrijfsnaam</label>
+          <input type="text" id="cb_bedrijf_markt" name="bedrijf" placeholder="Uw bedrijf" required>
+        </div>
+        <div class="field">
+          <label for="cb_onderwerp_markt">Waarover gaat uw vraag?</label>
+          <select id="cb_onderwerp_markt" name="onderwerp" required>
+            <option value="">Kies een onderwerp</option>
+            <option value="Mijn contract loopt binnenkort af">Mijn contract loopt binnenkort af</option>
+            <option value="Ik wil weten of ik te veel betaal">Ik wil weten of ik te veel betaal</option>
+            <option value="Ik denk na over zonnepanelen of een batterij">Ik denk na over zonnepanelen of een batterij</option>
+            <option value="Ik heb een vraag over dynamische contracten">Ik heb een vraag over dynamische contracten</option>
+            <option value="Iets anders / weet ik nog niet">Iets anders / weet ik nog niet</option>
+          </select>
+        </div>
+        <div class="field full consent-row">
+          <input type="checkbox" id="cb_toestemming_markt" name="toestemming" required>
+          <label for="cb_toestemming_markt">Ik geef toestemming dat Bart mij naar aanleiding van deze aanvraag persoonlijk benadert per telefoon of e-mail. Zie de <a href="privacyverklaring.html">privacyverklaring</a>.</label>
+        </div>
+      </div>
+      <button type="submit" class="submit-btn">Verstuur terugbelverzoek</button>
+      <p class="form-note">Ik reageer op werkdagen binnen &eacute;&eacute;n werkdag.</p>
+    </form>
+  </div>
+</div>
+
       <div class="sources">
         Bronnen: <a href="https://www.netbeheernederland.nl/artikelen/nieuws/netwerkkosten-stijgen-circa-35-2026" target="_blank" rel="noopener">Netbeheer Nederland</a>,
         <a href="https://www.liander.nl/over-ons/nieuws/2025/nieuwe-tarieven-netbeheerkosten-2026-bekend" target="_blank" rel="noopener">Liander</a>,
@@ -478,5 +538,6 @@
 })();
 </script>
 <a href="tel:+31615721173" class="mobile-call-bar"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg> Bel direct: 06 15 72 11 73</a>
+<script src="recaptcha-gate.js" defer></script>
 </body>
 </html>
