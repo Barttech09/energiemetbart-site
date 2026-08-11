@@ -250,7 +250,7 @@
       <h2>Vraag gratis advies aan</h2>
       <p class="sub">Ik reageer op werkdagen binnen &eacute;&eacute;n werkdag.</p>
 
-      <form name="lp-ervaring" method="POST" data-netlify="true" data-netlify-recaptcha="true" netlify-honeypot="bot-field" action="/bedankt" id="aanvraagForm">
+      <form name="lp-ervaring" method="POST" data-netlify="true" netlify-honeypot="bot-field" action="/bedankt" id="aanvraagForm" data-recaptcha-action="lp_ervaring">
         <input type="hidden" name="form-name" value="lp-ervaring">
         <input type="hidden" name="utm_source" id="utm_source">
         <input type="hidden" name="utm_medium" id="utm_medium">
@@ -304,7 +304,6 @@
           <textarea id="opmerkingen" name="opmerkingen" rows="3" placeholder="Bijvoorbeeld: wanneer u het beste bereikbaar bent, of een specifieke vraag."></textarea>
         </div>
 
-        <div data-netlify-recaptcha="true"></div>
         <button type="submit" class="submit-btn">Ontvang gratis advies</button>
         <p class="form-note">Uw gegevens worden alleen gebruikt om contact met u op te nemen.</p>
       </form>
@@ -315,9 +314,9 @@
 <footer>
   Energie met Bart: eerlijk energieadvies voor ondernemers
   <div class="footer-legal" style="margin-top:20px; padding-top:18px; border-top:1px solid rgba(255,255,255,0.12); font-size:0.76rem; line-height:1.7; color:rgba(255,255,255,0.5);">
-    <strong style="color:rgba(255,255,255,0.75);">Energie met Bart</strong> &mdash; eenmanszaak<br>
-    Amsterdam<br>
-    KvK 69874581 &middot; btw NL002381531B93<br>
+    <strong style="color:rgba(255,255,255,0.75);">Energie met Bart</strong><br>
+    Haarlem<br>
+    BTW-nummer NL002381531B93<br>
     <a href="tel:+31615721173" style="color:rgba(255,255,255,0.5);">06 15 72 11 73</a> &middot;
     <a href="mailto:info@energiemetbart.nl" style="color:rgba(255,255,255,0.5);">info@energiemetbart.nl</a>
   </div>
@@ -472,5 +471,6 @@
 })();
 </script>
 <a href="tel:+31615721173" class="mobile-call-bar"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg> Bel direct: 06 15 72 11 73</a>
+<script src="recaptcha-gate.js" defer></script>
 </body>
 </html>

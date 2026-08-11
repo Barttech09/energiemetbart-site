@@ -100,7 +100,7 @@
     background: linear-gradient(180deg, var(--navy) 0%, var(--navy-light) 100%);
     background-image: url('images/hero-bg.webp');
     background-size: cover; background-position: center;
-    color: #fff; padding: 110px 0 140px; overflow: hidden;
+    color: #fff; padding: 82px 0 130px; overflow: hidden;
   }
   .hero::before {
     content: ""; position: absolute; inset: 0;
@@ -114,7 +114,7 @@
   .hero-copy { max-width: 640px; }
   .hero-portrait { margin: 0; justify-self: end; }
   .hero-portrait img {
-    width: 100%; max-width: 360px; aspect-ratio: 4 / 5; object-fit: cover;
+    width: 100%; max-width: 320px; aspect-ratio: 4 / 5; object-fit: cover;
     border-radius: 20px; box-shadow: 0 30px 70px -24px rgba(0,0,0,0.55), 0 0 0 1px rgba(255,255,255,0.08);
   }
   .hero-note {
@@ -314,7 +314,7 @@
   "url": "https://energiemetbart.nl/",
   "image": "https://energiemetbart.nl/images/og-image.png",
   "areaServed": "NL",
-  "address": { "@type": "PostalAddress", "addressLocality": "Amsterdam", "addressCountry": "NL" },
+  "address": { "@type": "PostalAddress", "addressLocality": "Haarlem", "addressCountry": "NL" },
   "telephone": "+31615721173",
   "email": "info@energiemetbart.nl",
   "priceRange": "Gratis advies",
@@ -348,10 +348,10 @@
         <li><a href="nieuws.html">Nieuws</a></li>
         <li><a href="werkwijze.html">Werkwijze</a></li>
         <li><a href="mijn-verhaal.html">Mijn verhaal</a></li>
-        <li class="mobile-cta"><a href="#contact">Terugbelverzoek</a></li>
+        <li class="mobile-cta"><a href="#contact">Adviesgesprek</a></li>
       </ul>
     </nav>
-    <a href="#contact" class="nav-cta">Terugbelverzoek</a>
+    <a href="#contact" class="nav-cta">Adviesgesprek</a>
     <button class="burger" id="burgerBtn" aria-label="Menu" aria-expanded="false">
       <span></span><span></span><span></span>
     </button>
@@ -371,10 +371,9 @@
       met leveranciers, en gewoon duidelijke uitleg over uw situatie.
     </p>
     <div class="btn-row">
-      <a href="#contact" class="btn btn-primary">Vraag een terugbelverzoek aan</a>
-      <a href="#markt" class="btn btn-secondary">Bekijk marktontwikkeling &darr;</a>
+      <a href="#contact" class="btn btn-primary">Vraag een adviesgesprek aan</a>
     </div>
-    <p class="hero-note">Mijn advies kost u niets &mdash; ook als ik u adviseer om n&iacute;et over te stappen, hoort u dat gewoon.</p>
+    <p class="hero-note">Ik ga graag met u in gesprek over de mogelijkheden voor uw huidige energieovereenkomst. Dit is vrijblijvend: wellicht zit u al goed, misschien kan het nog beter. Dat bekijken we samen, afhankelijk van uw situatie.</p>
     </div>
     <figure class="hero-portrait">
       <img src="images/bart-hero.jpg" width="700" height="875" alt="Bart, energieadviseur voor ondernemers" fetchpriority="high">
@@ -386,9 +385,9 @@
 <div class="wrap">
   <div class="stats reveal-stagger">
     <div class="stat"><strong data-count="10">10</strong><span>jaar ervaring in de energiemarkt</span></div>
-    <div class="stat"><strong data-count="100" data-suffix="%">100%</strong><span>persoonlijk advies, rechtstreeks contact</span></div>
-    <div class="stat"><strong data-count="1" data-suffix=" dag">1 dag</strong><span>maximale reactietijd</span></div>
-    <div class="stat"><strong data-count="1">1</strong><span>vast aanspreekpunt: u heeft altijd mij aan de lijn</span></div>
+    <div class="stat"><strong data-count="100" data-suffix="%">100%</strong><span>persoonlijk advies op maat</span></div>
+    <div class="stat"><strong data-count="1" data-suffix=" dag">1 dag</strong><span>uiterlijk binnen 1 werkdag reactie</span></div>
+    <div class="stat"><strong data-count="1">1</strong><span>vast aanspreekpunt, geen callcenter</span></div>
   </div>
 </div>
 
@@ -397,7 +396,7 @@
     <div class="section-head reveal">
       <span class="eyebrow">Waarom Energie met Bart</span>
       <h2>Persoonlijk geholpen, met één vast aanspreekpunt</h2>
-      <p>Energie is een steeds grotere kostenpost voor u als ondernemer. Dat verdient persoonlijke aandacht en een advies op maat.</p>
+      <p>Energie is een steeds grotere kostenpost voor u als ondernemer, en de ontwikkelingen in de energiemarkt volgen zich in een razendsnel tempo op. Dat verdient persoonlijke aandacht en een advies op maat, gebaseerd op uw situatie.</p>
     </div>
     <div class="cards reveal-stagger">
       <div class="card">
@@ -449,9 +448,11 @@
         <span class="eyebrow">Marktinzicht</span>
         <h2>De zakelijke energiemarkt staat niet stil</h2>
         <p>
-          Netbeheerkosten, energiebelasting en geopolitieke onrust duwen de komende jaren in
-          verschillende richtingen. Ik houd deze ontwikkelingen voor u bij, zodat u niet voor
-          verrassingen komt te staan.
+          Geopolitieke onrust, denk aan de coronacrisis, de inval in Oekraïne en de spanningen
+          rond Iran, zorgde de afgelopen jaren telkens weer voor grote prijsbewegingen. De kans
+          is groot dat de wereld onrustig blijft. Ook netbeheerkosten en energiebelasting spelen
+          mee, al heeft u daar als ondernemer weinig invloed op. Ik houd deze ontwikkelingen
+          voor u bij, zodat u niet voor verrassingen komt te staan.
         </p>
         <a href="markt.html" class="btn btn-secondary" style="margin-top: 20px;">Lees de volledige marktanalyse &rarr;</a>
         <p class="disclaimer">
@@ -459,19 +460,36 @@
         </p>
       </div>
       <div class="chart-box" id="chartBox">
-        <svg viewBox="0 0 460 170" preserveAspectRatio="none">
+        <div style="font-size:0.72rem; font-weight:700; text-transform:uppercase; letter-spacing:0.03em; color:rgba(255,255,255,0.45); margin-bottom:6px;">Laatste 6 maanden</div>
+        <svg viewBox="0 0 460 100" preserveAspectRatio="none">
           <defs>
             <linearGradient id="fillGrad" x1="0" y1="0" x2="0" y2="1">
               <stop offset="0%" stop-color="#d98a5f" stop-opacity="0.35"/>
               <stop offset="100%" stop-color="#d98a5f" stop-opacity="0"/>
             </linearGradient>
           </defs>
-          <polygon class="chart-fill" fill="url(#fillGrad)" points="0,110 66,120 132,140 198,60 264,95 330,80 396,65 460,72 460,170 0,170"/>
-          <polyline class="chart-line" points="0,110 66,120 132,140 198,60 264,95 330,80 396,65 460,72"/>
+          <polygon class="chart-fill" fill="url(#fillGrad)" points="0,50 92,38 184,58 276,32 368,46 460,40 460,100 0,100"/>
+          <polyline class="chart-line" points="0,50 92,38 184,58 276,32 368,46 460,40"/>
         </svg>
         <div class="chart-labels">
-          <span>2020</span><span>2021</span><span>2022</span><span>2023</span><span>2024</span><span>2025</span><span>2026</span>
+          <span>mrt</span><span>apr</span><span>mei</span><span>jun</span><span>jul</span><span>aug</span>
         </div>
+
+        <div style="font-size:0.72rem; font-weight:700; text-transform:uppercase; letter-spacing:0.03em; color:rgba(255,255,255,0.45); margin:20px 0 6px;">Vijf jaar op een rij</div>
+        <svg viewBox="0 0 460 100" preserveAspectRatio="none">
+          <defs>
+            <linearGradient id="fillGrad2b" x1="0" y1="0" x2="0" y2="1">
+              <stop offset="0%" stop-color="#d98a5f" stop-opacity="0.3"/>
+              <stop offset="100%" stop-color="#d98a5f" stop-opacity="0"/>
+            </linearGradient>
+          </defs>
+          <polygon class="chart-fill" fill="url(#fillGrad2b)" points="0,78 92,86 184,10 276,50 368,38 460,44 460,100 0,100"/>
+          <polyline class="chart-line" points="0,78 92,86 184,10 276,50 368,38 460,44"/>
+        </svg>
+        <div class="chart-labels">
+          <span>2021</span><span>2022</span><span>2023</span><span>2024</span><span>2025</span><span>2026</span>
+        </div>
+        <p style="font-size:0.72rem; color:rgba(255,255,255,0.4); margin:10px 0 0; line-height:1.5;">De piek in 2022 laat zien hoe volatiel de markt kan zijn: reden om niet blind te varen op één momentopname.</p>
       </div>
     </div>
   </div>
@@ -484,11 +502,11 @@
       <h2>5 vragen die u zich moet stellen voordat u overstapt</h2>
       <p style="color:var(--muted); font-size:1.02rem; max-width:520px;">
         Een korte, praktische gids voor ondernemers die twijfelen of hun energiecontract nog
-        marktconform is. Geen verkooppraatje, gewoon een eerlijk overzicht.
+        marktconform is: een eerlijk overzicht, geen verkooppraatje.
       </p>
     </div>
     <div class="form-card" style="background:var(--bg); border:1px solid var(--border); border-radius:var(--radius); padding:26px;">
-      <form name="gids" method="POST" data-netlify="true" data-netlify-recaptcha="true" netlify-honeypot="bot-field" style="display:flex; flex-direction:column; gap:12px;">
+      <form name="gids" method="POST" data-netlify="true" netlify-honeypot="bot-field" style="display:flex; flex-direction:column; gap:12px;" data-recaptcha-action="gids">
         <input type="hidden" name="form-name" value="gids">
         <input type="hidden" name="bron_pagina" value="index-gids">
         <p style="display:none;"><label>Niet invullen: <input name="bot-field"></label></p>
@@ -500,7 +518,6 @@
           <label for="gids_email">E-mailadres</label>
           <input type="email" id="gids_email" name="email" placeholder="uw@email.nl" required>
         </div>
-        <div data-netlify-recaptcha="true"></div>
         <button type="submit" class="submit-btn" formaction="5-vragen-voor-u-overstapt.pdf">Download de gratis gids</button>
         <p class="form-note" style="margin:2px 0 0;">Uw gegevens gebruik ik alleen om, indien gewenst, contact met u op te nemen.</p>
       </form>
@@ -513,14 +530,22 @@
     <div class="section-head reveal">
       <span class="eyebrow">Nieuws &amp; verdieping</span>
       <h2>Wat er echt speelt in de zakelijke energiemarkt</h2>
-      <p>Geen standaard nieuwsfeitjes: elke week duik ik dieper in één ontwikkeling en wat die concreet voor uw bedrijf betekent.</p>
+      <p>Elke week een nieuw artikel met verdieping over de energiemarkt: van belastingwijzigingen en subsidies voor zonnepanelen tot de salderingsregeling, de bijmengverplichting en groen gas.</p>
     </div>
     <div class="news-grid reveal-stagger">
-      <a href="nieuws-artikel-netbeheerkosten-2026.html" class="news-card featured">
+      <a href="nieuws-artikel-geopolitieke-situatie-2026.html" class="news-card featured">
+        <div class="tag-bar"><span>Verdieping · Geopolitiek</span></div>
+        <div class="body">
+          <h3>Waarom de energiemarkt kwetsbaar blijft voor het Midden-Oosten, ook nu de rust lijkt terug te keren</h3>
+          <p>De energieprijzen zijn rustiger dan vorig jaar, maar het conflict rond de Straat van Hormuz is niet opgelost. Wat betekent dit voor uw bedrijf?</p>
+          <div class="meta-row"><span>7 min leestijd</span><span class="read-more">Lees de analyse &rarr;</span></div>
+        </div>
+      </a>
+      <a href="nieuws-artikel-netbeheerkosten-2026.html" class="news-card">
         <div class="tag-bar"><span>Verdieping · Netbeheer</span></div>
         <div class="body">
-          <h3>Waarom uw netbeheerkosten in 2026 harder stijgen dan u denkt — en het niet bij dit jaar blijft</h3>
-          <p>Netbeheerders investeren tot 2030 meer dan €8 miljard per jaar in het net. Wat betekent de correctie op gastarieven concreet voor uw aansluiting?</p>
+          <h3>Waarom uw netbeheerkosten in 2026 harder stijgen dan u denkt</h3>
+          <p>Netbeheerders investeren tot 2030 meer dan €8 miljard per jaar in het net. Wat betekent dat concreet voor uw aansluiting?</p>
           <div class="meta-row"><span>6 min leestijd</span><span class="read-more">Lees de analyse &rarr;</span></div>
         </div>
       </a>
@@ -532,10 +557,10 @@
 <div class="wrap">
   <div class="cta-strip reveal">
     <div>
-      <h2>Benieuwd wat dit voor uw bedrijf betekent?</h2>
+      <h2>Benieuwd wat de veranderende energiemarkt specifiek voor uw bedrijf betekent?</h2>
       <p>Vrijblijvend en zonder verplichtingen. Gewoon een eerlijk gesprek.</p>
     </div>
-    <a href="#contact" class="btn btn-primary">Terugbelverzoek</a>
+    <a href="#contact" class="btn btn-primary">Plan een vrijblijvend kennismakingsgesprek</a>
   </div>
 </div>
 
@@ -551,7 +576,7 @@
       <div class="contact-methods">
         <div class="method">
           <div class="icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg></div>
-          <div><h3>Telefonisch</h3><a href="tel:+31615721173">06 15 72 11 73</a></div>
+          <div><h3>Telefonisch</h3><a href="tel:+31615721173">+31 6 15 72 11 73</a></div>
         </div>
         <div class="method">
           <div class="icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-10 6L2 7"/></svg></div>
@@ -567,7 +592,7 @@
         </div>
       </div>
     </div>
-    <form name="contact" method="POST" data-netlify="true" data-netlify-recaptcha="true" netlify-honeypot="bot-field" action="/bedankt" id="contactForm">
+    <form name="contact" method="POST" data-netlify="true" netlify-honeypot="bot-field" action="/bedankt" id="contactForm" data-recaptcha-action="contact">
       <input type="hidden" name="form-name" value="contact">
       <input type="hidden" name="bron_pagina" value="index">
       <p style="display:none;"><label>Niet invullen: <input name="bot-field"></label></p>
@@ -575,7 +600,7 @@
       <div class="form-progress">
         <span class="step-dot active" id="contactDot1"></span>
         <span class="step-dot" id="contactDot2"></span>
-        <span id="contactProgressText">Stap 1 van 2 &mdash; uw contactgegevens</span>
+        <span id="contactProgressText">Stap 1 van 2: uw contactgegevens</span>
       </div>
 
       <div class="form-step" id="contactStep1">
@@ -584,12 +609,12 @@
           <input type="text" id="naam" name="naam" placeholder="Uw naam" required>
         </div>
         <div class="field">
-          <label for="telefoon">Telefoonnummer <span class="optional">(zodat ik u kan terugbellen)</span></label>
+          <label for="telefoon">Telefoonnummer</label>
           <input type="tel" id="telefoon" name="telefoon" placeholder="06 - ..." required>
         </div>
         <div class="field">
-          <label for="email">E-mailadres <span class="optional">(optioneel)</span></label>
-          <input type="email" id="email" name="email" placeholder="uw@email.nl">
+          <label for="email">E-mailadres</label>
+          <input type="email" id="email" name="email" placeholder="uw@email.nl" required>
         </div>
         <button type="button" class="btn-next" id="contactNextBtn">Volgende stap &rarr;</button>
         <p class="form-note">Nog een paar korte vragen over uw situatie.</p>
@@ -597,8 +622,8 @@
 
       <div class="form-step hidden" id="contactStep2">
         <div class="field">
-          <label for="bedrijf">Bedrijfsnaam <span class="optional">(optioneel)</span></label>
-          <input type="text" id="bedrijf" name="bedrijf" placeholder="Uw bedrijf">
+          <label for="bedrijf">Bedrijfsnaam</label>
+          <input type="text" id="bedrijf" name="bedrijf" placeholder="Uw bedrijf" required>
         </div>
         <div class="field">
           <label for="einddatum">Einddatum huidig contract <span class="optional">(optioneel)</span></label>
@@ -618,14 +643,13 @@
           </select>
         </div>
         <div class="field">
-          <label for="bericht">Waar kan ik u mee helpen? <span class="optional">(optioneel)</span></label>
+          <label for="bericht">Opmerkingen <span class="optional">(optioneel)</span></label>
           <textarea id="bericht" name="bericht" placeholder="Bijv. huidig energiecontract, verduurzaming, of gewoon een vraag..."></textarea>
         </div>
         <div class="field" style="flex-direction:row; align-items:flex-start; gap:10px;">
           <input type="checkbox" id="toestemming" name="toestemming" required style="margin-top:3px; width:auto;">
           <label for="toestemming" style="font-weight:500; font-size:0.85rem;">Ik geef toestemming dat Bart mij naar aanleiding van deze aanvraag persoonlijk benadert per telefoon of e-mail. Zie de <a href="privacyverklaring.html" style="color:var(--amber);">privacyverklaring</a>.</label>
         </div>
-        <div data-netlify-recaptcha="true"></div>
         <button type="submit" class="submit-btn">Verstuur aanvraag</button>
         <button type="button" class="btn-back" id="contactBackBtn">&larr; Vorige stap</button>
         <p class="form-note">Ik reageer op werkdagen binnen &eacute;&eacute;n werkdag.</p>
@@ -653,7 +677,7 @@
         }
         step1.classList.add('hidden');
         step2.classList.remove('hidden');
-        progressText.textContent = 'Stap 2 van 2 — uw situatie';
+        progressText.textContent = 'Stap 2 van 2: uw situatie';
         dot1.classList.remove('active');
         dot2.classList.add('active');
         var firstField = step2.querySelector('input, select, textarea');
@@ -662,7 +686,7 @@
       function goToStep1() {
         step2.classList.add('hidden');
         step1.classList.remove('hidden');
-        progressText.textContent = 'Stap 1 van 2 — uw contactgegevens';
+        progressText.textContent = 'Stap 1 van 2: uw contactgegevens';
         dot2.classList.remove('active');
         dot1.classList.add('active');
       }
@@ -674,15 +698,7 @@
 </section>
 
 <footer>
-  <div class="wrap">
-    <div class="topbar-links" style="display:flex; gap:16px; flex-wrap:wrap;">
-      <a href="diensten.html" style="color:rgba(255,255,255,0.7); font-weight:500;">Diensten</a>
-      <a href="werkwijze.html" style="color:rgba(255,255,255,0.7); font-weight:500;">Werkwijze</a>
-      <a href="nieuws.html" style="color:rgba(255,255,255,0.7); font-weight:500;">Nieuws</a>
-      <a href="mijn-verhaal.html" style="color:rgba(255,255,255,0.7); font-weight:500;">Mijn verhaal</a>
-    </div>
-  </div>
-  <div class="wrap footer-bottom">
+    <div class="wrap footer-bottom">
     <div><strong style="color:#fff;">Energie met Bart</strong>: eerlijk energieadvies voor ondernemers</div>
     <div class="topbar-links" style="display:flex; gap:16px; flex-wrap:wrap;">
       <a href="privacyverklaring.html" style="color:rgba(255,255,255,0.7); font-weight:500;">Privacyverklaring</a>
@@ -691,9 +707,9 @@
     <div>&copy; <span id="year"></span> Energie met Bart</div>
   </div>
   <div class="footer-legal" style="margin-top:20px; padding-top:18px; border-top:1px solid rgba(255,255,255,0.12); font-size:0.76rem; line-height:1.7; color:rgba(255,255,255,0.5);">
-    <strong style="color:rgba(255,255,255,0.75);">Energie met Bart</strong> &mdash; eenmanszaak<br>
-    Amsterdam<br>
-    KvK 69874581 &middot; btw NL002381531B93<br>
+    <strong style="color:rgba(255,255,255,0.75);">Energie met Bart</strong><br>
+    Haarlem<br>
+    BTW-nummer NL002381531B93<br>
     <a href="tel:+31615721173" style="color:rgba(255,255,255,0.5);">06 15 72 11 73</a> &middot;
     <a href="mailto:info@energiemetbart.nl" style="color:rgba(255,255,255,0.5);">info@energiemetbart.nl</a>
   </div>
@@ -907,5 +923,6 @@
 })();
 </script>
 <a href="tel:+31615721173" class="mobile-call-bar"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg> Bel direct: 06 15 72 11 73</a>
+<script src="recaptcha-gate.js" defer></script>
 </body>
 </html>
