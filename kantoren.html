@@ -314,21 +314,15 @@
   .skip-link:focus { left: 12px; top: 12px; }
   :focus-visible { outline: 3px solid var(--amber); outline-offset: 2px; border-radius: 4px; }
 
-.mobile-call-bar { display: none; }
-@media (max-width: 900px) {
-  .mobile-call-bar {
-    display: flex; position: fixed; left: 0; right: 0; bottom: 0; z-index: 1000;
-    background: var(--amber, #d98c1f); color: #ffffff; text-decoration: none;
-    align-items: center; justify-content: center; gap: 8px;
-    padding: 13px 16px calc(13px + env(safe-area-inset-bottom));
-    font-weight: 700; font-size: 0.95rem;
-    box-shadow: 0 -4px 16px rgba(0,0,0,0.12);
-  }
-  body { padding-bottom: 54px; }
-}
 
   /* Kort terugbelverzoek */
   .callback-form { background: var(--white); border: 1px solid var(--border); border-radius: 20px; padding: 40px 46px; margin-top: 24px; }
+  .callback-form summary { list-style: none; cursor: pointer; display: inline-flex; align-items: center; gap: 7px; font-weight: 700; font-size: 0.95rem; color: var(--navy); }
+  .callback-form summary::-webkit-details-marker { display: none; }
+  .callback-form summary::after { content: '\2192'; transition: transform 0.2s ease; font-weight: 400; }
+  .callback-form[open] summary::after { transform: rotate(90deg); }
+  .callback-form:not([open]) { background: transparent; border: none; padding: 0; }
+  .callback-form-body { margin-top: 22px; }
   .callback-form h2 { font-size: 1.3rem; color: var(--navy); margin: 0 0 8px; }
   .callback-form > p.cb-intro { color: var(--muted); margin: 0 0 22px; font-size: 0.95rem; }
   .callback-form .cb-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px 20px; }
@@ -404,10 +398,10 @@
         <li><a href="nieuws.html">Nieuws</a></li>
         <li><a href="werkwijze.html">Werkwijze</a></li>
         <li><a href="mijn-verhaal.html">Mijn verhaal</a></li>
-        <li class="mobile-cta"><a href="index.html#contact">Adviesgesprek</a></li>
+        <li class="mobile-cta"><a href="index.html#contact">Adviesgesprek aanvragen</a></li>
       </ul>
     </nav>
-    <a href="index.html#contact" class="nav-cta">Adviesgesprek</a>
+    <a href="index.html#contact" class="nav-cta">Adviesgesprek aanvragen</a>
     <button class="burger" id="burgerBtn" aria-label="Menu" aria-expanded="false">
       <span></span><span></span><span></span>
     </button>
@@ -513,7 +507,7 @@
         <p>Plan een vrijblijvend kennismakingsgesprek, telefonisch of op locatie in overleg. Ik reageer binnen &eacute;&eacute;n werkdag. Na het gesprek onderzoek ik de opties voor u en plannen we een vervolggesprek in.</p>
       </div>
       <div>
-        <a href="index.html#contact" class="btn btn-primary">Plan een vrijblijvend kennismakingsgesprek</a>
+        <a href="index.html#contact" class="btn btn-primary">Adviesgesprek aanvragen</a>
       </div>
     </div>
   </div>
@@ -521,8 +515,9 @@
 
 <section style="padding-top:0;">
   <div class="wrap">
-    <div class="callback-form">
-      <h2>Liever direct een terugbelverzoek?</h2>
+    <details class="callback-form">
+      <summary>Liever dat ik u bel? Laat hier uw nummer achter</summary>
+      <div class="callback-form-body">
       <p class="cb-intro">Vul onderstaand formulier in en ik neem op werkdagen binnen &eacute;&eacute;n werkdag persoonlijk contact met u op.</p>
       <form name="terugbelverzoek" method="POST" data-netlify="true" netlify-honeypot="bot-field" action="/bedankt" data-recaptcha-action="terugbelverzoek">
         <input type="hidden" name="form-name" value="terugbelverzoek">
@@ -561,6 +556,7 @@
         <p class="form-note">Ik reageer op werkdagen binnen &eacute;&eacute;n werkdag.</p>
       </form>
     </div>
+    </details>
   </div>
 </section>
 
@@ -679,11 +675,7 @@
       if (!window.gtag) return;
       var telLink = ev.target.closest('a[href^="tel:"]');
       if (telLink) {
-        if (telLink.classList.contains('mobile-call-bar')) {
-          gtag('event', 'belknop_mobiel_klik');
-        } else {
-          gtag('event', 'telefoonklik');
-        }
+        gtag('event', 'telefoonklik');
         return;
       }
       var waLink = ev.target.closest('a[href*="wa.me"]');
@@ -727,7 +719,7 @@
   } catch (e) {}
 })();
 </script>
-<a href="tel:+31615721173" class="mobile-call-bar"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg> Bel direct: 06 15 72 11 73</a>
+
 <script src="recaptcha-gate.js" defer></script>
 </body>
 </html>

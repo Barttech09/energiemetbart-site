@@ -121,9 +121,15 @@
     font-size: 0.85rem; color: rgba(255,255,255,0.68); max-width: 520px; margin-top: 18px;
     padding-top: 16px; border-top: 1px solid rgba(255,255,255,0.15); line-height: 1.55;
   }
+  .hero-avatar-mobile { display: none; }
   @media (max-width: 900px) {
     .hero-grid { grid-template-columns: 1fr; }
     .hero-portrait { display: none; }
+    .hero-avatar-mobile {
+      display: block; width: 84px; height: 84px; border-radius: 50%; object-fit: cover;
+      margin: 0 0 16px; border: 3px solid rgba(255,255,255,0.25);
+      box-shadow: 0 10px 24px -8px rgba(0,0,0,0.5);
+    }
   }
   .eyebrow {
     display: inline-flex; align-items: center; gap: 8px;
@@ -163,6 +169,12 @@
   .stat:last-child { border-right: none; }
   .stat strong { display: block; font-size: 1.9rem; font-weight: 800; color: var(--navy); font-variant-numeric: tabular-nums; }
   .stat span { font-size: 0.8rem; color: var(--muted); }
+  .mini-faq {
+    display: grid; grid-template-columns: 1fr 1fr; gap: 18px 32px;
+    max-width: 900px; margin: 0 auto; padding: 22px 0 6px; font-size: 0.9rem; color: var(--text);
+  }
+  .mini-faq strong { color: var(--navy); }
+  @media (max-width: 640px) { .mini-faq { grid-template-columns: 1fr; } }
 
   section { padding: 80px 0; }
   .section-head { max-width: 640px; margin-bottom: 44px; }
@@ -293,18 +305,6 @@
   .skip-link:focus { left: 12px; top: 12px; }
   :focus-visible { outline: 3px solid var(--amber); outline-offset: 2px; border-radius: 4px; }
 
-.mobile-call-bar { display: none; }
-@media (max-width: 900px) {
-  .mobile-call-bar {
-    display: flex; position: fixed; left: 0; right: 0; bottom: 0; z-index: 1000;
-    background: var(--amber, #d98c1f); color: #ffffff; text-decoration: none;
-    align-items: center; justify-content: center; gap: 8px;
-    padding: 13px 16px calc(13px + env(safe-area-inset-bottom));
-    font-weight: 700; font-size: 0.95rem;
-    box-shadow: 0 -4px 16px rgba(0,0,0,0.12);
-  }
-  body { padding-bottom: 54px; }
-}
 </style>
 <script type="application/ld+json">
 {
@@ -348,10 +348,10 @@
         <li><a href="nieuws.html">Nieuws</a></li>
         <li><a href="werkwijze.html">Werkwijze</a></li>
         <li><a href="mijn-verhaal.html">Mijn verhaal</a></li>
-        <li class="mobile-cta"><a href="#contact">Adviesgesprek</a></li>
+        <li class="mobile-cta"><a href="#contact">Adviesgesprek aanvragen</a></li>
       </ul>
     </nav>
-    <a href="#contact" class="nav-cta">Adviesgesprek</a>
+    <a href="#contact" class="nav-cta">Adviesgesprek aanvragen</a>
     <button class="burger" id="burgerBtn" aria-label="Menu" aria-expanded="false">
       <span></span><span></span><span></span>
     </button>
@@ -363,6 +363,7 @@
 <section class="hero" id="main-content">
   <div class="wrap hero-grid">
     <div class="hero-copy">
+    <img class="hero-avatar-mobile" src="images/bart-avatar-mobile.jpg" width="84" height="84" alt="Bart, energieadviseur voor ondernemers">
     <span class="eyebrow">Persoonlijk advies, zakelijke energiemarkt</span>
     <h1 class="hero-title" id="heroTitle">Duidelijkheid over uw energiekosten. <em>Zonder ruis.</em></h1>
     <p class="lead">
@@ -370,7 +371,7 @@
       betekent dat gewoon blijven zitten.
     </p>
     <div class="btn-row">
-      <a href="#contact" class="btn btn-primary">Vraag een adviesgesprek aan</a>
+      <a href="#contact" class="btn btn-primary">Adviesgesprek aanvragen</a>
     </div>
     <p class="hero-note">Ik ga graag met u in gesprek over de mogelijkheden voor uw huidige energieovereenkomst. Dit is vrijblijvend: wellicht zit u al goed, misschien kan het nog beter. Dat bekijken we samen, afhankelijk van uw situatie.</p>
     </div>
@@ -384,9 +385,13 @@
 <div class="wrap">
   <div class="stats reveal-stagger">
     <div class="stat"><strong data-count="10">10</strong><span>jaar ervaring in de energiemarkt</span></div>
-    <div class="stat"><strong data-count="0" data-prefix="&euro;">&euro;0</strong><span>wat mijn advies u kost, ook als u niet overstapt</span></div>
+    <div class="stat"><strong>Gratis advies</strong><span>Mijn gesprek en advies zijn altijd gratis.</span></div>
     <div class="stat"><strong data-count="1" data-suffix=" dag">1 dag</strong><span>uiterlijk binnen 1 werkdag reactie</span></div>
     <div class="stat"><strong data-count="1">1</strong><span>vast aanspreekpunt, geen callcenter</span></div>
+  </div>
+  <div class="mini-faq">
+    <div><strong>Kost dit mij iets?</strong> Nee, een adviesgesprek en analyse zijn altijd gratis en vrijblijvend, ongeacht de uitkomst.</div>
+    <div><strong>Ben ik ergens toe verplicht?</strong> Nee, u zit nergens aan vast en beslist na het gesprek helemaal zelf.</div>
   </div>
 </div>
 
@@ -450,48 +455,58 @@
         <span class="eyebrow">Marktinzicht</span>
         <h2>De zakelijke energiemarkt staat niet stil</h2>
         <p>
-          Geopolitieke onrust, denk aan de coronacrisis, de inval in Oekraïne en de spanningen
-          rond Iran, zorgde de afgelopen jaren telkens weer voor grote prijsbewegingen. De kans
-          is groot dat de wereld onrustig blijft. Ook netbeheerkosten en energiebelasting spelen
-          mee, al heeft u daar als ondernemer weinig invloed op. Ik houd deze ontwikkelingen
-          voor u bij, zodat u niet voor verrassingen komt te staan.
+          Benieuwd naar de achterliggende redenen van de stroom- en gasprijzen, en wat er nu
+          speelt in de energiemarkt? Ontwikkelingen die uw bedrijf direct kunnen raken, nu en de
+          komende jaren.
         </p>
         <a href="markt.html" class="btn btn-secondary" style="margin-top: 20px;">Lees de volledige marktanalyse &rarr;</a>
         <p class="disclaimer">
-          Illustratieve weergave van de richting van de markt, geen actuele beurskoers of prijsgarantie.
+          Live TTF-gasprijs, automatisch bijgewerkt door TradingView. Geen prijsgarantie.
         </p>
       </div>
       <div class="chart-box" id="chartBox">
-        <div style="font-size:0.72rem; font-weight:700; text-transform:uppercase; letter-spacing:0.03em; color:rgba(255,255,255,0.45); margin-bottom:6px;">Laatste 6 maanden</div>
-        <svg viewBox="0 0 460 100" preserveAspectRatio="none">
-          <defs>
-            <linearGradient id="fillGrad" x1="0" y1="0" x2="0" y2="1">
-              <stop offset="0%" stop-color="#d98a5f" stop-opacity="0.35"/>
-              <stop offset="100%" stop-color="#d98a5f" stop-opacity="0"/>
-            </linearGradient>
-          </defs>
-          <polygon class="chart-fill" fill="url(#fillGrad)" points="0,50 92,38 184,58 276,32 368,46 460,40 460,100 0,100"/>
-          <polyline class="chart-line" points="0,50 92,38 184,58 276,32 368,46 460,40"/>
-        </svg>
-        <div class="chart-labels">
-          <span>mrt</span><span>apr</span><span>mei</span><span>jun</span><span>jul</span><span>aug</span>
+        <div style="font-size:0.72rem; font-weight:700; text-transform:uppercase; letter-spacing:0.03em; color:rgba(255,255,255,0.45); margin-bottom:6px;">TTF-gasprijs &mdash; laatste 6 maanden</div>
+        <div class="tradingview-widget-container">
+          <div class="tradingview-widget-container__widget"></div>
+          <script type="text/javascript" src="https://s3.tradingview.com/external-embedding/embed-widget-mini-symbol-overview.js" async>
+          {
+            "symbol": "ICEENDEX:TFM1!",
+            "width": "100%",
+            "height": "170",
+            "locale": "nl_NL",
+            "dateRange": "6M",
+            "colorTheme": "dark",
+            "trendLineColor": "rgba(217, 138, 95, 1)",
+            "underLineColor": "rgba(217, 138, 95, 0.15)",
+            "underLineBottomColor": "rgba(217, 138, 95, 0)",
+            "isTransparent": true,
+            "autosize": true,
+            "largeChartUrl": ""
+          }
+          </script>
         </div>
 
-        <div style="font-size:0.72rem; font-weight:700; text-transform:uppercase; letter-spacing:0.03em; color:rgba(255,255,255,0.45); margin:20px 0 6px;">Vijf jaar op een rij</div>
-        <svg viewBox="0 0 460 100" preserveAspectRatio="none">
-          <defs>
-            <linearGradient id="fillGrad2b" x1="0" y1="0" x2="0" y2="1">
-              <stop offset="0%" stop-color="#d98a5f" stop-opacity="0.3"/>
-              <stop offset="100%" stop-color="#d98a5f" stop-opacity="0"/>
-            </linearGradient>
-          </defs>
-          <polygon class="chart-fill" fill="url(#fillGrad2b)" points="0,78 92,86 184,10 276,50 368,38 460,44 460,100 0,100"/>
-          <polyline class="chart-line" points="0,78 92,86 184,10 276,50 368,38 460,44"/>
-        </svg>
-        <div class="chart-labels">
-          <span>2021</span><span>2022</span><span>2023</span><span>2024</span><span>2025</span><span>2026</span>
+        <div style="font-size:0.72rem; font-weight:700; text-transform:uppercase; letter-spacing:0.03em; color:rgba(255,255,255,0.45); margin:20px 0 6px;">TTF-gasprijs &mdash; vijf jaar op een rij</div>
+        <div class="tradingview-widget-container">
+          <div class="tradingview-widget-container__widget"></div>
+          <script type="text/javascript" src="https://s3.tradingview.com/external-embedding/embed-widget-mini-symbol-overview.js" async>
+          {
+            "symbol": "ICEENDEX:TFM1!",
+            "width": "100%",
+            "height": "170",
+            "locale": "nl_NL",
+            "dateRange": "60M",
+            "colorTheme": "dark",
+            "trendLineColor": "rgba(217, 138, 95, 1)",
+            "underLineColor": "rgba(217, 138, 95, 0.15)",
+            "underLineBottomColor": "rgba(217, 138, 95, 0)",
+            "isTransparent": true,
+            "autosize": true,
+            "largeChartUrl": ""
+          }
+          </script>
         </div>
-        <p style="font-size:0.72rem; color:rgba(255,255,255,0.4); margin:10px 0 0; line-height:1.5;">De piek in 2022 laat zien hoe volatiel de markt kan zijn: reden om niet blind te varen op één momentopname.</p>
+        <p style="font-size:0.72rem; color:rgba(255,255,255,0.4); margin:10px 0 0; line-height:1.5;">Bron: TradingView (ICE Endex, TTF-gasfutures). Koersen kunnen enige vertraging hebben t.o.v. de beurs.</p>
       </div>
     </div>
   </div>
@@ -570,7 +585,7 @@
       <h2>Benieuwd wat de veranderende energiemarkt specifiek voor uw bedrijf betekent?</h2>
       <p>Vrijblijvend en zonder verplichtingen. Gewoon een eerlijk gesprek.</p>
     </div>
-    <a href="#contact" class="btn btn-primary">Plan een vrijblijvend kennismakingsgesprek</a>
+    <a href="#contact" class="btn btn-primary">Adviesgesprek aanvragen</a>
   </div>
 </div>
 
@@ -891,11 +906,7 @@
       if (!window.gtag) return;
       var telLink = ev.target.closest('a[href^="tel:"]');
       if (telLink) {
-        if (telLink.classList.contains('mobile-call-bar')) {
-          gtag('event', 'belknop_mobiel_klik');
-        } else {
-          gtag('event', 'telefoonklik');
-        }
+        gtag('event', 'telefoonklik');
         return;
       }
       var waLink = ev.target.closest('a[href*="wa.me"]');
@@ -939,7 +950,7 @@
   } catch (e) {}
 })();
 </script>
-<a href="tel:+31615721173" class="mobile-call-bar"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg> Bel direct: 06 15 72 11 73</a>
+
 <script src="recaptcha-gate.js" defer></script>
 </body>
 </html>

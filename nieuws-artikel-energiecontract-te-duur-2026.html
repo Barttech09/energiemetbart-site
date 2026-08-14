@@ -110,18 +110,6 @@
   .skip-link:focus { left: 12px; top: 12px; }
   :focus-visible { outline: 3px solid var(--amber); outline-offset: 2px; border-radius: 4px; }
 
-.mobile-call-bar { display: none; }
-@media (max-width: 900px) {
-  .mobile-call-bar {
-    display: flex; position: fixed; left: 0; right: 0; bottom: 0; z-index: 1000;
-    background: var(--amber, #d98c1f); color: #ffffff; text-decoration: none;
-    align-items: center; justify-content: center; gap: 8px;
-    padding: 13px 16px calc(13px + env(safe-area-inset-bottom));
-    font-weight: 700; font-size: 0.95rem;
-    box-shadow: 0 -4px 16px rgba(0,0,0,0.12);
-  }
-  body { padding-bottom: 54px; }
-}
 </style>
 <script type="application/ld+json">
 {
@@ -161,10 +149,10 @@
         <li><a href="nieuws.html">Nieuws</a></li>
         <li><a href="werkwijze.html">Werkwijze</a></li>
         <li><a href="mijn-verhaal.html">Mijn verhaal</a></li>
-        <li class="mobile-cta"><a href="index.html#contact">Adviesgesprek</a></li>
+        <li class="mobile-cta"><a href="index.html#contact">Adviesgesprek aanvragen</a></li>
       </ul>
     </nav>
-    <a href="index.html#contact" class="nav-cta">Adviesgesprek</a>
+    <a href="index.html#contact" class="nav-cta">Adviesgesprek aanvragen</a>
     <button class="burger" id="burgerBtn" aria-label="Menu" aria-expanded="false">
       <span></span><span></span><span></span>
     </button>
@@ -252,7 +240,7 @@
         <strong style="font-size:1.15rem;">Wilt u weten of uw contract nog scherp is?</strong>
         <p style="margin:6px 0 0; color:rgba(255,255,255,0.75);">Vrijblijvend, geen verplichtingen.</p>
       </div>
-      <a href="index.html#contact" class="btn">Plan een vrijblijvend kennismakingsgesprek</a>
+      <a href="index.html#contact" class="btn">Adviesgesprek aanvragen</a>
     </div>
 
     <div style="background:var(--white); border:1px solid var(--border); border-radius:var(--radius); padding:26px; margin-top:24px;">
@@ -281,10 +269,6 @@
         <button type="submit" formaction="5-vragen-voor-u-overstapt.pdf" style="background:var(--amber); color:#fff; border:none; padding:11px 22px; border-radius:999px; font-weight:700; cursor:pointer;">Download</button>
         <p style="flex:1 1 100%; margin:0; font-size:0.78rem; color:var(--muted);">Lees hoe ik met uw gegevens omga in de <a href="privacyverklaring.html">privacyverklaring</a>.</p>
       </form>
-    </div>
-
-    <div class="sources">
-      Bronnen: <a href="https://consument.acm.nl/elektriciteit-en-gas" target="_blank" rel="noopener">ACM ConsuWijzer: elektriciteit en gas</a>
     </div>
 
     <div class="related-links" style="margin-top:24px;">
@@ -390,11 +374,7 @@
       if (!window.gtag) return;
       var telLink = ev.target.closest('a[href^="tel:"]');
       if (telLink) {
-        if (telLink.classList.contains('mobile-call-bar')) {
-          gtag('event', 'belknop_mobiel_klik');
-        } else {
-          gtag('event', 'telefoonklik');
-        }
+        gtag('event', 'telefoonklik');
         return;
       }
       var waLink = ev.target.closest('a[href*="wa.me"]');
@@ -438,7 +418,7 @@
   } catch (e) {}
 })();
 </script>
-<a href="tel:+31615721173" class="mobile-call-bar"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg> Bel direct: 06 15 72 11 73</a>
+
 <script src="recaptcha-gate.js" defer></script>
 </body>
 </html>
