@@ -117,21 +117,15 @@
   .skip-link:focus { left: 12px; top: 12px; }
   :focus-visible { outline: 3px solid var(--amber); outline-offset: 2px; border-radius: 4px; }
 
-.mobile-call-bar { display: none; }
-@media (max-width: 900px) {
-  .mobile-call-bar {
-    display: flex; position: fixed; left: 0; right: 0; bottom: 0; z-index: 1000;
-    background: var(--amber, #d98c1f); color: #ffffff; text-decoration: none;
-    align-items: center; justify-content: center; gap: 8px;
-    padding: 13px 16px calc(13px + env(safe-area-inset-bottom));
-    font-weight: 700; font-size: 0.95rem;
-    box-shadow: 0 -4px 16px rgba(0,0,0,0.12);
-  }
-  body { padding-bottom: 54px; }
-}
 
   /* Kort terugbelverzoek */
   .callback-form { background: var(--white); border: 1px solid var(--border); border-radius: 20px; padding: 40px 46px; margin-top: 24px; }
+  .callback-form summary { list-style: none; cursor: pointer; display: inline-flex; align-items: center; gap: 7px; font-weight: 700; font-size: 0.95rem; color: var(--navy); }
+  .callback-form summary::-webkit-details-marker { display: none; }
+  .callback-form summary::after { content: '\2192'; transition: transform 0.2s ease; font-weight: 400; }
+  .callback-form[open] summary::after { transform: rotate(90deg); }
+  .callback-form:not([open]) { background: transparent; border: none; padding: 0; }
+  .callback-form-body { margin-top: 22px; }
   .callback-form h2 { font-size: 1.3rem; color: var(--navy); margin: 0 0 8px; }
   .callback-form > p.cb-intro { color: var(--muted); margin: 0 0 22px; font-size: 0.95rem; }
   .callback-form .cb-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px 20px; }
@@ -178,10 +172,10 @@
         <li><a href="nieuws.html">Nieuws</a></li>
         <li><a href="werkwijze.html">Werkwijze</a></li>
         <li><a href="mijn-verhaal.html">Mijn verhaal</a></li>
-        <li class="mobile-cta"><a href="index.html#contact">Adviesgesprek</a></li>
+        <li class="mobile-cta"><a href="index.html#contact">Adviesgesprek aanvragen</a></li>
       </ul>
     </nav>
-    <a href="index.html#contact" class="nav-cta">Adviesgesprek</a>
+    <a href="index.html#contact" class="nav-cta">Adviesgesprek aanvragen</a>
     <button class="burger" id="burgerBtn" aria-label="Menu" aria-expanded="false">
       <span></span><span></span><span></span>
     </button>
@@ -192,7 +186,7 @@
   <div class="wrap">
     <span class="eyebrow">Marktinzicht</span>
     <h1>Wat er echt speelt in de zakelijke energiemarkt</h1>
-    <p>Geen kortetermijnfeitjes, maar de ontwikkelingen die uw energiekosten de komende jaren daadwerkelijk bepalen.</p>
+    <p>Benieuwd naar de achterliggende redenen van de stroom- en gasprijzen, en wat er nu speelt in de energiemarkt? Ontwikkelingen die uw bedrijf direct kunnen raken, nu en de komende jaren.</p>
   </div>
 </section>
 
@@ -204,24 +198,44 @@
       <h2 style="color:var(--navy); font-size:1.3rem; margin:8px 0 12px;">Actuele TTF-gasprijs</h2>
       <p style="color:var(--muted); max-width:640px; margin-bottom:20px;">
         De TTF (Title Transfer Facility) is de Europese referentiemarkt voor aardgas en de basis
-        onder vrijwel elk zakelijk energiecontract in Nederland. Dit is geen illustratie, maar de
-        daadwerkelijke groothandelsprijs op het moment van de laatste koersafsluiting hieronder.
+        onder vrijwel elk zakelijk energiecontract in Nederland. Onderstaande koers is live en
+        wordt automatisch bijgewerkt, geen momentopname.
       </p>
-      <div style="border:1px solid var(--border); border-radius:var(--radius); background:#fff; padding:28px 32px; display:flex; flex-wrap:wrap; gap:28px; align-items:flex-end; justify-content:space-between;">
-        <div>
-          <div style="font-size:0.78rem; color:var(--muted); text-transform:uppercase; letter-spacing:0.03em; margin-bottom:6px;">Dutch TTF Natural Gas (EUR/MWh)</div>
-          <div style="display:flex; align-items:baseline; gap:12px; flex-wrap:wrap;">
-            <span style="font-size:2.4rem; font-weight:800; color:var(--navy); letter-spacing:-0.01em;">&euro;55,54</span>
-            <span style="font-size:1rem; font-weight:700; color:#b0392f;">&minus;0,40% (&minus;&euro;0,225)</span>
-          </div>
-          <div style="font-size:0.8rem; color:var(--muted); margin-top:8px;">Slotkoers 7 augustus 2026 &middot; 52-weekbereik &euro;26,55 &ndash; &euro;69,35</div>
+      <div style="border:1px solid var(--border); border-radius:var(--radius); background:#fff; padding:16px 20px;">
+        <div class="tradingview-widget-container">
+          <div class="tradingview-widget-container__widget"></div>
+          <script type="text/javascript" src="https://s3.tradingview.com/external-embedding/embed-widget-symbol-overview.js" async>
+          {
+            "symbols": [["Dutch TTF Gas (EUR/MWh)|ICEENDEX:TFM1!"]],
+            "chartOnly": false,
+            "width": "100%",
+            "height": "220",
+            "locale": "nl_NL",
+            "colorTheme": "light",
+            "autosize": true,
+            "showVolume": false,
+            "showMA": false,
+            "hideDateRanges": false,
+            "hideMarketStatus": false,
+            "hideSymbolLogo": true,
+            "scalePosition": "right",
+            "scaleMode": "Normal",
+            "fontFamily": "-apple-system, BlinkMacSystemFont, Trebuchet MS, Roboto, Ubuntu, sans-serif",
+            "fontSize": "12",
+            "noTimeScale": false,
+            "valuesTracking": "1",
+            "changeMode": "price-and-percent",
+            "chartType": "area",
+            "lineWidth": 2,
+            "lineType": 0,
+            "dateRanges": ["1m|30", "3m|60", "12m|1D", "60m|1W", "all|1M"]
+          }
+          </script>
         </div>
-        <a href="https://www.investing.com/commodities/dutch-ttf-gas-c1-futures" target="_blank" rel="noopener" class="btn-tertiary" style="white-space:nowrap;">Bekijk live koers &rarr;</a>
       </div>
       <p style="font-size:0.78rem; color:var(--muted); margin-top:14px; max-width:640px;">
-        Bron: Investing.com (Dutch TTF Natural Gas Futures, CME). Dit is een momentopname van de
-        laatste beursafsluiting, geen realtime streaming koers, geen persoonlijk leveringstarief en
-        geen beleggingsadvies. Klik op &ldquo;Bekijk live koers&rdquo; voor de actuele stand.
+        Live koers via TradingView (ICE Endex, Dutch TTF Gas Futures). Geen persoonlijk
+        leveringstarief en geen beleggingsadvies.
       </p>
     </div>
 
@@ -339,12 +353,13 @@
           <strong style="font-size:1.1rem;">Benieuwd hoe dit uw situatie raakt?</strong>
           <p style="margin:6px 0 0; color:rgba(255,255,255,0.85);">Vrijblijvend, geen verplichtingen.</p>
         </div>
-        <a href="index.html#contact" class="btn">Plan een vrijblijvend kennismakingsgesprek</a>
+        <a href="index.html#contact" class="btn">Adviesgesprek aanvragen</a>
       </div>
 
 <div class="wrap">
-  <div class="callback-form">
-    <h2>Liever direct een terugbelverzoek?</h2>
+  <details class="callback-form">
+      <summary>Liever dat ik u bel? Laat hier uw nummer achter</summary>
+      <div class="callback-form-body">
     <p class="cb-intro">Vul onderstaand formulier in en ik neem op werkdagen binnen &eacute;&eacute;n werkdag persoonlijk contact met u op.</p>
     <form name="terugbelverzoek" method="POST" data-netlify="true" netlify-honeypot="bot-field" action="/bedankt" data-recaptcha-action="terugbelverzoek">
       <input type="hidden" name="form-name" value="terugbelverzoek">
@@ -383,13 +398,8 @@
       <p class="form-note">Ik reageer op werkdagen binnen &eacute;&eacute;n werkdag.</p>
     </form>
   </div>
+    </details>
 </div>
-
-      <div class="sources">
-        Bronnen: <a href="https://www.netbeheernederland.nl/artikelen/nieuws/netwerkkosten-stijgen-circa-35-2026" target="_blank" rel="noopener">Netbeheer Nederland</a>,
-        <a href="https://www.liander.nl/over-ons/nieuws/2025/nieuwe-tarieven-netbeheerkosten-2026-bekend" target="_blank" rel="noopener">Liander</a>,
-        <a href="https://www.acm.nl/system/files/documents/focus-op-energie-2026_0.pdf" target="_blank" rel="noopener">ACM: Focus op Energie 2026</a>
-      </div>
     </div>
   </div>
 </main>
@@ -489,11 +499,7 @@
       if (!window.gtag) return;
       var telLink = ev.target.closest('a[href^="tel:"]');
       if (telLink) {
-        if (telLink.classList.contains('mobile-call-bar')) {
-          gtag('event', 'belknop_mobiel_klik');
-        } else {
-          gtag('event', 'telefoonklik');
-        }
+        gtag('event', 'telefoonklik');
         return;
       }
       var waLink = ev.target.closest('a[href*="wa.me"]');
@@ -537,7 +543,7 @@
   } catch (e) {}
 })();
 </script>
-<a href="tel:+31615721173" class="mobile-call-bar"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg> Bel direct: 06 15 72 11 73</a>
+
 <script src="recaptcha-gate.js" defer></script>
 </body>
 </html>

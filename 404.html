@@ -28,18 +28,6 @@
   .btn-primary { background: var(--amber); color: #fff; }
   .btn-ghost { background: var(--white); color: var(--navy); border: 1px solid var(--border); }
 
-.mobile-call-bar { display: none; }
-@media (max-width: 900px) {
-  .mobile-call-bar {
-    display: flex; position: fixed; left: 0; right: 0; bottom: 0; z-index: 1000;
-    background: var(--amber, #d98c1f); color: #ffffff; text-decoration: none;
-    align-items: center; justify-content: center; gap: 8px;
-    padding: 13px 16px calc(13px + env(safe-area-inset-bottom));
-    font-weight: 700; font-size: 0.95rem;
-    box-shadow: 0 -4px 16px rgba(0,0,0,0.12);
-  }
-  body { padding-bottom: 54px; }
-}
 </style>
 </head>
 <body>
@@ -57,6 +45,6 @@
     </div>
   </div>
 </main>
-<a href="tel:+31615721173" class="mobile-call-bar"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg> Bel direct: 06 15 72 11 73</a>
+
 </body>
 </html>

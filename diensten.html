@@ -379,18 +379,6 @@
   .faq-item h3 { font-size: 1.02rem; color: var(--navy); margin: 0 0 8px; }
   .faq-item p { color: var(--muted); margin: 0; font-size: 0.95rem; }
 
-.mobile-call-bar { display: none; }
-@media (max-width: 900px) {
-  .mobile-call-bar {
-    display: flex; position: fixed; left: 0; right: 0; bottom: 0; z-index: 1000;
-    background: var(--amber, #d98c1f); color: #ffffff; text-decoration: none;
-    align-items: center; justify-content: center; gap: 8px;
-    padding: 13px 16px calc(13px + env(safe-area-inset-bottom));
-    font-weight: 700; font-size: 0.95rem;
-    box-shadow: 0 -4px 16px rgba(0,0,0,0.12);
-  }
-  body { padding-bottom: 54px; }
-}
 </style>
 <script type="application/ld+json">
 {
@@ -412,12 +400,16 @@
   "@context": "https://schema.org",
   "@type": "FAQPage",
   "mainEntity": [
-    { "@type": "Question", "name": "Kost het mij iets om advies te vragen?", "acceptedAnswer": { "@type": "Answer", "text": "Nee. Een adviesgesprek en analyse zijn altijd gratis en vrijblijvend, ook als u uiteindelijk niet overstapt." } },
-    { "@type": "Question", "name": "Ben ik verplicht om over te stappen als ik advies vraag?", "acceptedAnswer": { "@type": "Answer", "text": "Nee, u zit nergens aan vast. Na het gesprek en de analyse beslist u zelf, zonder druk." } },
-    { "@type": "Question", "name": "Werkt u met alle energieleveranciers?", "acceptedAnswer": { "@type": "Answer", "text": "Ik werk met meerdere leveranciers via mijn eigen netwerk, maar niet met alle partijen op de markt." } },
-    { "@type": "Question", "name": "Hoe lang duurt een overstap?", "acceptedAnswer": { "@type": "Answer", "text": "Dat verschilt per leverancier en per situatie, meestal enkele weken." } },
-    { "@type": "Question", "name": "Kunt u ook helpen als ik nog vastzit aan een lopend contract?", "acceptedAnswer": { "@type": "Answer", "text": "Zeker. Ik bekijk wanneer uw contract afloopt en wat een opzegtermijn of -vergoeding betekent." } },
-    { "@type": "Question", "name": "Ik heb zonnepanelen of overweeg ze. Verandert dat iets?", "acceptedAnswer": { "@type": "Answer", "text": "Ja, zeker met de aankomende afbouw van de salderingsregeling. Ik neem dat mee in mijn advies." } }
+    { "@type": "Question", "name": "Wat kost een adviesgesprek met Bart?", "acceptedAnswer": { "@type": "Answer", "text": "Dat kost u niets. Een adviesgesprek en analyse zijn altijd gratis en vrijblijvend, ongeacht de uitkomst." } },
+    { "@type": "Question", "name": "Ben ik verplicht om over te stappen als ik advies vraag?", "acceptedAnswer": { "@type": "Answer", "text": "Nee, u zit nergens aan vast. Na het gesprek beslist u zelf, zonder druk. Ik geef u enkel advies en wat u hier vervolgens mee doet is volledig aan uzelf." } },
+    { "@type": "Question", "name": "Werkt Energie met Bart met alle energieleveranciers?", "acceptedAnswer": { "@type": "Answer", "text": "Ik werk met meerdere leveranciers via mijn eigen netwerk, maar niet met alle partijen op de markt. Waar relevant benoem ik dat expliciet in mijn advies." } },
+    { "@type": "Question", "name": "Hoe lang duurt een overstap?", "acceptedAnswer": { "@type": "Answer", "text": "Dat verschilt per leverancier en per situatie. We kijken samen naar hoe lang uw huidige contract nog loopt of u variabel zit, en naar het juiste overstapmoment zodat u niet voor onverwachte kosten komt te staan." } },
+    { "@type": "Question", "name": "Wat zijn mijn opties als ik nog een lopend vast contract heb?", "acceptedAnswer": { "@type": "Answer", "text": "Ook dan zijn er zeker opties. Ik bekijk uw contractvoorwaarden, wanneer het afloopt en wat een eventuele opzegtermijn en vergoeding betekenen." } },
+    { "@type": "Question", "name": "Ik heb op dit moment zonnepanelen of overweeg deze aan te schaffen. Wat verandert er in dat geval?", "acceptedAnswer": { "@type": "Answer", "text": "Veel blijft hetzelfde, maar we houden rekening met teruglevering, terugleverkosten en het stoppen van de salderingsregeling per 1 januari 2027." } },
+    { "@type": "Question", "name": "Wat kan ik ongeveer besparen?", "acceptedAnswer": { "@type": "Answer", "text": "Bij de één een paar tientjes per maand, bij de ander honderden euro's per jaar. Dat hangt af van uw huidige contract en de voorwaarden." } },
+    { "@type": "Question", "name": "Ik heb al een aanbod van mijn huidige leverancier. Kan jij hier ook naar kijken?", "acceptedAnswer": { "@type": "Answer", "text": "Stuur het gerust op, dan leggen we het naast andere aanbiedingen. Blijkt een andere partij toch goedkoper, dan kunt u dat vanzelfsprekend daar afsluiten." } },
+    { "@type": "Question", "name": "Is er een minimum of maximum verbruik vanaf waar je werkt?", "acceptedAnswer": { "@type": "Answer", "text": "Nee. Mijn focus ligt op mkb-bedrijven, maar ook grotere ondernemingen of eenmanszaken met een kleine aansluiting zijn welkom." } },
+    { "@type": "Question", "name": "Ik heb meerdere vestigingen, kan dat ook?", "acceptedAnswer": { "@type": "Answer", "text": "Zeker. Ik bekijk elke vestiging apart. Meestal is een gebundeld contract het voordeligst, met vaak een extra korting omdat het om meerdere adressen gaat." } }
   ]
 }
 </script>
@@ -447,10 +439,10 @@
         <li><a href="nieuws.html">Nieuws</a></li>
         <li><a href="werkwijze.html">Werkwijze</a></li>
         <li><a href="mijn-verhaal.html">Mijn verhaal</a></li>
-        <li class="mobile-cta"><a href="index.html#contact">Adviesgesprek</a></li>
+        <li class="mobile-cta"><a href="index.html#contact">Adviesgesprek aanvragen</a></li>
       </ul>
     </nav>
-    <a href="index.html#contact" class="nav-cta">Adviesgesprek</a>
+    <a href="index.html#contact" class="nav-cta">Adviesgesprek aanvragen</a>
     <button class="burger" id="burgerBtn" aria-label="Menu" aria-expanded="false">
       <span></span><span></span><span></span>
     </button>
@@ -619,27 +611,22 @@
     <div class="section-head">
       <span class="eyebrow">Wat kost dit u?</span>
       <h2>Mijn advies is gratis.</h2>
-      <p>Een adviesgesprek, een analyse van uw huidige contract of begeleiding bij een overstap kost u niets.</p>
+      <p>Een adviesgesprek inclusief een analyse van uw huidige contract en/of eventuele begeleiding bij een overstap kost u niets. Ongeacht de uitkomst.</p>
     </div>
     <div style="max-width:760px; color:var(--text); font-size:1.02rem; line-height:1.75;">
-      <p>
-        Kiest u ervoor om niet over te stappen, dan kost mijn advies u dus helemaal niets. Kiest u
-        wel voor een overstap, dan regel ik de uitvoering voor u zonder dat u daar zelf achteraan
-        hoeft te bellen.
-      </p>
-      <div style="background:var(--bg); border:1px solid var(--border); border-radius:var(--radius); padding:28px; margin-top:28px;">
-        <h3 style="margin:0 0 12px; color:var(--navy); font-size:1.1rem;">En hoe verdien ik dan mijn geld?</h3>
-        <p style="margin:0 0 14px;">
-          Dat is een terechte vraag, dus ik beantwoord 'm gewoon. Sluit u via mij een contract af,
-          dan betaalt de energieleverancier mij een vergoeding voor het werk dat ik uit handen heb
-          genomen. U sluit uw contract rechtstreeks met de leverancier, niet met mij en u betaalt
-          daardoor niet meer dan wanneer u dat contract zelf zou afsluiten.
+      <div style="background:var(--bg); border:1px solid var(--border); border-radius:var(--radius); padding:28px;">
+        <h3 style="margin:0 0 12px; color:var(--navy); font-size:1.1rem;">Hoe verdien ik dan mijn geld?</h3>
+        <p style="margin:0 0 20px;">
+          Een terechte vraag die in deze branche soms onduidelijk is. Sluit u via mij een contract
+          af, dan betaalt de energieleverancier mij een vergoeding voor het werk dat ik uit handen
+          neem. U sluit het contract rechtstreeks met de leverancier, niet met mij. U betaalt
+          daardoor niet meer dan wanneer u het zelf zou regelen.
         </p>
+        <h3 style="margin:0 0 12px; color:var(--navy); font-size:1.1rem;">Waarom is dat voor u geen probleem?</h3>
         <p style="margin:0;">
-          Waarom dat voor u geen probleem is: ik werk met meerdere leveranciers. Mijn belang zit
-          niet in wélke van hen het wordt, maar erin dat u tevreden blijft en over een paar jaar
-          weer belt. Een klant die zich ergens ingerommeld voelt, belt nooit meer. Daarom hoort u
-          het ook gewoon als niets doen het beste advies is.
+          Ik werk met meerdere leveranciers en het maakt mij niet uit welke het wordt. Wat mij wél
+          uitmaakt, is dat u tevreden blijft en over een paar jaar weer belt. Daarom hoort u van mij
+          ook gewoon als niets doen het beste advies is.
         </p>
       </div>
     </div>
@@ -654,48 +641,44 @@
     </div>
     <div class="faq-list">
       <div class="faq-item">
-        <h3>Kost het mij iets om advies te vragen?</h3>
-        <p>Nee. Een adviesgesprek en analyse zijn altijd gratis en vrijblijvend, ook als u uiteindelijk niet overstapt.</p>
+        <h3>Wat kost een adviesgesprek met Bart?</h3>
+        <p>Dat kost u niets. Een adviesgesprek en analyse zijn altijd gratis en vrijblijvend, ongeacht de uitkomst.</p>
       </div>
       <div class="faq-item">
         <h3>Ben ik verplicht om over te stappen als ik advies vraag?</h3>
-        <p>Nee, u zit nergens aan vast. Na het gesprek en de analyse beslist u zelf, zonder druk.</p>
+        <p>Nee, u zit nergens aan vast. Na het gesprek beslist u zelf, zonder druk. Ik geef u enkel advies en wat u hier vervolgens mee doet is volledig aan uzelf.</p>
       </div>
       <div class="faq-item">
-        <h3>Werkt u met alle energieleveranciers?</h3>
-        <p>Ik werk met meerdere leveranciers via mijn eigen netwerk, maar niet met alle partijen op de markt. Ik ben hier open over: waar relevant benoem ik dat expliciet in mijn advies.</p>
+        <h3>Werkt Energie met Bart met alle energieleveranciers?</h3>
+        <p>Ik werk met meerdere leveranciers via mijn eigen netwerk, maar niet met alle partijen op de markt. Waar relevant benoem ik dat expliciet in mijn advies.</p>
       </div>
       <div class="faq-item">
         <h3>Hoe lang duurt een overstap?</h3>
-        <p>Dat verschilt per leverancier en per situatie, meestal enkele weken. Ik houd u tussentijds op de hoogte en regel de administratieve afhandeling.</p>
+        <p>Dat verschilt per leverancier en per situatie. We kijken samen naar hoe lang uw huidige contract nog loopt of u variabel zit. Ook is het overstapmoment belangrijk. Wanneer uw laatste jaarnota is gevallen is essentieel om niet voor onverwachte kosten te komen staan. Valt uw jaarnota bijvoorbeeld begin winter en stapt u pas eind winter over, dan kan de jaarafrekening ineens flink oplopen. Dat soort timing bespreken we uiteraard samen.</p>
       </div>
       <div class="faq-item">
-        <h3>Kunt u ook helpen als ik nog vastzit aan een lopend contract?</h3>
-        <p>Zeker. Ik bekijk wanneer uw contract afloopt en wat een eventuele opzegtermijn of -vergoeding betekent, zodat u tijdig en goed geïnformeerd een vervolgstap kunt zetten.</p>
+        <h3>Wat zijn mijn opties als ik nog een lopend vast contract heb?</h3>
+        <p>Ook dan zijn er zeker opties. We kijken specifiek naar uw contractvoorwaarden. Dat doen we samen, of u stuurt ze naar mij op. Ik bekijk dan wanneer uw contract afloopt en wat een eventuele opzegtermijn en vergoeding betekenen, zodat u op tijd en goed geïnformeerd een vervolgstap kunt zetten. Soms is het slim om nog even te wachten vanwege hoge overstapkosten. Gelukkig zijn hier vaak verschillende opties in.</p>
       </div>
       <div class="faq-item">
-        <h3>Ik heb zonnepanelen of overweeg ze. Verandert dat iets?</h3>
-        <p>Ja, zeker nu de salderingsregeling per 1 januari 2027 in één keer stopt. Ik neem dat mee in mijn advies zodat u weet wat teruglevering u nu en na die datum oplevert.</p>
+        <h3>Ik heb op dit moment zonnepanelen of overweeg deze aan te schaffen. Wat verandert er in dat geval?</h3>
+        <p>Veel blijft hetzelfde, maar we houden serieus rekening met teruglevering, terugleverkosten en het feit dat de salderingsregeling per 1 januari 2027 stopt. Soms is een dynamisch contract dan handig maar dit hangt sterk van uw piekmomenten in stroomverbruik.</p>
       </div>
       <div class="faq-item">
         <h3>Wat kan ik ongeveer besparen?</h3>
-        <p>Dat loopt enorm uiteen. Bij de één is het een paar tientjes per maand, bij de ander duizenden per jaar. Ik weet het pas als ik uw verbruik heb gezien en als het weinig oplevert, zeg ik dat gewoon.</p>
+        <p>Bij de één een paar tientjes per maand, bij de ander honderden euro's per jaar. Dat hangt af van uw huidige contract, de voorwaarden en wat u belangrijk vindt in een nieuw contract.</p>
       </div>
       <div class="faq-item">
-        <h3>Hoe lang duurt het hele traject, van eerste gesprek tot getekend contract?</h3>
-        <p>Reken op ongeveer een week: dag 1 een kort gesprek, daarna een paar dagen analyse, dan mijn advies en pas daarna beslist u.</p>
+        <h3>Ik heb al een aanbod van mijn huidige leverancier. Kan jij hier ook naar kijken?</h3>
+        <p>Stuur het gerust op, dan leggen we het naast andere aanbiedingen. In de praktijk zijn de voorstellen die ik kan aanbieden vrijwel altijd de laagste: omdat ik vaak rechtstreeks contact heb met leveranciers is het bijna onmogelijk dat u daar met een andere partij onder komt. Maar om u gerust te stellen, leggen we het uiteraard altijd naast elkaar. Blijkt een andere partij toch goedkoper, dan kunt u dat vanzelfsprekend gewoon daar afsluiten.</p>
       </div>
       <div class="faq-item">
-        <h3>Ik heb al een aanbod van mijn huidige leverancier liggen, kunt u daar ook naar kijken?</h3>
-        <p>Stuur het gerust op. Ik zeg u eerlijk of het goed is. Is het goed, dan tekent u het gewoon en heeft u mij niet meer nodig.</p>
-      </div>
-      <div class="faq-item">
-        <h3>Werkt u ook voor mij als ik maar één kleine aansluiting heb?</h3>
-        <p>Ja. Ik werk met ondernemers van elke omvang, van een eenmanszaak met één aansluiting tot bedrijven met meerdere vestigingen.</p>
+        <h3>Is er een minimum of maximum verbruik vanaf waar je werkt?</h3>
+        <p>Nee. Mijn focus ligt op mkb-bedrijven, maar heeft u een grote onderneming of juist een eenmanszaak met een kleine aansluiting? Ook dan kijk ik graag mee. Laat uw gegevens achter via het contactformulier of "Adviesgesprek aanvragen" rechtsboven, dan bel ik u op en bekijken we het samen.</p>
       </div>
       <div class="faq-item">
         <h3>Ik heb meerdere vestigingen, kan dat ook?</h3>
-        <p>Zeker. Ik bekijk elke vestiging apart, want verbruik en aansluitwaarde verschillen vaak per locatie.</p>
+        <p>Zeker. Ik bekijk elke vestiging apart omdat verbruik en aansluitwaarde vaak per locatie verschillen. Meestal is een gebundeld contract het voordeligst, en valt er vaak nog een extra korting te behalen omdat het om meerdere adressen gaat.</p>
       </div>
     </div>
   </div>
@@ -816,11 +799,7 @@
       if (!window.gtag) return;
       var telLink = ev.target.closest('a[href^="tel:"]');
       if (telLink) {
-        if (telLink.classList.contains('mobile-call-bar')) {
-          gtag('event', 'belknop_mobiel_klik');
-        } else {
-          gtag('event', 'telefoonklik');
-        }
+        gtag('event', 'telefoonklik');
         return;
       }
       var waLink = ev.target.closest('a[href*="wa.me"]');
@@ -864,6 +843,6 @@
   } catch (e) {}
 })();
 </script>
-<a href="tel:+31615721173" class="mobile-call-bar"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg> Bel direct: 06 15 72 11 73</a>
+
 </body>
 </html>
