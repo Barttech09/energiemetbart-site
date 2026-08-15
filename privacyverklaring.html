@@ -1,0 +1,508 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Privacyverklaring: Energie met Bart</title>
+<meta name="description" content="Privacyverklaring van Energie met Bart: hoe uw persoonsgegevens worden verzameld, gebruikt en beschermd.">
+<link rel="canonical" href="https://energiemetbart.nl/privacyverklaring">
+<meta property="og:type" content="website">
+<meta property="og:locale" content="nl_NL">
+<meta property="og:title" content="Privacyverklaring: Energie met Bart">
+<meta property="og:description" content="Privacyverklaring van Energie met Bart: hoe uw persoonsgegevens worden verzameld, gebruikt en beschermd.">
+<meta property="og:image" content="https://energiemetbart.nl/images/og-image.png">
+<meta property="og:url" content="https://energiemetbart.nl/privacyverklaring">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Privacyverklaring: Energie met Bart">
+<meta name="twitter:description" content="Privacyverklaring van Energie met Bart: hoe uw persoonsgegevens worden verzameld, gebruikt en beschermd.">
+<link rel="icon" type="image/png" sizes="32x32" href="images/favicon-32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="images/favicon-16.png">
+<link rel="apple-touch-icon" href="images/apple-touch-icon.png">
+<link rel="icon" href="images/favicon.ico">
+<style>
+  :root {
+    --navy: #10233a;
+    --navy-light: #1c3b5c;
+    --amber: #a04f28;
+    --amber-light: #b45f31;
+    --bg: #f7f5f1;
+    --white: #ffffff;
+    --text: #22303f;
+    --muted: #5b6b7a;
+    --border: #e4ded3;
+    --radius: 14px;
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    color: var(--text);
+    background: var(--bg);
+    line-height: 1.65;
+  }
+  a { color: var(--amber); font-weight: 600; }
+  .wrap { max-width: 760px; margin: 0 auto; padding: 0 24px; }
+  .wrap-wide { max-width: 1120px; margin: 0 auto; padding: 0 24px; }
+
+  header {
+    background: rgba(247,245,241,0.92);
+    border-bottom: 1px solid var(--border);
+  }
+  .nav { display: flex; align-items: center; justify-content: space-between; padding: 16px 0; }
+  .logo { font-weight: 800; font-size: 1.1rem; letter-spacing: -0.02em; color: var(--navy); text-decoration: none; }
+  .logo span { color: var(--amber); }
+  .back { font-size: 0.9rem; font-weight: 600; color: var(--navy-light); text-decoration: none; }
+
+  .page-hero { padding: 56px 0 8px; }
+  .eyebrow {
+    display: inline-flex; align-items: center; gap: 8px;
+    background: rgba(177,89,47,0.12); color: #8c4a22;
+    font-weight: 700; font-size: 0.82rem; padding: 6px 14px; border-radius: 999px; margin-bottom: 18px;
+  }
+  h1 { font-size: 2rem; letter-spacing: -0.02em; color: var(--navy); margin: 0 0 10px; }
+  .updated { color: var(--muted); font-size: 0.9rem; margin: 0; }
+
+  .content { padding: 24px 0 80px; }
+  .content h2 { font-size: 1.2rem; color: var(--navy); margin: 36px 0 12px; }
+  .content h2:first-of-type { margin-top: 0; }
+  .content p, .content li { color: var(--text); margin: 0 0 12px; }
+  .content ul { padding-left: 22px; margin: 0 0 14px; }
+  .box {
+    background: var(--white);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    padding: 20px 24px;
+    margin: 20px 0;
+  }
+  .box p:last-child { margin-bottom: 0; }
+
+  footer { background: var(--navy); color: rgba(255,255,255,0.6); padding: 32px 0; font-size: 0.85rem; }
+  .footer-grid { display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 12px; }
+  .footer-grid strong { color: var(--white); }
+  .footer-grid a { color: rgba(255,255,255,0.7); font-weight: 500; text-decoration: none; }
+
+  .skip-link { position: absolute; left: -9999px; top: 0; background: #fff; color: var(--navy); padding: 10px 16px; border-radius: 8px; z-index: 9999; font-weight: 700; font-size: 0.9rem; }
+  .skip-link:focus { left: 12px; top: 12px; }
+  :focus-visible { outline: 3px solid var(--amber); outline-offset: 2px; border-radius: 4px; }
+
+.mobile-call-bar { display: none; }
+@media (max-width: 900px) {
+  .mobile-call-bar {
+    display: flex; position: fixed; left: 0; right: 0; bottom: 0; z-index: 1000;
+    background: var(--amber, #d98c1f); color: #ffffff; text-decoration: none;
+    align-items: center; justify-content: center; gap: 8px;
+    padding: 13px 16px calc(13px + env(safe-area-inset-bottom));
+    font-weight: 700; font-size: 0.95rem;
+    box-shadow: 0 -4px 16px rgba(0,0,0,0.12);
+  }
+  body { padding-bottom: 54px; }
+}
+</style>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "ProfessionalService",
+  "name": "Energie met Bart",
+  "url": "https://energiemetbart.nl/privacyverklaring",
+  "image": "https://energiemetbart.nl/images/og-image.png",
+  "areaServed": "NL",
+  "address": { "@type": "PostalAddress", "addressLocality": "Haarlem", "addressCountry": "NL" },
+  "telephone": "+31615721173",
+  "email": "info@energiemetbart.nl",
+  "priceRange": "Gratis advies",
+  "founder": { "@type": "Person", "name": "Bart" },
+  "description": "Privacyverklaring van Energie met Bart: hoe persoonsgegevens worden verzameld, gebruikt en beschermd."
+}
+</script>
+</head>
+<body>
+<a class="skip-link" href="#main-content">Direct naar inhoud</a>
+
+<header>
+  <div class="wrap-wide nav">
+    <a href="index.html" class="logo">Energie met <span>Bart</span></a>
+    <a href="index.html" class="back">&larr; Terug naar de website</a>
+  </div>
+</header>
+
+<section class="page-hero" id="main-content">
+  <div class="wrap">
+    <span class="eyebrow">Juridisch</span>
+    <h1>Privacyverklaring</h1>
+    <p class="updated">Laatst bijgewerkt: 2026</p>
+  </div>
+</section>
+
+<section class="content">
+  <div class="wrap">
+
+    <div class="box">
+      <p>
+        Energie met Bart (hierna: "wij", "ons" of "de verwerkingsverantwoordelijke") hecht grote
+        waarde aan de bescherming van uw persoonsgegevens. In deze privacyverklaring leggen wij
+        uit welke persoonsgegevens wij verzamelen en gebruiken, met welk doel wij dit doen en op
+        welke rechtsgrondslag en welke rechten u kunt uitoefenen. Wij verwerken uw
+        persoonsgegevens in overeenstemming met de geldende privacywetgeving, waaronder de
+        Algemene Verordening Gegevensbescherming (AVG/GDPR) en de Uitvoeringswet AVG.
+      </p>
+    </div>
+
+    <h2>1. Verwerkingsverantwoordelijke</h2>
+    <p>
+      De verwerkingsverantwoordelijke voor de verwerking van persoonsgegevens zoals beschreven in
+      deze privacyverklaring is:
+    </p>
+    <ul>
+      <li>Handelsnaam: Energie met Bart</li>
+      <li>Rechtsvorm: eenmanszaak</li>
+      <li>Vestigingsadres: Haarlem</li>
+      <li>Ingeschreven bij de Kamer van Koophandel onder nummer: 69874581</li>
+      <li>Btw-identificatienummer: NL002381531B93</li>
+      <li>E-mailadres: <a href="mailto:info@energiemetbart.nl">info@energiemetbart.nl</a></li>
+      <li>Telefoonnummer: <a href="tel:+31615721173">06 15 72 11 73</a></li>
+    </ul>
+
+    <h2>2. Toepassingsgebied</h2>
+    <p>
+      Deze privacyverklaring is van toepassing op alle persoonsgegevens die wij verwerken van
+      bezoekers van onze website, gebruikers van onze contact- en aanvraagformulieren en
+      (potentiële) opdrachtgevers, in het kader van onze dienstverlening op het gebied van
+      energieadvies en -bemiddeling.
+    </p>
+
+    <h2>3. Welke persoonsgegevens verwerken wij</h2>
+    <p>Afhankelijk van uw interactie met onze website kunnen wij de volgende categorieën van persoonsgegevens verwerken:</p>
+    <ul>
+      <li>Contactgegevens: naam, bedrijfsnaam, telefoonnummer en (indien verstrekt) e-mailadres</li>
+      <li>E-mailadres, wanneer u dit invult om onze gratis gids te downloaden</li>
+      <li>Inhoud van uw bericht of vraag, zoals ingevuld in het contactformulier of via WhatsApp</li>
+      <li>Indicatieve bedrijfsgegevens, zoals een schatting van uw energieverbruik en de (verwachte) einddatum van uw huidige energiecontract</li>
+      <li>Technische en analytische gegevens over uw websitebezoek, zoals beschreven onder artikel 7</li>
+      <li>Correspondentie die ontstaat naar aanleiding van uw contact met ons, bijvoorbeeld via e-mail, telefoon of WhatsApp</li>
+    </ul>
+    <p>
+      Wij verzamelen geen bijzondere categorieën van persoonsgegevens (zoals gezondheidsgegevens,
+      strafrechtelijke gegevens of gegevens over ras, geloofsovertuiging of seksuele geaardheid)
+      en verzoeken u dergelijke gegevens niet met ons te delen.
+    </p>
+
+    <h2>4. Doeleinden en rechtsgrondslagen van de verwerking</h2>
+    <p>Wij verwerken uw persoonsgegevens uitsluitend voor de volgende doeleinden, telkens op basis van de daarbij vermelde rechtsgrondslag uit artikel 6 AVG:</p>
+    <ul>
+      <li><strong>Het beantwoorden van uw vraag of aanvraag en het opnemen van contact met u</strong>, op grond van de uitvoering van (voorafgaand aan) een overeenkomst, dan wel ons gerechtvaardigd belang om te reageren op door u verstrekte informatie</li>
+      <li><strong>Het geven van persoonlijk energieadvies</strong>, op grond van de uitvoering van de overeenkomst tussen u en ons of de precontractuele fase daarvan</li>
+      <li><strong>Het, met uw uitdrukkelijke instemming, in contact brengen met een energieleverancier uit ons netwerk ten behoeve van bemiddeling</strong>, op grond van uw toestemming</li>
+      <li><strong>Het bijhouden van geanonimiseerde of gepseudonimiseerde websitestatistieken</strong>, op grond van ons gerechtvaardigd belang bij inzicht in het gebruik van onze website</li>
+      <li><strong>Het tonen van relevante advertenties op Facebook en Instagram en het meten van de effectiviteit daarvan</strong>, uitsluitend op grond van uw toestemming via de cookiebanner</li>
+      <li><strong>Het per e-mail toesturen van onze gratis gids en, indien u dit niet heeft geweigerd, het incidenteel toesturen van vervolginformatie over energieadvies</strong>, op grond van uw toestemming bij het invullen van het downloadformulier</li>
+      <li><strong>Het voldoen aan wettelijke verplichtingen</strong>, bijvoorbeeld op grond van fiscale of administratieve regelgeving, op grond van die wettelijke verplichting</li>
+    </ul>
+
+    <h2>5. Verstrekking aan derden</h2>
+    <p>
+      Wij verstrekken uw persoonsgegevens niet aan derden, tenzij dit noodzakelijk is voor de
+      uitvoering van onze dienstverlening, u hiervoor uitdrukkelijk toestemming heeft gegeven of
+      wij hiertoe wettelijk verplicht zijn. Voor zover van toepassing kan dit betekenen dat uw
+      gegevens worden gedeeld met een energieleverancier, uitsluitend nadat u daarmee heeft
+      ingestemd, met Meta Platforms Ireland Limited voor zover u toestemming heeft gegeven voor
+      de Meta Pixel of voor zover u contact met ons opneemt via WhatsApp Business, of met
+      dienstverleners die ten behoeve van ons diensten verrichten (zoals hostingpartijen of
+      software voor websiteformulieren), met wie wij, waar de wet dit vereist, een
+      verwerkersovereenkomst hebben gesloten. Wij verkopen uw persoonsgegevens nooit aan derden.
+    </p>
+
+    <h2>6. Doorgifte buiten de Europese Economische Ruimte</h2>
+    <p>
+      In beginsel worden uw persoonsgegevens verwerkt binnen de Europese Economische Ruimte
+      (EER). Voor zover een door ons ingeschakelde dienstverlener, zoals Google of Meta,
+      persoonsgegevens buiten de EER verwerkt, dragen wij er zorg voor dat dit gebeurt met
+      inachtneming van passende waarborgen zoals bedoeld in de AVG, bijvoorbeeld op basis van een
+      adequaatheidsbesluit van de Europese Commissie of modelcontractbepalingen.
+    </p>
+
+    <h2>7. Cookies en vergelijkbare technieken</h2>
+    <p>
+      Deze website gebruikt de volgende cookies en scripts.
+    </p>
+    <p>
+      Strikt noodzakelijke technische cookies van Google reCAPTCHA, die uitsluitend dienen om het
+      contact- en aanvraagformulier tegen spam en misbruik te beschermen. Hiervoor is geen
+      voorafgaande toestemming vereist, omdat deze cookies noodzakelijk zijn voor de werking van
+      het formulier.
+    </p>
+    <p>
+      Uitsluitend na uw uitdrukkelijke toestemming via de cookiebanner gebruiken wij Google
+      Analytics 4 om geanonimiseerde bezoekersstatistieken te verzamelen (zoals aantal bezoekers,
+      bezochte pagina's, verwijzende websites en interacties zoals het klikken op ons
+      telefoonnummer, WhatsApp-knop of het downloaden van een gratis gids), zodat wij deze
+      website kunnen verbeteren. IP-adressen worden door Google Analytics geanonimiseerd.
+    </p>
+    <p>
+      Eveneens uitsluitend na uw uitdrukkelijke toestemming via de cookiebanner gebruiken wij de
+      Meta Pixel (van Meta Platforms Ireland Limited). Deze technologie meet of bezoekers na het
+      zien van een advertentie op Facebook of Instagram onze website bezoeken en daar een actie
+      ondernemen, zoals het invullen van het contactformulier. Op basis hiervan kunnen wij onze
+      advertenties beter afstemmen en de effectiviteit ervan meten.
+    </p>
+    <p>
+      Deze statistiek- en advertentiecookies worden pas geplaatst nadat u op "Alles accepteren"
+      heeft geklikt in de cookiebanner; kiest u voor "Alleen noodzakelijk", dan worden Google
+      Analytics en de Meta Pixel niet geladen en worden er geen statistiek- of trackingcookies
+      geplaatst. U kunt uw toestemming op elk moment intrekken door de cookies van deze website
+      in uw browser te verwijderen, waarna de cookiebanner opnieuw verschijnt.
+    </p>
+    <p>
+      Google Analytics en de Meta Pixel worden respectievelijk aangeboden door Google Ireland
+      Limited en Meta Platforms Ireland Limited. Daarbij kunnen gegevens worden doorgegeven aan
+      Google LLC en Meta Platforms, Inc. in de Verenigde Staten. Beide partijen zijn aangesloten
+      bij het EU-U.S. Data Privacy Framework en hanteren daarnaast modelcontractbepalingen als
+      aanvullende waarborg voor deze doorgifte, zoals bedoeld in artikel 6 van deze verklaring.
+      Meer informatie vindt u in het
+      <a href="https://policies.google.com/privacy" target="_blank" rel="noopener">privacybeleid van Google</a>
+      en het
+      <a href="https://www.facebook.com/privacy/policy/" target="_blank" rel="noopener">privacybeleid van Meta</a>.
+    </p>
+    <p>
+      Wij zijn bereikbaar via WhatsApp Business. Als u ons via WhatsApp benadert, worden uw
+      berichten en telefoonnummer verwerkt binnen de WhatsApp Business-omgeving, die eveneens
+      onderdeel is van Meta Platforms, Inc. Voor die verwerking geldt het privacybeleid van
+      WhatsApp zelf, naast onze eigen omgang met de inhoud van het gesprek zoals beschreven in
+      deze verklaring.
+    </p>
+    <p>
+      Afgezien van het bovenstaande maakt deze website geen gebruik van overige advertentie- of
+      social-mediacookies.
+    </p>
+
+    <h2>8. Bewaartermijnen</h2>
+    <p>
+      Wij bewaren uw persoonsgegevens niet langer dan noodzakelijk is voor de hierboven genoemde
+      doeleinden. Gegevens die zijn verstrekt via het contact- of aanvraagformulier of via
+      WhatsApp bewaren wij gedurende maximaal twee jaar na het laatste contactmoment, tenzij een
+      langere bewaartermijn wettelijk verplicht is (bijvoorbeeld op grond van de fiscale
+      bewaarplicht van zeven jaar voor gegevens die onderdeel zijn van onze administratie) of
+      noodzakelijk is voor de afhandeling van een lopend geschil. Het e-mailadres dat u invult
+      om de gratis gids te ontvangen, bewaren wij totdat u zich afmeldt of, als u zich niet
+      afmeldt, gedurende maximaal twee jaar na de aanvraag.
+    </p>
+
+    <h2>9. Beveiliging van persoonsgegevens</h2>
+    <p>
+      Wij nemen passende technische en organisatorische maatregelen om uw persoonsgegevens te
+      beveiligen tegen verlies of tegen enige vorm van onrechtmatige verwerking. Deze website
+      wordt aangeboden via een beveiligde (https) verbinding. Mocht u, ondanks deze maatregelen,
+      een vermoeden hebben van misbruik, dan verzoeken wij u dit direct aan ons te melden via de
+      contactgegevens onder artikel 1.
+    </p>
+
+    <h2>10. Geautomatiseerde besluitvorming</h2>
+    <p>
+      Wij nemen geen besluiten over zaken die (aanzienlijke) gevolgen kunnen hebben voor personen
+      op basis van uitsluitend geautomatiseerde verwerkingen, waaronder profilering.
+    </p>
+
+    <h2>11. Uw rechten</h2>
+    <p>Op grond van de AVG heeft u de volgende rechten met betrekking tot uw persoonsgegevens:</p>
+    <ul>
+      <li>Het recht op inzage in de persoonsgegevens die wij van u verwerken</li>
+      <li>Het recht op rectificatie of aanvulling van onjuiste of onvolledige gegevens</li>
+      <li>Het recht op verwijdering ("recht op vergetelheid") van uw gegevens</li>
+      <li>Het recht op beperking van de verwerking</li>
+      <li>Het recht op overdraagbaarheid van gegevens (dataportabiliteit)</li>
+      <li>Het recht van bezwaar tegen de verwerking van uw gegevens</li>
+      <li>Het recht om een eerder gegeven toestemming te allen tijde in te trekken</li>
+    </ul>
+    <p>
+      U kunt een verzoek tot uitoefening van een of meer van deze rechten indienen via de
+      contactgegevens onder artikel 1. Wij reageren op een dergelijk verzoek binnen de wettelijke
+      termijn van maximaal één maand. Om misbruik te voorkomen kunnen wij u vragen zich te
+      identificeren. Heeft u zich aangemeld voor de gratis gids en wilt u geen vervolginformatie
+      meer ontvangen? Dan kunt u zich afmelden via de afmeldlink onderaan de e-mail of door ons
+      een bericht te sturen via de contactgegevens onder artikel 1.
+    </p>
+
+    <h2>12. Klachtrecht</h2>
+    <p>
+      Heeft u een klacht over de wijze waarop wij met uw persoonsgegevens omgaan? Wij verzoeken u
+      hierover eerst contact met ons op te nemen, zodat wij samen naar een oplossing kunnen
+      zoeken. Daarnaast heeft u te allen tijde het recht om een klacht in te dienen bij de
+      nationale toezichthouder, de Autoriteit Persoonsgegevens, via
+      <a href="https://autoriteitpersoonsgegevens.nl" target="_blank" rel="noopener">autoriteitpersoonsgegevens.nl</a>.
+    </p>
+
+    <h2>13. Wijzigingen van deze privacyverklaring</h2>
+    <p>
+      Wij behouden ons het recht voor deze privacyverklaring te wijzigen, bijvoorbeeld naar
+      aanleiding van gewijzigde regelgeving of gewijzigde bedrijfsprocessen. De meest actuele
+      versie van deze privacyverklaring is steeds op deze pagina te raadplegen.
+    </p>
+
+    <h2>14. Contact</h2>
+    <p>
+      Voor vragen over deze privacyverklaring of over de verwerking van uw persoonsgegevens kunt
+      u contact opnemen via <a href="mailto:info@energiemetbart.nl">info@energiemetbart.nl</a> of
+      <a href="tel:+31615721173">06 15 72 11 73</a>.
+    </p>
+
+  </div>
+</section>
+
+<footer>
+  <div class="wrap-wide footer-grid">
+    <div><strong>Energie met Bart</strong>: eerlijk energieadvies voor ondernemers</div>
+    <div style="display:flex; gap:16px;">
+      <a href="index.html">Terug naar home</a>
+      <a href="algemene-voorwaarden.html">Algemene voorwaarden</a>
+    </div>
+    <div>&copy; 2026 Energie met Bart</div>
+  </div>
+  <div class="footer-legal" style="margin-top:20px; padding:18px 24px 0; box-sizing:border-box; border-top:1px solid rgba(255,255,255,0.12); font-size:0.76rem; line-height:1.7; color:rgba(255,255,255,0.5);">
+    <strong style="color:rgba(255,255,255,0.75);">Energie met Bart</strong><br>
+    Haarlem<br>
+    BTW-nummer NL002381531B93<br>
+    <a href="tel:+31615721173" style="color:rgba(255,255,255,0.5);">06 15 72 11 73</a> &middot;
+    <a href="mailto:info@energiemetbart.nl" style="color:rgba(255,255,255,0.5);">info@energiemetbart.nl</a>
+  </div>
+</footer>
+
+<a href="https://wa.me/31615721173?text=Hallo%20Bart%2C%20ik%20heb%20een%20vraag%20over%20energieadvies." class="whatsapp-float" target="_blank" rel="noopener" aria-label="Stuur een WhatsApp-bericht naar Bart">
+<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12.001 2C6.478 2 2 6.477 2 12c0 1.955.56 3.779 1.528 5.32L2 22l4.828-1.492A9.94 9.94 0 0 0 12.001 22C17.523 22 22 17.523 22 12S17.523 2 12.001 2zm0 18.2a8.16 8.16 0 0 1-4.409-1.288l-.316-.19-3.116.963.99-3.037-.206-.313A8.15 8.15 0 0 1 3.8 12c0-4.522 3.679-8.2 8.201-8.2 4.521 0 8.199 3.678 8.199 8.2 0 4.522-3.678 8.2-8.199 8.2z"/></svg>
+</a>
+
+<div id="cookieBanner" class="cookie-banner" role="dialog" aria-label="Cookiemelding" style="display:none;">
+  <div class="cookie-banner-inner">
+    <p>Deze website gebruikt functionele cookies (Google reCAPTCHA, tegen spam) en, alleen met uw
+      toestemming, Google Analytics- en Meta Pixel-cookies om bezoekersstatistieken en
+      advertentie-effectiviteit te meten. Zonder toestemming worden er geen analytische of
+      trackingcookies geplaatst. Meer weten? Lees de <a href="privacyverklaring.html">privacyverklaring</a>.</p>
+    <div class="cookie-banner-actions">
+      <button type="button" id="cookieBannerReject" class="cookie-banner-btn cookie-banner-btn-ghost">Alleen noodzakelijk</button>
+      <button type="button" id="cookieBannerAccept" class="cookie-banner-btn">Alles accepteren</button>
+    </div>
+  </div>
+</div>
+<style>
+  .cookie-banner { position: fixed; left: 0; right: 0; bottom: 0; z-index: 9998; background: var(--navy); color: rgba(255,255,255,0.88); padding: 16px 20px; box-shadow: 0 -8px 30px -12px rgba(16,35,58,0.4); }
+  .cookie-banner-inner { max-width: 980px; margin: 0 auto; display: flex; align-items: center; gap: 20px; flex-wrap: wrap; }
+  .cookie-banner-inner p { margin: 0; font-size: 0.85rem; line-height: 1.6; flex: 1 1 480px; }
+  .cookie-banner-inner a { color: #fff; text-decoration: underline; }
+  .cookie-banner-btn { background: var(--amber); color: #fff; border: none; padding: 10px 22px; border-radius: 999px; font-weight: 700; font-size: 0.88rem; cursor: pointer; flex-shrink: 0; }
+  .cookie-banner-actions { display: flex; gap: 10px; flex-shrink: 0; flex-wrap: wrap; }
+  .cookie-banner-btn-ghost { background: transparent; color: #fff; border: 1px solid rgba(255,255,255,0.45); }
+
+  .whatsapp-float { position: fixed; bottom: 24px; right: 24px; width: 60px; height: 60px; background: #25D366; border-radius: 50%; display: flex; align-items: center; justify-content: center; box-shadow: 0 4px 16px rgba(0,0,0,0.28); z-index: 999; transition: transform 0.2s ease, box-shadow 0.2s ease; }
+  .whatsapp-float:hover { transform: scale(1.08); box-shadow: 0 6px 20px rgba(0,0,0,0.32); }
+  .whatsapp-float svg { width: 30px; height: 30px; fill: #fff; }
+  @media (max-width: 600px) {
+    .whatsapp-float { width: 52px; height: 52px; bottom: 16px; right: 16px; }
+    .whatsapp-float svg { width: 26px; height: 26px; }
+  }
+</style>
+<script>
+(function () {
+  try {
+    var KEY = 'emb_cookie_consent';
+    var MEAS_ID = 'G-3KRHEMLLQ5';
+    var META_PIXEL_ID = '743866154971318';
+    var banner = document.getElementById('cookieBanner');
+    var acceptBtn = document.getElementById('cookieBannerAccept');
+    var rejectBtn = document.getElementById('cookieBannerReject');
+    var wa = document.querySelector('.whatsapp-float');
+
+    function positionWa() {
+      if (wa && banner && banner.style.display !== 'none') {
+        wa.style.bottom = (banner.offsetHeight + 16) + 'px';
+      } else if (wa) {
+        wa.style.bottom = '';
+      }
+    }
+
+    function loadAnalytics() {
+      if (window.__gaLoaded) return;
+      window.__gaLoaded = true;
+      var s = document.createElement('script');
+      s.async = true;
+      s.src = 'https://www.googletagmanager.com/gtag/js?id=' + MEAS_ID;
+      document.head.appendChild(s);
+      window.dataLayer = window.dataLayer || [];
+      window.gtag = function () { dataLayer.push(arguments); };
+      gtag('js', new Date());
+      gtag('config', MEAS_ID, { anonymize_ip: true });
+    }
+    window.embLoadAnalytics = loadAnalytics;
+
+    // Meta Pixel wordt pas geladen na toestemming, net als Google Analytics.
+    // Vervang META_PIXEL_ID hierboven door je echte Pixel-ID uit Meta Events Manager
+    // voordat je de advertenties live zet.
+    function loadMetaPixel() {
+      if (window.__metaPixelLoaded) return;
+      if (!META_PIXEL_ID || META_PIXEL_ID.indexOf('VUL_HIER') === 0) return;
+      window.__metaPixelLoaded = true;
+      !function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+      n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;
+      n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;
+      t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,
+      document,'script','https://connect.facebook.net/en_US/fbevents.js');
+      fbq('init', META_PIXEL_ID);
+      fbq('track', 'PageView');
+    }
+    window.embLoadMetaPixel = loadMetaPixel;
+
+    document.addEventListener('click', function (ev) {
+      if (!window.gtag) return;
+      var telLink = ev.target.closest('a[href^="tel:"]');
+      if (telLink) {
+        if (telLink.classList.contains('mobile-call-bar')) {
+          gtag('event', 'belknop_mobiel_klik');
+        } else {
+          gtag('event', 'telefoonklik');
+        }
+        return;
+      }
+      var waLink = ev.target.closest('a[href*="wa.me"]');
+      if (waLink) {
+        gtag('event', 'whatsapp_klik');
+        return;
+      }
+      var pdfLink = ev.target.closest('a[href$=".pdf"], button[formaction$=".pdf"]');
+      if (pdfLink) {
+        gtag('event', 'gratis_gids_gedownload');
+      }
+    }, true);
+
+    var consent = localStorage.getItem(KEY);
+    if (consent === 'granted') {
+      loadAnalytics();
+      loadMetaPixel();
+    } else if (consent !== 'denied') {
+      if (banner) banner.style.display = 'block';
+      document.body.classList.add('cookie-banner-visible');
+      positionWa();
+      window.addEventListener('resize', positionWa);
+    }
+
+    if (acceptBtn) {
+      acceptBtn.addEventListener('click', function () {
+        localStorage.setItem(KEY, 'granted');
+        loadAnalytics();
+        loadMetaPixel();
+        if (banner) banner.style.display = 'none';
+        document.body.classList.remove('cookie-banner-visible');
+        if (wa) wa.style.bottom = '';
+      });
+    }
+    if (rejectBtn) {
+      rejectBtn.addEventListener('click', function () {
+        localStorage.setItem(KEY, 'denied');
+        if (banner) banner.style.display = 'none';
+        document.body.classList.remove('cookie-banner-visible');
+        if (wa) wa.style.bottom = '';
+      });
+    }
+  } catch (e) {}
+})();
+</script>
+<a href="tel:+31615721173" class="mobile-call-bar"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg> Bel direct: 06 15 72 11 73</a>
+</body>
+</html>
